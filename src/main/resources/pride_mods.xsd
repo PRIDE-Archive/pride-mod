@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="pride_mod">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="pride_modifications"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pride_modifications">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="pride_modification"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pride_modification">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="unimod_mappings"/>
+                <xs:element ref="psi_modifications"/>
+            </xs:sequence>
+            <xs:attribute name="biological_significance" use="required" type="xs:integer"/>
+            <xs:attribute name="diff_mono" use="required" type="xs:decimal"/>
+            <xs:attribute name="id" use="required" type="xs:integer"/>
+            <xs:attribute name="title" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="unimod_mappings">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="unimod_mapping"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="unimod_mapping">
+        <xs:complexType>
+            <xs:attribute name="id" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="psi_modifications">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="psi_modification"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="psi_modification">
+        <xs:complexType>
+            <xs:attribute name="general_modification" use="required" type="xs:integer"/>
+            <xs:attribute name="id" use="required" type="xs:NMTOKEN"/>
+            <xs:attribute name="obsolete" use="required" type="xs:integer"/>
+            <xs:attribute name="origin" use="required" type="xs:NMTOKEN"/>
+            <xs:attribute name="specific_modification" use="required" type="xs:integer"/>
+            <xs:attribute name="term_spec" use="required"/>
+            <xs:attribute name="title" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

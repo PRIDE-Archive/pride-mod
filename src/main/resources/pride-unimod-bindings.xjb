@@ -1,0 +1,110 @@
+<!--
+  Author: yperez
+  Author: Yasset
+  File: pride-unimod-bindings.xjb
+
+  pride-mod is Copyright 2008 The European Bioinformatics Institute
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+-->
+<jxb:bindings version="2.1"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+
+    <jxb:globalBindings choiceContentProperty="true">
+        <!-- the serializable uid should reflect the version number 1.0.0 -->
+        <jxb:serializable uid="100"/>
+        <!-- this interface will be used to ensure type safety in generified methods -->
+        <xjc:superInterface name="uk.ac.ebi.unimod.model.UnimodObject"/>
+    </jxb:globalBindings>
+
+
+    <!-- ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### -->
+    <!-- #####             UniMod bindings                                    ##### -->
+    <!-- ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### -->
+
+    <jxb:bindings schemaLocation="unimod.xsd" node="/xs:schema">
+
+        <jxb:schemaBindings>
+            <jxb:package name="uk.ac.ebi.unimod.model"/>
+        </jxb:schemaBindings>
+
+        <!-- ToDo: check if the following is still true for unimod -->
+        <!-- ATTENTION: Some code in the Unimod library may expect that the class names are the same
+            as the element names of the Unimod.
+        -->
+
+        <jxb:bindings node="//xs:element[@name='elements']">
+            <jxb:class name="ElementCollection"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='xref']">
+            <jxb:class name="Reference"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='elem']">
+            <jxb:class name="AtomElement"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='modifications']">
+            <jxb:class name="ModificationCollection"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='mod']">
+            <jxb:class name="UnimodModification"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='specificity']">
+            <jxb:class name="Specificity"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='NeutralLoss']">
+            <jxb:class name="NeutralLoss"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='PepNeutralLoss']">
+            <jxb:class name="PepNeutralLoss"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='delta']">
+            <jxb:class name="Delta"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='Ignore']">
+            <jxb:class name="Ignore"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='amino_acids']">
+            <jxb:class name="AminoAcidCollection"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='aa']">
+            <jxb:class name="AminoAcid"/>
+        </jxb:bindings>
+
+
+        <jxb:bindings node="//xs:element[@name='mod_bricks']">
+            <jxb:class name="ModBricksCollection"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='brick']">
+            <jxb:class name="ModBrick"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='element']">
+            <jxb:class name="AtomComposition"/>
+        </jxb:bindings>
+
+    </jxb:bindings>
+</jxb:bindings>

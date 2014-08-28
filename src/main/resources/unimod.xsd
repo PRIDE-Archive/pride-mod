@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://www.unimod.org/xmlns/schema/unimod_2"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:umod="http://www.unimod.org/xmlns/schema/unimod_2">
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    <xs:element name="unimod">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="umod:elements"/>
+                <xs:element ref="umod:modifications"/>
+                <xs:element ref="umod:amino_acids"/>
+                <xs:element ref="umod:mod_bricks"/>
+            </xs:sequence>
+            <xs:attribute name="majorVersion" use="required" type="xs:integer"/>
+            <xs:attribute name="minorVersion" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="elements">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:elem"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="elem">
+        <xs:complexType>
+            <xs:attribute name="avge_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="full_name" use="required" type="xs:NCName"/>
+            <xs:attribute name="mono_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="title" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="modifications">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:mod"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="mod">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:specificity"/>
+                <xs:element ref="umod:delta"/>
+                <xs:choice>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:alt_name"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:Ignore"/>
+                </xs:choice>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:xref"/>
+                <xs:element minOccurs="0" ref="umod:misc_notes"/>
+            </xs:sequence>
+            <xs:attribute name="approved" use="required" type="xs:integer"/>
+            <xs:attribute name="date_time_modified" use="required"/>
+            <xs:attribute name="date_time_posted" use="required"/>
+            <xs:attribute name="full_name" use="required"/>
+            <xs:attribute name="group_of_poster" use="required"/>
+            <xs:attribute name="record_id" use="required" type="xs:integer"/>
+            <xs:attribute name="title" use="required"/>
+            <xs:attribute name="username_of_poster" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="specificity">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:NeutralLoss"/>
+                <xs:choice>
+                    <xs:element ref="umod:misc_notes"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:PepNeutralLoss"/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="classification" use="required"/>
+            <xs:attribute name="hidden" use="required" type="xs:integer"/>
+            <xs:attribute name="position" use="required"/>
+            <xs:attribute name="site" use="required" type="xs:NCName"/>
+            <xs:attribute name="spec_group" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="NeutralLoss">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:element"/>
+            </xs:sequence>
+            <xs:attribute name="avge_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="composition" use="required"/>
+            <xs:attribute name="flag" use="required" type="xs:boolean"/>
+            <xs:attribute name="mono_mass" use="required" type="xs:decimal"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PepNeutralLoss">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:element"/>
+            </xs:sequence>
+            <xs:attribute name="avge_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="composition" use="required"/>
+            <xs:attribute name="mono_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="required" use="required" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="delta">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:element"/>
+            </xs:sequence>
+            <xs:attribute name="avge_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="composition" use="required"/>
+            <xs:attribute name="mono_mass" use="required" type="xs:decimal"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="alt_name" type="xs:string"/>
+    <xs:element name="Ignore">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:element"/>
+            </xs:sequence>
+            <xs:attribute name="avge_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="composition" use="required"/>
+            <xs:attribute name="mono_mass" use="required" type="xs:decimal"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="xref">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="umod:text"/>
+                <xs:element ref="umod:source"/>
+                <xs:element ref="umod:url"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="text" type="xs:string"/>
+    <xs:element name="source" type="xs:string"/>
+    <xs:element name="url" type="xs:anyURI"/>
+    <xs:element name="amino_acids">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:aa"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="aa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:element"/>
+            </xs:sequence>
+            <xs:attribute name="avge_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="full_name" use="required"/>
+            <xs:attribute name="mono_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="three_letter" use="required"/>
+            <xs:attribute name="title" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="mod_bricks">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="umod:brick"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="brick">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="umod:element"/>
+            </xs:sequence>
+            <xs:attribute name="avge_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="full_name" use="required"/>
+            <xs:attribute name="mono_mass" use="required" type="xs:decimal"/>
+            <xs:attribute name="title" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="element">
+        <xs:complexType>
+            <xs:attribute name="number" use="required" type="xs:integer"/>
+            <xs:attribute name="symbol" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="misc_notes" type="xs:string"/>
+</xs:schema>
