@@ -4,7 +4,12 @@ PRIDE Modification library (PRIDE-Mod) is a Java API to handle post-translationa
 
 It also provide a the corresponding parsers for UNIMOD and PSI-MOD databases. It can be use to retrieve an specific modification using Accessions, Amino Acids, Delta Masses (monoisotopic or average). 
 
+# How to cite it:
+
+Perez-Riverol, Y., Wang, R., Hermjakob, H., Müller, M., Vesada, V., & Vizcaíno, J. A. (2014). Open source libraries and frameworks for mass spectrometry based proteomics: A developer's perspective. Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics, 1844(1), 63-76. [PDF File](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3898926/)[Pubmed Record](http://www.ncbi.nlm.nih.gov/pubmed/23467006)
+
 # Main Features
+
 * Support UNIMOD and PSI-MOD databases
 * Common representation for all kind of modifications.
 * Common API to retrieve modifications based on: Accessions, Amino Acids, Delta Masses, etc.
@@ -46,3 +51,8 @@ If you wish to include pride-mod in your own Java projects, and you use Maven 2,
 If you have questions or need additional help, please contact the PRIDE Helpdesk at the EBI: pride-support at ebi.ac.uk (replace at with @).
 
 Please send us your feedback, including error reports, improvement suggestions, new feature requests and any other things you might want to suggest to the PRIDE team.
+
+# This library has been used in:
+
+* [PRIDE Converter 2](https://code.google.com/p/pride-converter-2/) 
+* [PRIDE-Archive](http://www.ebi.ac.uk/pride/archive/)
