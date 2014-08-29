@@ -56,3 +56,26 @@ Please send us your feedback, including error reports, improvement suggestions, 
 
 * Côté, R. G., Griss, J., Dianes, J. A., Wang, R., Wright, J. C., van den Toorn, H. W., ... & Vizcaíno, J. A. (2012). The PRoteomics IDEntification (PRIDE) Converter 2 framework: an improved suite of tools to facilitate data submission to the PRIDE database and the ProteomeXchange consortium. Molecular & Cellular Proteomics, 11(12), 1682-1689. [PRIDE Converter 2](https://code.google.com/p/pride-converter-2/) 
 * Vizcaíno, J. A., Côté, R. G., Csordas, A., Dianes, J. A., Fabregat, A., Foster, J. M., ... & Hermjakob, H. (2013). The PRoteomics IDEntifications (PRIDE) database and associated tools: status in 2013. Nucleic acids research, 41(D1), D1063-D1069. [PRIDE-Archive](http://www.ebi.ac.uk/pride/archive/)
+
+How to use pride-mod
+===============
+
+# Using pride-mod
+ 
+Here we will show you how to use the PRIDE-Mod library:
+   
+ * How to retrieve all modifications in PSI-Mod and UNIMOD with 'phospho' pattern in the Description:
+
+   ```java
+    ModReader modReader = ModReader.getInstance();
+   List<PTM> ptms = modReader.getPTMListByPatternDescription("Phospho");
+   assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 102);
+   ```
+ * Retrieve the the UNIMOD modification with Accession 1:
+   
+   ```java
+    File inputFile = new File("unimoddatabase.xml");
+    unimodDataAccessController = new UnimodDataAccessController(inputFile);
+    PTM ptm = unimodDataAccessController.getPTMbyAccession("UNIMOD:1");
+    assertTrue("Difference mass for Average mass is:", ptm.getAveDeltaMass() == 42.0367);
+   ```
