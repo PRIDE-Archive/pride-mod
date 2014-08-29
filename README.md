@@ -6,7 +6,7 @@ It also provide a the corresponding parsers for UNIMOD and PSI-MOD databases. It
 
 # How to cite it:
 
-Perez-Riverol, Y., Wang, R., Hermjakob, H., Müller, M., Vesada, V., & Vizcaíno, J. A. (2014). Open source libraries and frameworks for mass spectrometry based proteomics: A developer's perspective. Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics, 1844(1), 63-76. [PDF File](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3898926/)[Pubmed Record](http://www.ncbi.nlm.nih.gov/pubmed/23467006)
+Perez-Riverol, Y., Wang, R., Hermjakob, H., Müller, M., Vesada, V., & Vizcaíno, J. A. (2014). Open source libraries and frameworks for mass spectrometry based proteomics: A developer's perspective. Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics, 1844(1), 63-76. [PDF File](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3898926/) [Pubmed Record](http://www.ncbi.nlm.nih.gov/pubmed/23467006)
 
 # Main Features
 
