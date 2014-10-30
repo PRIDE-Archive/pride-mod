@@ -107,7 +107,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>2.5</version>
                 <configuration>
                     <remoteTagging>true</remoteTagging>
                     <goals>deploy</goals>
@@ -198,8 +198,8 @@
 
     <!--scm git config-->
     <scm>
-        <connection>scm:git:git@github.com:USER/repository.git</connection>
-        <developerConnection>scm:git:git@github.com:USER/repository.git</developerConnection>
+        <connection>scm:git:ssh://github.com/PRIDE-Utilities/pride-mod.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:PRIDE-Utilities/pride-mod.git</developerConnection>
         <url>https://github.com/PRIDE-Utilities/pride-mod.git</url>
         <tag>HEAD</tag>
     </scm>
