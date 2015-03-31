@@ -1,5 +1,7 @@
 # PRIDE-Mod Library
 
+[![Build Status](https://travis-ci.org/PRIDE-Utilities/pride-mod.svg?branch=master)](https://travis-ci.org/PRIDE-Utilities/pride-mod)
+
 PRIDE Modification library (PRIDE-Mod) is a Java API to handle post-translational modifications (PTMs) in proteomics experiments. The library provide a common representation between different PTMs databases such as [UNIMOD](www.ebi.ac.uk/pride/archive/) , [PSI-MOD](http://www.psidev.info/MOD) and the PRIDE Modification Slim Ontology.
 
 It also provide a the corresponding parsers for UNIMOD and PSI-MOD databases. It can be use to retrieve an specific modification using Accessions, Amino Acids, Delta Masses (monoisotopic or average). 
