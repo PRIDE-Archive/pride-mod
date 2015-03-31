@@ -1,6 +1,5 @@
 package uk.ac.ebi.pridemod;
 
-import ch.qos.logback.core.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.ac.ebi.pridemod.controller.impl.PRIDEModDataAccessController;
@@ -13,8 +12,6 @@ import uk.ac.ebi.pridemod.utils.PRIDEModUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.List;
 
 /**
@@ -39,13 +36,13 @@ public class ModReader {
      */
     private static InputStream prideModdUrl = ModReader.class.getClassLoader().getResourceAsStream("pride_mods.xml");
 
-    private UnimodDataAccessController unimodController;
+    private static UnimodDataAccessController unimodController;
 
-    private PSIModDataAccessController psiModController;
+    private static PSIModDataAccessController psiModController;
 
-    private PRIDEModDataAccessController prideModController;
+    private static PRIDEModDataAccessController prideModController;
 
-    private static ModReader instance = null;
+    private volatile static ModReader instance = new ModReader();
 
     protected ModReader(){
         try {
@@ -74,9 +71,6 @@ public class ModReader {
     }
 
     public static ModReader getInstance(){
-        if(instance == null){
-            instance = new ModReader();
-        }
         return instance;
     }
 
