@@ -9218,6 +9218,7 @@ xref: MassMono: "129.042593"
 xref: Origin: "S"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:1"
 is_a: MOD:00644 ! O-acetylated residue
 is_a: MOD:00647 ! acetylated L-serine
 
@@ -9343,6 +9344,7 @@ xref: MassMono: "188.090940"
 xref: Origin: "R"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:425"
 is_a: MOD:00428 ! dihydroxylated residue
 is_a: MOD:00682 ! hydroxylated arginine
 
@@ -9368,6 +9370,7 @@ xref: MassMono: "160.084792"
 xref: Origin: "K"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:425"
 is_a: MOD:00428 ! dihydroxylated residue
 is_a: MOD:00681 ! hydroxylated lysine
 
@@ -9395,6 +9398,7 @@ xref: MassMono: "466.111432"
 xref: Origin: "H"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:405"
 is_a: MOD:00909 ! modified L-histidine residue
 is_a: MOD:01165 ! adenylated residue
 
@@ -9422,6 +9426,7 @@ xref: MassMono: "443.084214"
 xref: Origin: "H"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:417"
 is_a: MOD:00909 ! modified L-histidine residue
 is_a: MOD:01166 ! uridylated residue
 
@@ -9451,6 +9456,7 @@ xref: MassMono: "99.032028"
 xref: Origin: "D"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:447"
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:01161 ! deoxygenated residue
 
@@ -9473,6 +9479,7 @@ xref: MassMono: "935.231809"
 xref: Origin: "S"
 xref: Source: "natural"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:448"
 is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
@@ -9495,6 +9502,7 @@ xref: MassMono: "1688.012718"
 xref: Origin: "D"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:424"
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:01167 ! molybdopterin guanine dinucleotide
 
@@ -9708,6 +9716,7 @@ xref: MassMono: "126.055504"
 xref: Origin: "P"
 xref: Source: "hypothetical"
 xref: TermSpec: "N-term"
+xref: UniMod: "UniMod:122"
 is_a: MOD:00409 ! N-formylated residue
 is_a: MOD:00915 ! modified L-proline residue
 is_a: MOD:01696 ! alpha-amino acylated residue
@@ -9734,6 +9743,7 @@ xref: MassMono: "241.167794"
 xref: Origin: "S"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:449"
 is_a: MOD:00668 ! O-decanoylated residue
 is_a: MOD:00916 ! modified L-serine residue
 
@@ -9760,6 +9770,7 @@ xref: MassMono: "227.152144"
 xref: Origin: "T"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:426"
 is_a: MOD:00669 ! O-octanoylated residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -9785,6 +9796,7 @@ xref: MassMono: "255.183444"
 xref: Origin: "T"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:449"
 is_a: MOD:00668 ! O-decanoylated residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -9815,6 +9827,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:1"
 is_a: MOD:00649 ! acylated residue
 
 [Term]
