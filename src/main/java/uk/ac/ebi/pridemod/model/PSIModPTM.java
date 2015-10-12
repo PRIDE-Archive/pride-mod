@@ -19,22 +19,32 @@ public class PSIModPTM extends AbstractPTM{
 
     private String remapID;
 
-    public PSIModPTM(String accession,
-                     String name,
-                     String description,
-                     Double monoDeltaMass,
-                     Double averageDeltaMass,
-                     List<Specificity> specificityList,
-                     String formula, List<String> synonyms,
-                     boolean obsolete, String source,
-                     List<Comparable> parentPTMList,
-                     String remapID) {
+    private String unimodId;
+
+    /**
+     *
+     * @param accession
+     * @param name
+     * @param description
+     * @param monoDeltaMass
+     * @param averageDeltaMass
+     * @param specificityList
+     * @param formula
+     * @param synonyms
+     * @param obsolete
+     * @param source
+     * @param parentPTMList
+     * @param remapID
+     * @param unimodId
+     */
+    public PSIModPTM(String accession, String name, String description, Double monoDeltaMass, Double averageDeltaMass, List<Specificity> specificityList, String formula, List<String> synonyms, boolean obsolete, String source, List<Comparable> parentPTMList, String remapID, String unimodId) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
         this.synonyms = synonyms;
         this.obsolete = obsolete;
         this.source = source;
         this.parentPTMList = parentPTMList;
         this.remapID = remapID;
+        this.unimodId = unimodId;
     }
 
     public boolean isObsolete() {
@@ -77,5 +87,23 @@ public class PSIModPTM extends AbstractPTM{
         this.remapID = remapID;
     }
 
+    public String getUnimodId() {
+        return unimodId;
+    }
 
+    public void setUnimodId(String unimodId) {
+        this.unimodId = unimodId;
+    }
+
+    @Override
+    public String toString() {
+        return "PSIModPTM{" +
+                "synonyms=" + synonyms +
+                ", obsolete=" + obsolete +
+                ", source='" + source + '\'' +
+                ", parentPTMList=" + parentPTMList +
+                ", remapID='" + remapID + '\'' +
+                ", unimodId='" + unimodId + '\'' +
+                '}';
+    }
 }

@@ -24,6 +24,8 @@ import java.util.List;
  */
 public class PSIModDataAccessController extends AbstractDataAccessController{
 
+    private static final String UNIMOD_TAG = "UniMod";
+
     private final String NAME_TAG    = "name";
 
     private final String DEF_TAG     = "def";
@@ -48,7 +50,7 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
 
     private final String IS_A_TAG     = "is_a";
 
-    private final String REMAP_TAG    = "Remap";
+    private final String REMAP_TAG    = "Remap:";
 
     private static final Logger logger = LoggerFactory.getLogger(UnimodDataAccessController.class);
 
@@ -77,6 +79,9 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
         for(Frame frame: termCollection){
             String id = frame.getId();
 
+            if(id.contains("MOD:01961")){
+                System.out.println("si");
+            }
             String name = (String) frame.getTagValue(NAME_TAG);
 
             String description = (String) frame.getTagValue(DEF_TAG);
@@ -97,7 +102,8 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
             String source  = null;
             String aminoacid = null;
             String aminoacidPosition = null;
-            String remapID;
+            String remapID = null;
+            String unimodID = null;
 
             if(xrefs != null){
                 for(Object xref: xrefs){
@@ -121,6 +127,9 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
                     }
                     if(((Xref)xref).getIdref().equalsIgnoreCase(REMAP_TAG)){
                         remapID = ((Xref)xref).getAnnotation();
+                    }
+                    if(((Xref)xref).getIdref().equalsIgnoreCase(UNIMOD_TAG)){
+                        unimodID = ((Xref)xref).getAnnotation();
                     }
                 }
             }
@@ -153,7 +162,7 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
                     parentPTMs.add((Comparable)object);
             }
 
-            PSIModPTM ptm = new PSIModPTM(id,name,description,monoDeltaMass,averageDeltaMass,specificityList,formula,synonyms,source, parentPTMs, obsolete);
+            PSIModPTM ptm = new PSIModPTM(id,name,description,monoDeltaMass,averageDeltaMass,specificityList,formula,synonyms,obsolete,source, parentPTMs, remapID,unimodID);
             ptmMap.put(id, ptm);
         }
     }
