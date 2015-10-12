@@ -47,4 +47,9 @@ public class ModReaderTest {
         List<PTM> ptms = modReader.getPTMListByAvgDeltaMass(42.0367);
         assertTrue("The number of Proteins with Average equal to 42.010565 is:", ptms.size() == 2);
     }
+
+    @Test
+    public void testRetrieveAnchorPTM() throws Exception {
+        modReader.retrieveAnchorPTM("MOD:00412", "M");
+    }
 }

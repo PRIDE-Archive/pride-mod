@@ -6,9 +6,11 @@ import uk.ac.ebi.pridemod.controller.impl.PRIDEModDataAccessController;
 import uk.ac.ebi.pridemod.controller.impl.PSIModDataAccessController;
 import uk.ac.ebi.pridemod.controller.impl.UnimodDataAccessController;
 import uk.ac.ebi.pridemod.exception.DataAccessException;
+import uk.ac.ebi.pridemod.model.PSIModPTM;
 import uk.ac.ebi.pridemod.model.PTM;
 import uk.ac.ebi.pridemod.model.Specificity;
 import uk.ac.ebi.pridemod.utils.PRIDEModUtils;
+import uk.ac.ebi.pridemod.utils.Utilities;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -134,17 +136,28 @@ public class ModReader {
         return ptms;
     }
 
+    /**
+     * Get the PTMs using the MonoDelta Mass of the modification
+     * @param delta the delta mass to be search
+     * @return
+     */
     public List<PTM> getPTMListByMonoDeltaMass(Double delta) {
         List<PTM> ptms = unimodController.getPTMListByMonoDeltaMass(delta);
         ptms.addAll(psiModController.getPTMListByMonoDeltaMass(delta));
         return ptms;
     }
 
-
     public List<PTM> getPTMListByAvgDeltaMass(Double delta) {
         List<PTM> ptms = unimodController.getPTMListByAvgDeltaMass(delta);
         ptms.addAll(psiModController.getPTMListByAvgDeltaMass(delta));
         return ptms;
 
+    }
+
+    public PTM retrieveAnchorPTM(String accession, String aa){
+        PTM currentPTM = getPTMbyAccession(accession);
+        Double monoDelta = currentPTM.getMonoDeltaMass();
+        List<PTM> ptms  = Utilities.filterPTMsByAminoAcidSpecificity(getPTMListByMonoDeltaMass(monoDelta), aa);
+        return null;
     }
 }

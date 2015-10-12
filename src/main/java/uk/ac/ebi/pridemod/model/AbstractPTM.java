@@ -96,4 +96,17 @@ public class AbstractPTM implements PTM {
     public String getFormula() {
         return formula;
     }
+
+    @Override
+    public String toString() {
+        return "AbstractPTM{" +
+                "accession='" + accession + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", monoDeltaMass=" + monoDeltaMass +
+                ", averageDeltaMass=" + averageDeltaMass +
+                ", specificityList=" + specificityList +
+                ", formula='" + formula + '\'' +
+                '}';
+    }
 }

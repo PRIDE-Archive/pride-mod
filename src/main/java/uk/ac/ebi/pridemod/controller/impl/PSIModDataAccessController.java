@@ -48,6 +48,8 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
 
     private final String IS_A_TAG     = "is_a";
 
+    private final String REMAP_TAG    = "Remap";
+
     private static final Logger logger = LoggerFactory.getLogger(UnimodDataAccessController.class);
 
     public PSIModDataAccessController(InputStream inputStream) {
@@ -95,6 +97,7 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
             String source  = null;
             String aminoacid = null;
             String aminoacidPosition = null;
+            String remapID;
 
             if(xrefs != null){
                 for(Object xref: xrefs){
@@ -115,6 +118,9 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
                     }
                     if(((Xref)xref).getIdref().equalsIgnoreCase(TERMSPEC_TAG)){
                         aminoacidPosition = ((Xref)xref).getAnnotation();
+                    }
+                    if(((Xref)xref).getIdref().equalsIgnoreCase(REMAP_TAG)){
+                        remapID = ((Xref)xref).getAnnotation();
                     }
                 }
             }

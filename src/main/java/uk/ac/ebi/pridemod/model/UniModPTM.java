@@ -8,7 +8,7 @@ import java.util.List;
 public class UniModPTM extends AbstractPTM {
 
     /**
-     * Contructor with all the fields for a general modification
+     * Constructor with all the fields for a general modification
      *
      * @param accession        PTM accession
      * @param name             Name

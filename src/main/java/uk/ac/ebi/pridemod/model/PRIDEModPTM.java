@@ -41,4 +41,11 @@ public class PRIDEModPTM extends AbstractPTM{
     public void setUniModRef(Comparable uniModRef) {
         this.uniModRef = uniModRef;
     }
+
+    @Override
+    public String toString() {
+        return "PRIDEModPTM{" +
+                "uniModRef=" + uniModRef +
+                '}';
+    }
 }

@@ -6,7 +6,6 @@ import java.util.List;
  * yperez.
  */
 public class PSIModPTM extends AbstractPTM{
-
     /**
      * List of possible names of a modification
      */
@@ -18,22 +17,24 @@ public class PSIModPTM extends AbstractPTM{
 
     private List<Comparable> parentPTMList;
 
+    private String remapID;
+
     public PSIModPTM(String accession,
                      String name,
                      String description,
                      Double monoDeltaMass,
                      Double averageDeltaMass,
                      List<Specificity> specificityList,
-                     String formula,
-                     List<String> synonyms,
-                     String source,
+                     String formula, List<String> synonyms,
+                     boolean obsolete, String source,
                      List<Comparable> parentPTMList,
-                     boolean obsolete) {
+                     String remapID) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
         this.synonyms = synonyms;
         this.obsolete = obsolete;
-        this.parentPTMList = parentPTMList;
         this.source = source;
+        this.parentPTMList = parentPTMList;
+        this.remapID = remapID;
     }
 
     public boolean isObsolete() {
@@ -67,4 +68,14 @@ public class PSIModPTM extends AbstractPTM{
     public void setParentPTMList(List<Comparable> parentPTMList) {
         this.parentPTMList = parentPTMList;
     }
+
+    public String getRemapID() {
+        return remapID;
+    }
+
+    public void setRemapID(String remapID) {
+        this.remapID = remapID;
+    }
+
+
 }
