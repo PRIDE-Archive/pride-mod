@@ -13087,6 +13087,7 @@ xref: MassMono: "none"
 xref: Origin: "H"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:244"
 is_obsolete: true
 
 [Term]
@@ -13103,6 +13104,7 @@ xref: Origin: "H"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: Remap: "MOD:00776"
+xref: UinMod: "UniMod:245"
 is_obsolete: true
 
 [Term]
@@ -13137,6 +13139,7 @@ xref: MassMono: "112.039853"
 xref: Origin: "P"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:359"
 is_a: MOD:00679 ! carbon oxygenated residue
 is_a: MOD:00915 ! modified L-proline residue
 is_a: MOD:01048 ! 2-pyrrolidone-5-carboxylic acid
@@ -13156,6 +13159,7 @@ xref: MassMono: "355.167811"
 xref: Origin: "R"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:343"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13174,6 +13178,7 @@ xref: MassMono: "369.183461"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:353"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13192,6 +13197,7 @@ xref: MassMono: "355.167811"
 xref: Origin: "P"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:357"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13210,6 +13216,7 @@ xref: MassMono: "341.152161"
 xref: Origin: "T"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:361"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13227,6 +13234,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:253"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13244,6 +13252,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:254"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13261,6 +13270,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: ""UniMod:255
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13278,6 +13288,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:256"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13293,6 +13304,8 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: Remap: "MOD:00579"
+xref: UniMod: "UniMod:257"
 is_obsolete: true
 
 [Term]
@@ -13312,6 +13325,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:258"
 is_a: MOD:00845 ! (18)O substituted residue
 
 [Term]
@@ -13330,6 +13344,7 @@ xref: MassMono: "136.109162"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:259"
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00843 ! (15)N labeled residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -13349,6 +13364,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:260"
 is_a: MOD:00860 ! sulfur containing modified residue
 is_a: MOD:00861 ! phosphorus containing modified residue
 
@@ -13367,6 +13383,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "N-term"
+xref: UniMod: "UniMod:261"
 is_a: MOD:00841 ! isothiocyanate reagent derivatized residue
 
 [Term]
@@ -13385,6 +13402,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:262"
 is_a: MOD:00786 ! deuterium substituted residue
 
 [Term]
@@ -13402,6 +13420,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:264"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13421,6 +13440,7 @@ xref: MassMono: "166.109380"
 xref: Origin: "R"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:267"
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00843 ! (15)N labeled residue
 is_a: MOD:00902 ! modified L-arginine residue
@@ -13440,6 +13460,7 @@ xref: MassMono: "105.082223"
 xref: Origin: "V"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:268"
 is_a: MOD:00920 ! modified L-valine residue
 is_a: MOD:01809 ! 5x(13)C,1x(15)N labeled residue
 
@@ -13458,6 +13479,7 @@ xref: MassMono: "157.095642"
 xref: Origin: "F"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:269"
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00843 ! (15)N labeled residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
@@ -13477,6 +13499,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:270"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13494,6 +13517,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:271"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13511,6 +13535,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "N-term"
+xref: UniMod: "UniMod:272"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13529,6 +13554,7 @@ xref: MassMono: "381.189986"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:273"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13574,6 +13600,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:276"
 is_a: MOD:01652 ! sulfonyl halide reagent derivatized residue
 
 [Term]
@@ -13590,6 +13617,7 @@ xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: Remap: "MOD:00110"
+xref: UniMod: "UniMod:277"
 is_obsolete: true
 
 [Term]
@@ -13609,6 +13637,7 @@ xref: MassMono: "147.035400"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:278"
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
@@ -13628,6 +13657,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "none"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:34"
 is_a: MOD:00427 ! methylated residue
 
 [Term]
@@ -13647,6 +13677,7 @@ xref: MassMono: "157.073893"
 xref: Origin: "E"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:280"
 is_a: MOD:00906 ! modified L-glutamic acid residue
 is_a: MOD:01339 ! ethylated residue
 
@@ -13680,6 +13711,7 @@ xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "N-term"
 xref: Remap: "MOD:00110"
+xref: UniMod: "UniMod:283"
 is_obsolete: true
 
 [Term]
@@ -13697,6 +13729,7 @@ xref: MassMono: "144.123167"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:284"
 is_a: MOD:00839 ! (2)H deuterium labeled residue
 is_a: MOD:00912 ! modified L-lysine residue
 relationship: derives_from MOD:00085 ! N6-methyl-L-lysine
@@ -13716,6 +13749,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:285"
 is_a: MOD:01426 ! isotope tagged reagent derivatized residue
 
 [Term]
@@ -13733,6 +13767,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:286"
 is_a: MOD:01426 ! isotope tagged reagent derivatized residue
 
 [Term]
@@ -13751,6 +13786,7 @@ xref: MassMono: "217.061317"
 xref: Origin: "W"
 xref: Source: "artifact"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:288"
 is_a: MOD:00918 ! modified L-tryptophan residue
 
 [Term]
@@ -13768,6 +13804,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:289"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13785,6 +13822,7 @@ xref: MassMono: "531.200768"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:290"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -13802,6 +13840,7 @@ xref: MassMono: "304.979828"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:291"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:01075 ! mercury containing modified residue
@@ -13821,6 +13860,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:292"
 is_a: MOD:00848 ! reagent derivatized residue
 
 [Term]
@@ -13838,6 +13878,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:293"
 is_a: MOD:00649 ! acylated residue
 is_a: MOD:00848 ! reagent derivatized residue
 
@@ -13856,6 +13897,7 @@ xref: MassMono: "429.150446"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:294"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -13876,6 +13918,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:295"
 is_a: MOD:00736 ! deoxyhexosylated
 
 [Term]
@@ -13892,6 +13935,7 @@ xref: Origin: "R"
 xref: Source: "artifact"
 xref: TermSpec: "N-term"
 xref: Remap: "MOD:00584"
+xref: UniMod: "UniMod:261"
 is_obsolete: true
 
 [Term]
@@ -13917,6 +13961,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:298"
 is_a: MOD:00839 ! (2)H deuterium labeled residue
 
 [Term]
@@ -13935,6 +13980,7 @@ xref: MassMono: "230.069142"
 xref: Origin: "W"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:299"
 is_a: MOD:00918 ! modified L-tryptophan residue
 is_a: MOD:01152 ! carboxylated residue
 
@@ -13952,6 +13998,7 @@ xref: Origin: "W"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: Remap: "MOD:01328"
+xref: UniMod: "UniMod:300"
 is_obsolete: true
 
 [Term]
@@ -13970,6 +14017,7 @@ xref: MassMono: "293.083412"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:301"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -13988,6 +14036,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:302"
 is_a: MOD:00848 ! reagent derivatized residue
 
 [Term]
@@ -14007,6 +14056,7 @@ xref: MassMono: "179.007471"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:303"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -14025,6 +14075,7 @@ xref: MassMono: "1556.561147"
 xref: Origin: "N"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:305"
 is_a: MOD:00725 ! complex glycosylation
 is_a: MOD:00903 ! modified L-asparagine residue
 
@@ -14050,6 +14101,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:314"
 is_a: MOD:00848 ! reagent derivatized residue
 
 [Term]
@@ -14067,6 +14119,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:478"
 is_a: MOD:00848 ! reagent derivatized residue
 
 [Term]
@@ -14087,6 +14140,7 @@ xref: MassMono: "206.141913"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:316"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00912 ! modified L-lysine residue
 
@@ -14121,6 +14175,7 @@ xref: MassMono: "190.110613"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:318"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00912 ! modified L-lysine residue
 
@@ -14140,6 +14195,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:319"
 is_a: MOD:00848 ! reagent derivatized residue
 
 [Term]
@@ -14158,6 +14214,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:320"
 is_a: MOD:00848 ! reagent derivatized residue
 
 [Term]
@@ -14173,6 +14230,7 @@ xref: MassMono: "none"
 xref: Origin: "N"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:321"
 is_obsolete: true
 
 [Term]
@@ -14192,6 +14250,7 @@ xref: MassMono: "816.102263"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:323"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -14211,6 +14270,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:324"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -14228,6 +14288,7 @@ xref: MassMono: "659.348157"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:325"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00861 ! phosphorus containing modified residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -14248,6 +14309,7 @@ xref: MassMono: "131.040485"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:327"
 is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
@@ -14265,6 +14327,7 @@ xref: MassMono: "174.138946"
 xref: Origin: "R"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:329"
 is_a: MOD:00839 ! (2)H deuterium labeled residue
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00902 ! modified L-arginine residue
@@ -14285,6 +14348,7 @@ xref: MassMono: "192.176781"
 xref: Origin: "R"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:330"
 is_a: MOD:00839 ! (2)H deuterium labeled residue
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00902 ! modified L-arginine residue
@@ -14305,6 +14369,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:332"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00861 ! phosphorus containing modified residue
 
@@ -14323,6 +14388,7 @@ xref: MassMono: "554.233935"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:333"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00861 ! phosphorus containing modified residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -14341,6 +14407,7 @@ xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: Remap: "MOD:00612"
+xref: UniMod: "UniMod:334"
 is_obsolete: true
 
 [Term]
@@ -14359,6 +14426,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:335"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:01155 ! lipoconjugated residue
 relationship: derives_from MOD:00446 ! 4-hydroxynonenal adduct
@@ -14378,6 +14446,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: Uniod: "UniMod:337"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -14614,6 +14683,7 @@ xref: MassMono: "143.058243"
 xref: Origin: "Q"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:528"
 is_a: MOD:01369 ! deamidated and methyl esterified residue
 is_a: MOD:01453 ! L-glutamic acid 5-methyl ester
 relationship: has_functional_parent MOD:00659 ! methylated glutamine
@@ -14758,6 +14828,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:449"
 is_a: MOD:00667 ! decanoylated residue
 is_a: MOD:00671 ! O-acylated residue
 
@@ -14778,6 +14849,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:426"
 is_a: MOD:00666 ! octanoylated residue
 is_a: MOD:00671 ! O-acylated residue
 
@@ -14945,6 +15017,7 @@ xref: MassMono: "115.026943"
 xref: Origin: "N"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:7"
 is_a: MOD:00013 ! L-aspartic acid residue
 is_a: MOD:00400 ! deamidated residue
 is_a: MOD:00903 ! modified L-asparagine residue
@@ -14972,6 +15045,7 @@ xref: MassMono: "129.042593"
 xref: Origin: "Q"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:7"
 is_a: MOD:00015 ! L-glutamic acid residue
 is_a: MOD:00400 ! deamidated residue
 
@@ -14997,6 +15071,7 @@ xref: MassMono: "150.953635"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:162"
 is_a: MOD:00007 ! selenium substitution for sulfur
 is_a: MOD:00031 ! L-selenocysteine residue
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -15078,6 +15153,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:40"
 is_a: MOD:00860 ! sulfur containing modified residue
 
 [Term]
@@ -15099,6 +15175,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "none"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:21"
 is_a: MOD:00861 ! phosphorus containing modified residue
 
 [Term]
@@ -15118,6 +15195,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:50"
 is_a: MOD:01156 ! protein modification categorized by chemical process
 
 [Term]
@@ -15186,6 +15264,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:23"
 is_a: MOD:01156 ! protein modification categorized by chemical process
 
 [Term]
@@ -15224,6 +15303,7 @@ xref: MassMono: "161.047678"
 xref: Origin: "Y"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:401"
 is_a: MOD:00919 ! modified L-tyrosine residue
 is_a: MOD:01888 ! didehydrogenated residue
 
@@ -15397,6 +15477,7 @@ xref: MassMono: "147.035400"
 xref: Origin: "M"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:35"
 is_a: MOD:00709 ! sulfur oxygenated L-methionine
 is_a: MOD:01854 ! sulfur monooxygenated residue
 
@@ -15452,6 +15533,7 @@ xref: MassMono: "142.074228"
 xref: Origin: "Q"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:34"
 is_a: MOD:00599 ! monomethylated residue
 is_a: MOD:00659 ! methylated glutamine
 
@@ -15490,6 +15572,7 @@ xref: MassMono: "151.074562"
 xref: Origin: "H"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:34"
 is_a: MOD:00599 ! monomethylated residue
 is_a: MOD:00602 ! N-methylated residue
 is_a: MOD:00661 ! methylated histidine
@@ -15941,6 +16024,7 @@ xref: MassMono: "1720.629620"
 xref: Origin: "N"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:307"
 is_a: MOD:00725 ! complex glycosylation
 is_a: MOD:00903 ! modified L-asparagine residue
 
@@ -15959,6 +16043,7 @@ xref: MassMono: "1736.624535"
 xref: Origin: "N"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:311"
 is_a: MOD:00725 ! complex glycosylation
 is_a: MOD:00903 ! modified L-asparagine residue
 
@@ -15993,6 +16078,7 @@ xref: MassMono: "1412.518888"
 xref: Origin: "N"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:309"
 is_a: MOD:00725 ! complex glycosylation
 is_a: MOD:00903 ! modified L-asparagine residue
 
@@ -16011,6 +16097,7 @@ xref: MassMono: "1574.571711"
 xref: Origin: "N"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:310"
 is_a: MOD:00725 ! complex glycosylation
 is_a: MOD:00903 ! modified L-asparagine residue
 
@@ -16052,6 +16139,7 @@ xref: MassMono: "222.013284"
 xref: Origin: "C"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:312"
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:01862 ! disulfide conjugated residue
 
@@ -16069,6 +16157,7 @@ xref: MassAvg: "none"
 xref: MassMono: "none"
 xref: Origin: "X"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:313"
 is_a: MOD:00003 ! UniMod
 
 [Term]
@@ -16152,6 +16241,7 @@ xref: MassMono: "114.042927"
 xref: Origin: "H"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:348"
 is_a: MOD:00012 ! L-asparagine residue
 is_a: MOD:00909 ! modified L-histidine residue
 
@@ -16172,6 +16262,7 @@ xref: MassMono: "115.026943"
 xref: Origin: "H"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:349"
 is_a: MOD:00013 ! L-aspartic acid residue
 is_a: MOD:00909 ! modified L-histidine residue
 
@@ -16205,6 +16296,7 @@ xref: Origin: "K"
 xref: Source: "natural"
 xref: TermSpec: "none"
 xref: Remap: "MOD:00130"
+xref: UniMod: "UniMod:352"
 is_obsolete: true
 
 [Term]
@@ -16278,6 +16370,7 @@ xref: MassMono: "184.132411"
 xref: Origin: "R"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:36"
 is_a: MOD:00429 ! dimethylated residue
 is_a: MOD:00658 ! methylated arginine
 
@@ -16340,6 +16433,7 @@ xref: MassMono: "251.092259"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:362"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00861 ! phosphorus containing modified residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -16359,6 +16453,7 @@ xref: MassMono: "285.076609"
 xref: Origin: "Y"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:363"
 is_a: MOD:00848 ! reagent derivatized residue
 is_a: MOD:00861 ! phosphorus containing modified residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -16378,6 +16473,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:364"
 is_a: MOD:01426 ! isotope tagged reagent derivatized residue
 
 [Term]
@@ -16395,6 +16491,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:365"
 is_a: MOD:01426 ! isotope tagged reagent derivatized residue
 
 [Term]
@@ -16413,6 +16510,7 @@ xref: MassMono: "131.046839"
 xref: Origin: "Q"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:366"
 is_a: MOD:00685 ! deamidated L-glutamine
 is_a: MOD:00852 ! 1x(18)O labeled deamidated residue
 
@@ -16450,6 +16548,7 @@ xref: MassAvg: "69.06"
 xref: MassMono: "69.021464"
 xref: Origin: "C"
 xref: Source: "natural"
+xref: UniMod: "UniMod:368"
 xref: TermSpec: "none"
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:01168 ! dehydroalanine
@@ -16471,6 +16570,7 @@ xref: Origin: "P"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: Remap: "MOD:00477"
+xref: UniMod: "UniMod:369"
 is_obsolete: true
 
 [Term]
@@ -16488,6 +16588,7 @@ xref: MassMono: "189.045964"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:371"
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
@@ -16509,6 +16610,7 @@ xref: MassMono: "114.079313"
 xref: Origin: "R"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:372"
 is_a: MOD:00902 ! modified L-arginine residue
 
 [Term]
@@ -16552,6 +16654,7 @@ xref: MassMono: "102.001360"
 xref: Origin: "C"
 xref: Source: "none"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:374"
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
@@ -16777,6 +16880,7 @@ xref: MassMono: "71.013304"
 xref: Origin: "S"
 xref: Source: "natural"
 xref: TermSpec: "N-term"
+xref: UniMod: "UniMod:385"
 is_a: MOD:00916 ! modified L-serine residue
 is_a: MOD:01154 ! pyruvic acid
 is_a: MOD:01160 ! deaminated residue
@@ -16901,6 +17005,7 @@ xref: MassMono: "233.089937"
 xref: Origin: "S"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:295"
 is_a: MOD:00002 ! O-glycosyl-L-serine
 is_a: MOD:00614 ! fucosylated
 
@@ -16927,6 +17032,7 @@ xref: MassMono: "247.105587"
 xref: Origin: "T"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:295"
 is_a: MOD:00005 ! O-glycosyl-L-threonine
 is_a: MOD:00614 ! fucosylated
 
@@ -17032,6 +17138,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "natural"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:394"
 is_a: MOD:00764 ! glycoconjugated residue
 is_a: MOD:00861 ! phosphorus containing modified residue
 is_a: MOD:01155 ! lipoconjugated residue
@@ -17185,6 +17292,7 @@ xref: MassMono: "69.021464"
 xref: Origin: "Y"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:400"
 is_a: MOD:00919 ! modified L-tyrosine residue
 is_a: MOD:01168 ! dehydroalanine
 
