@@ -23396,6 +23396,7 @@ xref: MassMono: "253.147476"
 xref: Origin: "Y"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:212"
 is_a: MOD:00562 ! N-ethyl iodoacetamide-d5
 
 [Term]
@@ -23413,6 +23414,7 @@ xref: MassMono: "193.093332"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:212"
 is_a: MOD:00562 ! N-ethyl iodoacetamide-d5
 
 [Term]
@@ -23431,6 +23433,7 @@ xref: Origin: "Y"
 xref: Source: "none"
 xref: TermSpec: "none"
 xref: Remap: "MOD:01006"
+xref: UniMod: "UniMod:534"
 is_obsolete: true
 
 [Term]
@@ -23448,6 +23451,7 @@ xref: MassMono: "188.061949"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:211"
 is_a: MOD:00561 ! N-ethyl iodoacetamide-d0
 
 [Term]
@@ -23465,6 +23469,7 @@ xref: MassMono: "248.116092"
 xref: Origin: "Y"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:211"
 is_a: MOD:00561 ! N-ethyl iodoacetamide-d0
 
 [Term]
@@ -23482,6 +23487,7 @@ xref: MassMono: "222.082684"
 xref: Origin: "T"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:264"
 is_a: MOD:00586 ! phosphorylation to pyridyl thiol
 
 [Term]
@@ -23499,6 +23505,7 @@ xref: MassMono: "208.067034"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:264"
 is_a: MOD:00586 ! phosphorylation to pyridyl thiol
 
 [Term]
@@ -23516,6 +23523,7 @@ xref: MassMono: "232.121178"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:136"
 is_a: MOD:00505 ! benzoyl labeling reagent light form (N-term and K)
 
 [Term]
@@ -23534,6 +23542,7 @@ xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: Remap: "MOD:01654"
+xref: UniMod: "UniMod:139"
 is_obsolete: true
 
 [Term]
@@ -23552,6 +23561,7 @@ xref: MassMono: "320.121966"
 xref: Origin: "Q"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:490"
 is_a: MOD:00925 ! heptosylated residue
 
 [Term]
@@ -23570,6 +23580,7 @@ xref: MassMono: "279.095417"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:490"
 is_a: MOD:00925 ! heptosylated residue
 
 [Term]
@@ -23588,6 +23599,7 @@ xref: MassMono: "348.164499"
 xref: Origin: "R"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:490"
 is_a: MOD:00925 ! heptosylated residue
 
 [Term]
@@ -23606,6 +23618,7 @@ xref: MassMono: "293.111067"
 xref: Origin: "T"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:490"
 is_a: MOD:00925 ! heptosylated residue
 
 [Term]
@@ -23624,6 +23637,7 @@ xref: MassMono: "320.158351"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:490"
 is_a: MOD:00925 ! heptosylated residue
 
 [Term]
@@ -23642,6 +23656,7 @@ xref: MassMono: "306.106316"
 xref: Origin: "N"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:490"
 is_a: MOD:00925 ! heptosylated residue
 
 [Term]
@@ -23660,6 +23675,7 @@ xref: MassMono: "247.132077"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:25"
 is_a: MOD:00418 ! pyridylacetylated residue
 is_a: MOD:01875 ! N6-acylated L-lysine
 
@@ -23678,6 +23694,7 @@ xref: MassMono: "83.037114"
 xref: Origin: "M"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:526"
 is_a: MOD:00913 ! modified L-methionine residue
 
 [Term]
@@ -23695,6 +23712,7 @@ xref: MassMono: "1034.355057"
 xref: Origin: "S"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:160"
 is_a: MOD:00528 ! Hex1HexNAc1NeuAc2 glycosylated residue
 is_a: MOD:00916 ! modified L-serine residue
 
@@ -23713,6 +23731,7 @@ xref: MassMono: "1048.370707"
 xref: Origin: "T"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:160"
 is_a: MOD:00528 ! Hex1HexNAc1NeuAc2 glycosylated residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -23731,6 +23750,7 @@ xref: MassMono: "1061.365956"
 xref: Origin: "N"
 xref: Source: "natural"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:160"
 is_a: MOD:00528 ! Hex1HexNAc1NeuAc2 glycosylated residue
 is_a: MOD:00903 ! modified L-asparagine residue
 
@@ -23750,6 +23770,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "none"
 xref: TermSpec: "C-term"
+xref: UniMod: "UniMod:531"
 is_a: MOD:00742 ! copper containing modified residue
 
 [Term]
@@ -23768,6 +23789,7 @@ xref: MassMono: "176.948715"
 xref: Origin: "D"
 xref: Source: "none"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:531"
 is_a: MOD:00742 ! copper containing modified residue
 is_a: MOD:00904 ! modified L-aspartic acid residue
 
@@ -23787,6 +23809,7 @@ xref: MassMono: "190.964366"
 xref: Origin: "E"
 xref: Source: "none"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:531"
 is_a: MOD:00742 ! copper containing modified residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
@@ -23807,6 +23830,7 @@ xref: MassMono: "255.158292"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:29"
 is_a: MOD:01813 ! morpholine-2-acetylated residue
 is_a: MOD:01875 ! N6-acylated L-lysine
 
@@ -23829,6 +23853,7 @@ xref: MassMono: "185.116427"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:4"
 is_a: MOD:00397 ! iodoacetamide derivatized residue
 is_a: MOD:00912 ! modified L-lysine residue
 
@@ -23849,6 +23874,7 @@ xref: MassMono: "194.080376"
 xref: Origin: "H"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:4"
 is_a: MOD:00397 ! iodoacetamide derivatized residue
 is_a: MOD:00909 ! modified L-histidine residue
 
@@ -23868,6 +23894,7 @@ xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: Remap: "MOD:01060"
+xref: UniMod: "UniMod:4"
 is_obsolete: true
 
 [Term]
@@ -23887,6 +23914,7 @@ xref: MassMono: "172.048407"
 xref: Origin: "D"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:4"
 is_a: MOD:00397 ! iodoacetamide derivatized residue
 is_a: MOD:00904 ! modified L-aspartic acid residue
 
@@ -23907,6 +23935,7 @@ xref: MassMono: "186.064057"
 xref: Origin: "E"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMo: "UniMod:4"
 is_a: MOD:00397 ! iodoacetamide derivatized residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
@@ -23925,6 +23954,7 @@ xref: MassMono: "270.031042"
 xref: Origin: "D"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:285"
 is_a: MOD:00605 ! Sulfanilic Acid (SA), light C12
 
 [Term]
@@ -23942,6 +23972,7 @@ xref: MassMono: "284.046692"
 xref: Origin: "E"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UinMo: "UniMod:285"
 is_a: MOD:00605 ! Sulfanilic Acid (SA), light C12
 
 [Term]
@@ -23959,6 +23990,7 @@ xref: MassMono: "276.051171"
 xref: Origin: "D"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:286"
 is_a: MOD:00606 ! Sulfanilic Acid (SA), heavy C13
 
 [Term]
@@ -23976,6 +24008,7 @@ xref: MassMono: "290.066822"
 xref: Origin: "E"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:286"
 is_a: MOD:00606 ! Sulfanilic Acid (SA), heavy C13
 
 [Term]
@@ -23994,6 +24027,7 @@ xref: MassMono: "129.042593"
 xref: Origin: "T"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:122"
 is_a: MOD:00917 ! modified L-threonine residue
 is_a: MOD:01483 ! O-formylated residue
 
@@ -24013,6 +24047,7 @@ xref: MassMono: "115.026943"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:122"
 is_a: MOD:00916 ! modified L-serine residue
 is_a: MOD:01483 ! O-formylated residue
 
@@ -24034,6 +24069,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "N-term"
+xref: UniMod: "UniMod:126"
 is_a: MOD:00497 ! 3-sulfanylpropanoyl (N-term and Lys)
 
 [Term]
@@ -24054,6 +24090,7 @@ xref: MassMono: "216.093249"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:126"
 is_a: MOD:00497 ! 3-sulfanylpropanoyl (N-term and Lys)
 
 [Term]
@@ -24073,6 +24110,7 @@ xref: MassMono: "181.053907"
 xref: Origin: "Y"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:127"
 is_a: MOD:00498 ! fluorinated residue
 is_a: MOD:00985 ! halogenated tyrosine
 
@@ -24092,6 +24130,7 @@ xref: MassMono: "204.069891"
 xref: Origin: "W"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:127"
 is_a: MOD:00498 ! fluorinated residue
 is_a: MOD:01068 ! halogenated tryptophan
 
@@ -24112,6 +24151,7 @@ xref: MassMono: "165.058992"
 xref: Origin: "F"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:127"
 is_a: MOD:00498 ! fluorinated residue
 is_a: MOD:01066 ! halogenated phenylalanine
 
@@ -24134,6 +24174,7 @@ xref: MassMono: "288.959976"
 xref: Origin: "Y"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:129"
 is_a: MOD:00500 ! monoiodinated residue
 is_a: MOD:00998 ! iodinated tyrosine
 
@@ -24153,6 +24194,7 @@ xref: MassMono: "262.955560"
 xref: Origin: "H"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:129"
 is_a: MOD:00500 ! monoiodinated residue
 is_a: MOD:01049 ! halogenated histidine
 
@@ -24171,6 +24213,7 @@ xref: MassMono: "233.116427"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:365"
 is_a: MOD:00790 ! Bruker Daltonics SERVA-ICPL(TM) quantification chemistry, light form
 
 [Term]
@@ -24189,6 +24232,7 @@ xref: MassMono: "187.131242"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:59"
 is_a: MOD:01398 ! N6-propanoyl-L-lysine
 
 [Term]
@@ -24207,6 +24251,7 @@ xref: MassMono: "184.121178"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:58"
 is_a: MOD:01398 ! N6-propanoyl-L-lysine
 
 [Term]
@@ -24225,6 +24270,7 @@ xref: MassMono: "173.124358"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:56"
 is_a: MOD:00064 ! N6-acetyl-L-lysine
 is_a: MOD:00449 ! acetate labeling reagent (N-term) (heavy form, +3amu)
 
@@ -24244,6 +24290,7 @@ xref: MassMono: "89.036275"
 xref: Origin: "S"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:258"
 is_a: MOD:00581 ! (18)O monosubstituted residue
 is_a: MOD:00916 ! modified L-serine residue
 
@@ -24263,6 +24310,7 @@ xref: MassMono: "103.051925"
 xref: Origin: "T"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:258"
 is_a: MOD:00581 ! (18)O monosubstituted residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -24282,6 +24330,7 @@ xref: MassMono: "165.067575"
 xref: Origin: "Y"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:258"
 is_a: MOD:00581 ! (18)O monosubstituted residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -24301,6 +24350,7 @@ xref: MassMono: "259.124215"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:53"
 is_a: MOD:00446 ! 4-hydroxynonenal adduct
 
 [Term]
