@@ -11301,7 +11301,7 @@ xref: MassMono: "196.132411"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-xre: UniMod: "UniMod:94"
+xref: UniMod: "UniMod:94"
 is_a: MOD:01426 ! isotope tagged reagent derivatized residue
 
 [Term]
@@ -13032,7 +13032,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-xref: Remap: "MOD:01497"
+xref: Remap: "MOD:01493"
 xref: UniMod: "UniMod:214"
 is_obsolete: true
 
@@ -13270,7 +13270,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-xref: UniMod: ""UniMod:255
+xref: UniMod: "UniMod:255"
 is_a: MOD:00003 ! UniMod
 
 [Term]

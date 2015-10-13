@@ -19,7 +19,7 @@ public class PSIModPTM extends AbstractPTM{
 
     private String remapID;
 
-    private String unimodId;
+    private List<String> unimodId;
 
     /**
      *
@@ -37,7 +37,7 @@ public class PSIModPTM extends AbstractPTM{
      * @param remapID
      * @param unimodId
      */
-    public PSIModPTM(String accession, String name, String description, Double monoDeltaMass, Double averageDeltaMass, List<Specificity> specificityList, String formula, List<String> synonyms, boolean obsolete, String source, List<Comparable> parentPTMList, String remapID, String unimodId) {
+    public PSIModPTM(String accession, String name, String description, Double monoDeltaMass, Double averageDeltaMass, List<Specificity> specificityList, String formula, List<String> synonyms, boolean obsolete, String source, List<Comparable> parentPTMList, String remapID, List<String> unimodId) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
         this.synonyms = synonyms;
         this.obsolete = obsolete;
@@ -87,11 +87,11 @@ public class PSIModPTM extends AbstractPTM{
         this.remapID = remapID;
     }
 
-    public String getUnimodId() {
+    public List<String> getUnimodId() {
         return unimodId;
     }
 
-    public void setUnimodId(String unimodId) {
+    public void setUnimodId(List<String> unimodId) {
         this.unimodId = unimodId;
     }
 

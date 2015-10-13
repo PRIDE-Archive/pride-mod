@@ -103,7 +103,7 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
             String aminoacid = null;
             String aminoacidPosition = null;
             String remapID = null;
-            String unimodID = null;
+            List<String> unimodID = new ArrayList<String>();
 
             if(xrefs != null){
                 for(Object xref: xrefs){
@@ -129,7 +129,7 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
                         remapID = ((Xref)xref).getAnnotation();
                     }
                     if(((Xref)xref).getIdref().equalsIgnoreCase(UNIMOD_TAG)){
-                        unimodID = ((Xref)xref).getAnnotation();
+                        unimodID.add(((Xref)xref).getAnnotation());
                     }
                 }
             }
