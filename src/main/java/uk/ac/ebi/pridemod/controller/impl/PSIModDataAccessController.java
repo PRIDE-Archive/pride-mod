@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class PSIModDataAccessController extends AbstractDataAccessController{
 
-    private static final String UNIMOD_TAG = "UniMod";
+    private static final String UNIMOD_TAG = "UniMod:";
 
     private final String NAME_TAG    = "name";
 
@@ -79,9 +79,6 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
         for(Frame frame: termCollection){
             String id = frame.getId();
 
-            if(id.contains("MOD:01961")){
-                System.out.println("si");
-            }
             String name = (String) frame.getTagValue(NAME_TAG);
 
             String description = (String) frame.getTagValue(DEF_TAG);

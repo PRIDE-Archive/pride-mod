@@ -16,6 +16,7 @@ import uk.ac.ebi.pridemod.model.UniModPTM;
 import javax.xml.bind.JAXBException;
 
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

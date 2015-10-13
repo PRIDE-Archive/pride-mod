@@ -122,8 +122,7 @@ public class Specificity implements Comparable {
         if (s.compareToIgnoreCase("Y") == 0) return AminoAcid.Y;
         if (s.compareToIgnoreCase("V") == 0) return AminoAcid.V;
         if (s.compareToIgnoreCase("X") == 0) return AminoAcid.X;
-        if (s.compareToIgnoreCase("none") == 0) return AminoAcid.NONE;
-        return null;
+        return AminoAcid.NONE;
     }
 
     /**

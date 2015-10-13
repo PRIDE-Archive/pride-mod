@@ -14,7 +14,10 @@ import uk.ac.ebi.pridemod.utils.Utilities;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * yperez
@@ -157,7 +160,52 @@ public class ModReader {
     public PTM retrieveAnchorPTM(String accession, String aa){
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
-        List<PTM> ptms  = Utilities.filterPTMsByAminoAcidSpecificity(getPTMListByMonoDeltaMass(monoDelta), aa);
+        List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
+        ptms = remapPTMs(ptms);
+        ptms  = Utilities.filterPTMsByAminoAcidSpecificity(ptms, aa);
+
         return null;
+    }
+
+    private List<PTM> remapPTMs(List<PTM> ptms){
+        List<PTM> resutList = new ArrayList<PTM>();
+        for(PTM ptm: ptms){
+            if(ptm instanceof PSIModPTM){
+                if(ptm.getAccession().contains("MOD:01966"))
+                    System.out.println("s");
+                PSIModPTM psiPTM = (PSIModPTM) ptm;
+                if(psiPTM.isObsolete() && psiPTM.getRemapID() != null && !psiPTM.getRemapID().isEmpty()){
+                    PSIModPTM ptmResult = remapPTM((PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID()));
+                    if(ptmResult.getUnimodId() != null && !ptmResult.getUnimodId().isEmpty()){
+                        for(String ptmAccesion: ptmResult.getUnimodId()){
+                            PTM unimodPTM = unimodController.getPTMbyAccession(Utilities.removePrefixUniMod(ptmAccesion));
+                            if( unimodPTM != null)
+                                resutList.add(unimodPTM);
+                        }
+                    }else
+                        resutList.add(ptmResult);
+                }else{
+                    if(psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty()){
+                        for(String ptmAccesion: psiPTM.getUnimodId()){
+                            PTM unimodPTM = unimodController.getPTMbyAccession(Utilities.removePrefixUniMod(ptmAccesion));
+                            if( unimodPTM != null)
+                                resutList.add(unimodPTM);
+                        }
+                    }else
+                        resutList.add(psiPTM);
+                }
+            }else
+                resutList.add(ptm);
+        }
+        Set<PTM> hashPTMs = new HashSet<>(resutList);
+        return new ArrayList<>(hashPTMs);
+    }
+
+    private PSIModPTM remapPTM(PSIModPTM psiPTM){
+        if(psiPTM.isObsolete() && psiPTM.getRemapID() != null){
+            PSIModPTM ptmResult = (PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID());
+            return remapPTM(ptmResult);
+        }
+        return psiPTM;
     }
 }

@@ -31,4 +31,9 @@ public class Utilities {
         }
         return resultPtms;
     }
+
+    public static String removePrefixUniMod(String uniModAccession){
+        String[] stringArray = uniModAccession.split(":");
+        return stringArray[1].substring(0, stringArray[1].length()-1);
+    }
 }
