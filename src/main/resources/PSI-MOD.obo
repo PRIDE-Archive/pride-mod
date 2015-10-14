@@ -29120,7 +29120,7 @@ xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: UniMod: "UniMod:532"
-is_a: MOD:01485 ! iTRAQ4plex-114 reporter+balance reagent acylated residue
+is_a: MOD:01485 ! iTRAQ4plex-114 reporter+balance reagent ac ylated residue
 is_a: MOD:01709 ! iTRAQ4plex reporter+balance reagent N-acylated residue
 is_a: MOD:01875 ! N6-acylated L-lysine
 

@@ -142,9 +142,12 @@ public class ModReader {
      * @return
      */
     public List<PTM> getPTMListByMonoDeltaMass(Double delta) {
-        List<PTM> ptms = unimodController.getPTMListByMonoDeltaMass(delta);
-        ptms.addAll(psiModController.getPTMListByMonoDeltaMass(delta));
-        return ptms;
+        if(delta != null){
+            List<PTM> ptms = unimodController.getPTMListByMonoDeltaMass(delta);
+            ptms.addAll(psiModController.getPTMListByMonoDeltaMass(delta));
+            return ptms;
+        }
+        return Collections.emptyList();
     }
 
     public List<PTM> getPTMListByAvgDeltaMass(Double delta) {
@@ -161,7 +164,7 @@ public class ModReader {
      * 2- Remap all of the to the new terms avoiding to include obsolete terms.
      * 3- Remap all of them to the UniMod modifications if is possible.
      * 4- If the Modification has a parent with the UniMod reference, we will try to use this as the reference.
-     *
+     * 5- Filter the results by know amino-acid position
      * @param accession
      * @param aa
      * @return
@@ -170,10 +173,29 @@ public class ModReader {
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
+        if(ptms.isEmpty()){
+            ptms = new ArrayList<PTM>();
+            ptms.add(currentPTM);
+        }
         ptms = remapPTMs(ptms);
         ptms  = Utilities.filterPTMsByAminoAcidSpecificity(ptms, aa);
         return ptms;
     }
+
+
+    public List<PTM> getAnchorModification(String accession) {
+        PTM currentPTM = getPTMbyAccession(accession);
+        Double monoDelta = currentPTM.getMonoDeltaMass();
+        List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
+        if(ptms.isEmpty()){
+            ptms = new ArrayList<PTM>();
+            ptms.add(currentPTM);
+        }
+        ptms = remapPTMs(ptms);
+        return ptms;
+    }
+
+
 
     /**
      * This function allows to remap all possible modifications for a list of modifications, it try to map all modifications from PSI and UniMod into
@@ -257,7 +279,4 @@ public class ModReader {
         }
         return psiPTM;
     }
-
-
-
 }

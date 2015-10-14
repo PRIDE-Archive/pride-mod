@@ -28,7 +28,7 @@ public class ModReaderTest {
     @Test
     public void TestGetPTms() {
         List<PTM> ptms = modReader.getPTMListByPatternDescription("Phospho");
-        assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 102);
+        assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 106);
     }
 
     @Test
@@ -51,7 +51,31 @@ public class ModReaderTest {
 
     @Test
     public void testRetrieveAnchorPTM() throws Exception {
-        List<PTM> ptms = modReader.getAnchorModification("MOD:00412", "M");
+
+        //Todo: Solution for MOD:00907 should be provided
+
+        List<PTM> ptms = modReader.getAnchorModification("MOD:01709");
         Assert.assertTrue(ptms.size() == 1);
+        System.out.println(ptms);
+
+        //Modification Oxidation example
+        ptms = modReader.getAnchorModification("MOD:00412", "M");
+        Assert.assertTrue(ptms.size() == 1);
+        System.out.println(ptms);
+
+        // Silac
+        ptms = modReader.getAnchorModification("MOD:00942");
+        Assert.assertTrue(ptms.size() == 1);
+        System.out.println(ptms);
+
+        // Silac
+        ptms = modReader.getAnchorModification("MOD:01812");
+        Assert.assertTrue(ptms.size() == 1);
+        System.out.println(ptms);
+
+
+
+
+
     }
 }

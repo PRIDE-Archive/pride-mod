@@ -33,7 +33,7 @@ public class UnimodDataAccessControllerTest {
     @Test
     public void TestGetPTms() {
         List<PTM> ptms = unimodDataAccessController.getPTMListByPatternDescription("Phospho");
-        assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 30);
+        assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 34);
     }
 
     @Test
