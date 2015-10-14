@@ -1,6 +1,7 @@
 package uk.ac.ebi.pridemod;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import uk.ac.ebi.pridemod.model.PTM;
@@ -50,6 +51,7 @@ public class ModReaderTest {
 
     @Test
     public void testRetrieveAnchorPTM() throws Exception {
-        modReader.getSynonyms("MOD:00412", "M");
+        List<PTM> ptms = modReader.getAnchorModification("MOD:00412", "M");
+        Assert.assertTrue(ptms.size() == 1);
     }
 }

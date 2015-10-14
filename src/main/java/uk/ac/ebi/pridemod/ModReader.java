@@ -14,10 +14,7 @@ import uk.ac.ebi.pridemod.utils.Utilities;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * yperez
@@ -157,41 +154,53 @@ public class ModReader {
 
     }
 
-    public PTM getSynonyms(String accession, String aa){
+    /**
+     * List the anchor synonyms for a given modification.
+     * 1- The method started by adding getting all the modifications with the same
+     * monoisotopic mass.
+     * 2- Remap all of the to the new terms avoiding to include obsolete terms.
+     * 3- Remap all of them to the UniMod modifications if is possible.
+     * 4- If the Modification has a parent with the UniMod reference, we will try to use this as the reference.
+     *
+     * @param accession
+     * @param aa
+     * @return
+     */
+    public List<PTM> getAnchorModification(String accession, String aa){
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
         ptms = remapPTMs(ptms);
         ptms  = Utilities.filterPTMsByAminoAcidSpecificity(ptms, aa);
-
-        return null;
+        return ptms;
     }
 
+    /**
+     * This function allows to remap all possible modifications for a list of modifications, it try to map all modifications from PSI and UniMod into
+     * a UniMod list of modifications.
+     * @param ptms the list of the current modifications
+     * @return a List of mapped modifications
+     */
     private List<PTM> remapPTMs(List<PTM> ptms){
         List<PTM> resutList = new ArrayList<PTM>();
         for(PTM ptm: ptms){
             if(ptm instanceof PSIModPTM){
                 PSIModPTM psiPTM = (PSIModPTM) ptm;
+
                 if(psiPTM.isObsolete() && psiPTM.getRemapID() != null && !psiPTM.getRemapID().isEmpty()){
-                    PSIModPTM ptmResult = remapPTM((PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID()));
-                    if(ptmResult.getUnimodId() != null && !ptmResult.getUnimodId().isEmpty()){
-                        for(String ptmAccesion: ptmResult.getUnimodId()){
-                            PTM unimodPTM = unimodController.getPTMbyAccession(Utilities.removePrefixUniMod(ptmAccesion));
-                            if( unimodPTM != null)
-                                resutList.add(unimodPTM);
-                        }
-                    }else
-                        resutList.add(ptmResult);
-                }else{
-                    if(psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty()){
-                        for(String ptmAccesion: psiPTM.getUnimodId()){
-                            PTM unimodPTM = unimodController.getPTMbyAccession(Utilities.removePrefixUniMod(ptmAccesion));
-                            if( unimodPTM != null)
-                                resutList.add(unimodPTM);
-                        }
-                    }else
-                        resutList.add(psiPTM);
+                    psiPTM = remapPTM((PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID()));
                 }
+
+                if(psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty()){
+                    resutList.addAll(remapToUniMod(psiPTM));
+                }else if(psiPTM.getParentPTMList() != null && !psiPTM.getParentPTMList().isEmpty()){
+                    List<PTM> parents = remapParentPtms(psiPTM);
+                    if(!parents.isEmpty())
+                        resutList.addAll(parents);
+                    else
+                        resutList.add(psiPTM);
+                }else
+                    resutList.add(psiPTM);
             }else
                 resutList.add(ptm);
         }
@@ -199,6 +208,48 @@ public class ModReader {
         return new ArrayList<>(hashPTMs);
     }
 
+    /**
+     * Try to remap the parents PTMs to UniMod, if the parent do not contains the UniMod,
+     * we don't do anything with it.
+     * @param currentPTM the PSI Mod to be mapped
+     * @return A list of Unimod modifications were the modification map.
+     */
+    private List<PTM> remapParentPtms(PTM currentPTM) {
+        List<PTM> resultPTMs = new ArrayList<PTM>();
+        for(Comparable parent: ((PSIModPTM)currentPTM).getParentPTMList()){
+            PSIModPTM psiModPTM = (PSIModPTM) psiModController.getPTMbyAccession((String) parent);
+            if(psiModPTM.getUnimodId() != null && !psiModPTM.getUnimodId().isEmpty()){
+                resultPTMs.addAll(remapToUniMod(psiModPTM));
+            }else if(psiModPTM.getParentPTMList() != null && !psiModPTM.getParentPTMList().isEmpty()){
+                resultPTMs.addAll(remapParentPtms(psiModPTM));
+            }
+        }
+        return resultPTMs;
+    }
+
+    /**
+     * This function map a PSIMod modification to UniMod by looking inside the
+     * UniMod and map the mapUniMod id to it.
+     *
+     * @param ptm the PSIMod modification
+     * @return the list of Unimod modifications.
+     */
+    private List<PTM> remapToUniMod(PSIModPTM ptm){
+        List<PTM> resultList = new ArrayList<PTM>();
+        for(String ptmAccesion: ptm.getUnimodId()){
+            PTM unimodPTM = unimodController.getPTMbyAccession(Utilities.removePrefixUniMod(ptmAccesion));
+            if( unimodPTM != null)
+                resultList.add(unimodPTM);
+        }
+        return resultList;
+    }
+
+    /**
+     * This function allow to trace the obsolete modifications until the updated and new version of modification.
+     * The recursive method allow to remap obsolete modifications to the new versions.
+     * @param psiPTM an obsolete modification
+     * @return the new Term
+     */
     private PSIModPTM remapPTM(PSIModPTM psiPTM){
         if(psiPTM.isObsolete() && psiPTM.getRemapID() != null){
             PSIModPTM ptmResult = (PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID());
@@ -206,4 +257,7 @@ public class ModReader {
         }
         return psiPTM;
     }
+
+
+
 }
