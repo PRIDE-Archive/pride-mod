@@ -50,6 +50,6 @@ public class ModReaderTest {
 
     @Test
     public void testRetrieveAnchorPTM() throws Exception {
-        modReader.retrieveAnchorPTM("MOD:00412", "M");
+        modReader.getSynonyms("MOD:00412", "M");
     }
 }

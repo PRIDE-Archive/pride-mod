@@ -157,7 +157,7 @@ public class ModReader {
 
     }
 
-    public PTM retrieveAnchorPTM(String accession, String aa){
+    public PTM getSynonyms(String accession, String aa){
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
@@ -171,8 +171,6 @@ public class ModReader {
         List<PTM> resutList = new ArrayList<PTM>();
         for(PTM ptm: ptms){
             if(ptm instanceof PSIModPTM){
-                if(ptm.getAccession().contains("MOD:01966"))
-                    System.out.println("s");
                 PSIModPTM psiPTM = (PSIModPTM) ptm;
                 if(psiPTM.isObsolete() && psiPTM.getRemapID() != null && !psiPTM.getRemapID().isEmpty()){
                     PSIModPTM ptmResult = remapPTM((PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID()));
