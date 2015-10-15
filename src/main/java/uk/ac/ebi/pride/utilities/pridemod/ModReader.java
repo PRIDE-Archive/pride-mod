@@ -169,7 +169,7 @@ public class ModReader {
      * @param aa
      * @return
      */
-    public List<PTM> getAnchorModification(String accession, String aa){
+    public List<PTM> getAnchorModification(String accession, String aa, boolean delta){
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
@@ -183,7 +183,7 @@ public class ModReader {
     }
 
 
-    public List<PTM> getAnchorModification(String accession) {
+    public List<PTM> getAnchorModification(String accession, boolean delta) {
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
@@ -192,6 +192,21 @@ public class ModReader {
             ptms.add(currentPTM);
         }
         ptms = remapPTMs(ptms);
+        return ptms;
+    }
+
+    public List<PTM> getAnchorModification(String accession){
+        List<PTM> ptms = new ArrayList<PTM>();
+        ptms.add(getPTMbyAccession(accession));
+        List<PTM> resultMaps = remapPTMs(ptms);
+        return resultMaps;
+    }
+
+    public List<PTM> getAnchorModification(String accession, String aa) {
+        List<PTM> ptms = new ArrayList<PTM>();
+        ptms.add(getPTMbyAccession(accession));
+        List<PTM> resultMaps = remapPTMs(ptms);
+        ptms  = Utilities.filterPTMsByAminoAcidSpecificity(resultMaps, aa);
         return ptms;
     }
 

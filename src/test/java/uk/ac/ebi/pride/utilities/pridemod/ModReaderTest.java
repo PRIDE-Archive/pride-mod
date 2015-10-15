@@ -54,7 +54,7 @@ public class ModReaderTest {
 
         //Todo: Solution for MOD:00907 should be provided
 
-        List<PTM> ptms = modReader.getAnchorModification("MOD:01709");
+        List<PTM> ptms = modReader.getAnchorModification("MOD:00696");
         Assert.assertTrue(ptms.size() == 1);
         System.out.println(ptms);
 
@@ -73,9 +73,10 @@ public class ModReaderTest {
         Assert.assertTrue(ptms.size() == 1);
         System.out.println(ptms);
 
-
-
-
+        // Silac
+        ptms = modReader.getAnchorModification("MOD:00417");
+        Assert.assertTrue(ptms.size() == 1);
+        System.out.println(ptms);
 
     }
 }
