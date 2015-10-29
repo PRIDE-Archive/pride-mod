@@ -6,10 +6,9 @@ import org.junit.Test;
 import uk.ac.ebi.pridemod.model.PTM;
 
 import java.io.InputStream;
-import java.net.URL;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class PRIDEModDataAccessControllerTest {
 
@@ -37,7 +36,7 @@ public class PRIDEModDataAccessControllerTest {
 
     @Test
     public void TestGetMod(){
-        PTM ptm = prideModDataAccessController.getPTMbyAccession("MOD:00394");
+        PTM ptm = prideModDataAccessController.getPTMbyAccession("PRDMOD:1");
         assertTrue("Difference mass for Average mass is:", ptm.getMonoDeltaMass() == 42.010565);
     }
 

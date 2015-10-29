@@ -2,7 +2,7 @@
 <pride_mod>
 
     <pride_modifications>
-        <pride_modification title="Acetylation" id="1" diff_mono="42.010565" biological_significance="1">
+        <pride_modification title="Acetylation" id="PRDMOD:1" diff_mono="42.010565" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="1"/>
             </unimod_mappings>
@@ -76,7 +76,7 @@
                                   specific_modification="0" origin="X" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Amidation" id="2" diff_mono="-0.984016" biological_significance="1">
+        <pride_modification title="Amidation" id="PRDMOD:2" diff_mono="-0.984016" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="2"/>
             </unimod_mappings>
@@ -129,7 +129,7 @@
                                   specific_modification="0" origin="X" term_spec="C-term" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Biotinylation" id="3" diff_mono="226.077599" biological_significance="1">
+        <pride_modification title="Biotinylation" id="PRDMOD:3" diff_mono="226.077599" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="3"/>
             </unimod_mappings>
@@ -140,7 +140,7 @@
                                   specific_modification="1" origin="K" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Phosphorylation" id="4" diff_mono="79.966331" biological_significance="1">
+        <pride_modification title="Phosphorylation" id="PRDMOD:4" diff_mono="79.966331" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="21"/>
             </unimod_mappings>
@@ -183,7 +183,7 @@
                                   specific_modification="0" origin="Y" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Carbamidomethyl" id="5" diff_mono="57.021464" biological_significance="0">
+        <pride_modification title="Carbamidomethyl" id="PRDMOD:5" diff_mono="57.021464" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="4"/>
             </unimod_mappings>
@@ -211,7 +211,7 @@
                                   specific_modification="0" origin="E" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Carbamylation" id="6" diff_mono="43.005814" biological_significance="0">
+        <pride_modification title="Carbamylation" id="PRDMOD:6" diff_mono="43.005814" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="5"/>
             </unimod_mappings>
@@ -228,7 +228,7 @@
                                   specific_modification="0" origin="A" term_spec="N-term" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Carboxymethyl" id="7" diff_mono="58.005479" biological_significance="0">
+        <pride_modification title="Carboxymethyl" id="PRDMOD:7" diff_mono="58.005479" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="6"/>
             </unimod_mappings>
@@ -254,7 +254,7 @@
                                   specific_modification="0" origin="W" term_spec="none" obsolete="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Deamidation" id="8" diff_mono="0.984016" biological_significance="1">
+        <pride_modification title="Deamidation" id="PRDMOD:8" diff_mono="0.984016" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="7"/>
             </unimod_mappings>
@@ -273,7 +273,7 @@
                                   specific_modification="0" origin="N" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Homoserine" id="9" diff_mono="-29.992806" biological_significance="0">
+        <pride_modification title="Homoserine" id="PRDMOD:9" diff_mono="-29.992806" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="10"/>
             </unimod_mappings>
@@ -282,7 +282,7 @@
                                   origin="M" term_spec="C-term" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Homoserine lactone" id="10" diff_mono="-48.003371" biological_significance="0">
+        <pride_modification title="Homoserine lactone" id="PRDMOD:10" diff_mono="-48.003371" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="11"/>
             </unimod_mappings>
@@ -296,7 +296,7 @@
                                   specific_modification="0" origin="M" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="NIPCAM(C)" id="11" diff_mono="99.068414" biological_significance="0">
+        <pride_modification title="NIPCAM(C)" id="PRDMOD:11" diff_mono="99.068414" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="17"/>
             </unimod_mappings>
@@ -306,7 +306,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Dehydratation" id="12" diff_mono="-18.010565" biological_significance="1">
+        <pride_modification title="Dehydratation" id="PRDMOD:12" diff_mono="-18.010565" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="23"/>
             </unimod_mappings>
@@ -412,7 +412,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Propionamide(C)" id="13" diff_mono="71.037114" biological_significance="0">
+        <pride_modification title="Propionamide(C)" id="PRDMOD:13" diff_mono="71.037114" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="24"/>
             </unimod_mappings>
@@ -423,7 +423,7 @@
                                   specific_modification="0" origin="C" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Pyro-carbamidomethyl" id="14" diff_mono="39.994915" biological_significance="0">
+        <pride_modification title="Pyro-carbamidomethyl" id="PRDMOD:14" diff_mono="39.994915" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="26"/>
             </unimod_mappings>
@@ -433,7 +433,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Oxidation" id="15" diff_mono="15.994915" biological_significance="1">
+        <pride_modification title="Oxidation" id="PRDMOD:15" diff_mono="15.994915" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="35"/>
             </unimod_mappings>
@@ -514,7 +514,7 @@
                                   origin="X" term_spec="none" obsolete="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Deamination" id="16" diff_mono="-17.026549" biological_significance="1">
+        <pride_modification title="Deamination" id="PRDMOD:16" diff_mono="-17.026549" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="28"/>
                 <unimod_mapping id="385"/>
@@ -549,7 +549,7 @@
                                   term_spec="N-term" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="SMA" id="17" diff_mono="127.063329" biological_significance="0">
+        <pride_modification title="SMA" id="PRDMOD:17" diff_mono="127.063329" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="29"/>
             </unimod_mappings>
@@ -568,7 +568,7 @@
                                   specific_modification="0" origin="E" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Cation:Na" id="18" diff_mono="21.981944" biological_significance="0">
+        <pride_modification title="Cation:Na" id="PRDMOD:18" diff_mono="21.981944" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="30"/>
             </unimod_mappings>
@@ -581,7 +581,7 @@
                                   specific_modification="1" origin="E" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Pyridylethyl" id="19" diff_mono="105.057849" biological_significance="0">
+        <pride_modification title="Pyridylethyl" id="PRDMOD:19" diff_mono="105.057849" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="31"/>
             </unimod_mappings>
@@ -592,7 +592,7 @@
                                   specific_modification="0" origin="C" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Monomethylation" id="20" diff_mono="14.01565" biological_significance="1">
+        <pride_modification title="Monomethylation" id="PRDMOD:20" diff_mono="14.01565" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="34"/>
             </unimod_mappings>
@@ -675,7 +675,7 @@
                                   specific_modification="0" origin="L" term_spec="C-term" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Methylthio" id="21" diff_mono="45.987721" biological_significance="1">
+        <pride_modification title="Methylthio" id="PRDMOD:21" diff_mono="45.987721" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="39"/>
             </unimod_mappings>
@@ -692,7 +692,7 @@
                                   specific_modification="0" origin="C" term_spec="none" obsolete="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Sulfo" id="22" diff_mono="79.956815" biological_significance="1">
+        <pride_modification title="Sulfo" id="PRDMOD:22" diff_mono="79.956815" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="40"/>
             </unimod_mappings>
@@ -709,7 +709,7 @@
                                   specific_modification="1" origin="Y" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Lipoyl" id="23" diff_mono="188.032957" biological_significance="1">
+        <pride_modification title="Lipoyl" id="PRDMOD:23" diff_mono="188.032957" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="42"/>
             </unimod_mappings>
@@ -718,7 +718,7 @@
                                   specific_modification="1" origin="K" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Farnesylation" id="24" diff_mono="204.187801" biological_significance="1">
+        <pride_modification title="Farnesylation" id="PRDMOD:24" diff_mono="204.187801" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="44"/>
             </unimod_mappings>
@@ -732,7 +732,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Myristoylation" id="25" diff_mono="210.198365" biological_significance="1">
+        <pride_modification title="Myristoylation" id="PRDMOD:25" diff_mono="210.198365" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="45"/>
             </unimod_mappings>
@@ -751,7 +751,7 @@
                                   specific_modification="0" origin="X" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Pyridoxal phosphate" id="26" diff_mono="229.014009" biological_significance="1">
+        <pride_modification title="Pyridoxal phosphate" id="PRDMOD:26" diff_mono="229.014009" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="46"/>
             </unimod_mappings>
@@ -760,7 +760,7 @@
                                   specific_modification="1" origin="K" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Palmitoylation" id="27" diff_mono="238.229666" biological_significance="1">
+        <pride_modification title="Palmitoylation" id="PRDMOD:27" diff_mono="238.229666" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="47"/>
             </unimod_mappings>
@@ -791,7 +791,7 @@
                                   specific_modification="0" origin="X" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Geranyl-geranyl" id="28" diff_mono="272.250401" biological_significance="1">
+        <pride_modification title="Geranyl-geranyl" id="PRDMOD:28" diff_mono="272.250401" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="48"/>
             </unimod_mappings>
@@ -802,7 +802,7 @@
                                   specific_modification="1" origin="C" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Phosphopantetheine" id="29" diff_mono="340.085794" biological_significance="1">
+        <pride_modification title="Phosphopantetheine" id="PRDMOD:29" diff_mono="340.085794" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="49"/>
             </unimod_mappings>
@@ -811,7 +811,7 @@
                                   specific_modification="1" origin="S" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Flavin adenine dinucleotide" id="30" diff_mono="783.141485"
+        <pride_modification title="Flavin adenine dinucleotide" id="PRDMOD:30" diff_mono="783.141485"
                             biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="50"/>
@@ -833,7 +833,7 @@
                                   specific_modification="0" origin="H" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Guanidination" id="31" diff_mono="42.021798" biological_significance="0">
+        <pride_modification title="Guanidination" id="PRDMOD:31" diff_mono="42.021798" biological_significance="0">
             <!--
                Check what happens with the id=31 (← These terms have been questioned in PSI-MOD Bug-Tracker (3449657) )
                -->
@@ -845,7 +845,7 @@
                                   specific_modification='1' origin='K' term_spec='none' obsolete='0'/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Formylation" id="32" diff_mono="27.994915" biological_significance="1">
+        <pride_modification title="Formylation" id="PRDMOD:32" diff_mono="27.994915" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="122"/>
             </unimod_mappings>
@@ -874,7 +874,7 @@
                                   specific_modification="0" origin="X" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-D:2H(8)" id="33" diff_mono="450.275205" biological_significance="0">
+        <pride_modification title="ICAT-D:2H(8)" id="PRDMOD:33" diff_mono="450.275205" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="12"/>
             </unimod_mappings>
@@ -884,7 +884,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-D" id="34" diff_mono="442.224991" biological_significance="0">
+        <pride_modification title="ICAT-D" id="PRDMOD:34" diff_mono="442.224991" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="13"/>
             </unimod_mappings>
@@ -894,7 +894,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-C" id="35" diff_mono="227.126991" biological_significance="0">
+        <pride_modification title="ICAT-C" id="PRDMOD:35" diff_mono="227.126991" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="105"/>
             </unimod_mappings>
@@ -904,7 +904,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-C:13C(9)" id="36" diff_mono="236.157185" biological_significance="0">
+        <pride_modification title="ICAT-C:13C(9)" id="PRDMOD:36" diff_mono="236.157185" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="106"/>
             </unimod_mappings>
@@ -914,7 +914,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="13C(6) Silac label" id="37" diff_mono="6.020129" biological_significance="0">
+        <pride_modification title="13C(6) Silac label" id="PRDMOD:37" diff_mono="6.020129" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="188"/>
             </unimod_mappings>
@@ -931,7 +931,7 @@
                                   specific_modification="1" origin="R" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Label:18O(2)" id="38" diff_mono="4.008493" biological_significance="0">
+        <pride_modification title="Label:18O(2)" id="PRDMOD:38" diff_mono="4.008493" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="193"/>
             </unimod_mappings>
@@ -940,7 +940,7 @@
                                   specific_modification="1" origin="X" term_spec="C-term" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Carboxylation" id="39" diff_mono="43.989829" biological_significance="1">
+        <pride_modification title="Carboxylation" id="PRDMOD:39" diff_mono="43.989829" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="299"/>
             </unimod_mappings>
@@ -963,7 +963,7 @@
                                   specific_modification="1" origin="W" term_spec="none" obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Dioxidation" id="40" diff_mono="31.989829" biological_significance="1">
+        <pride_modification title="Dioxidation" id="PRDMOD:40" diff_mono="31.989829" biological_significance="1">
             <unimod_mappings>
                 <unimod_mapping id="425"/>
             </unimod_mappings>
@@ -1008,8 +1008,8 @@
                                   specific_modification="0" origin="W" term_spec="none" obsolete="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="iTRAQ4plex" id="41" diff_mono="144.102062" biological_significance="0">
-            <unimod_mappings>
+        <pride_modification title="iTRAQ4plex" id="PRDMOD:41" diff_mono="144.102062" biological_significance="0">            144.105919
+            <unimod_mappings>                                                                                                iTRAQ4plex-114 reporter+balance reagent acylated residue
                 <unimod_mapping id="214"/>
             </unimod_mappings>
             <psi_modifications>
@@ -1064,7 +1064,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="iTRAQ8plex" id="42" diff_mono="304.205359" biological_significance="0">
+        <pride_modification title="iTRAQ8plex" id="PRDMOD:42" diff_mono="304.205359" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="730"/>
             </unimod_mappings>
@@ -1155,7 +1155,7 @@
                                   obsolete="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="TMT6plex" id="43" diff_mono="229.162932" biological_significance="0">
+        <pride_modification title="TMT6plex" id="PRDMOD:43" diff_mono="229.162932" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping id="737"/>
             </unimod_mappings>

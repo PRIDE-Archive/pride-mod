@@ -41,12 +41,15 @@ public class PRIDEModDataAccessController extends AbstractDataAccessController {
         if(prideMod != null) {
             ptmMap = new HashMap<Comparable, PTM>();
             for (PrideModification oldMod : prideMod.getPrideModifications().getPrideModification()) {
-                String accession = oldMod.getPsiId();
-                String name = oldMod.getPsiName();
-                Double monoMass = oldMod.getDiffMono().doubleValue();
-                List<Specificity> specicityList = oldMod.getSpecificityList();
+                final String accession = oldMod.getId();
+                final String name = oldMod.getTitle();
+                final Double monoMass = oldMod.getDiffMono().doubleValue();
+                final List<Specificity> specicityList = oldMod.getSpecificityList();
+                //TODO: Change bioSignificance to boolean?
+                //In principle is safe to convert from BigInteger to int becasue the values are 0 and 1
+                final boolean bioSignificance = oldMod.getBiologicalSignificance().intValue() ==  1;
                 Comparable unimodReference = String.valueOf(oldMod.getUnimodMappings().getUnimodMapping().get(0).getId().intValue());
-                PRIDEModPTM ptm = new PRIDEModPTM(accession, name, name, monoMass, null, specicityList, unimodReference, null);
+                PRIDEModPTM ptm = new PRIDEModPTM(accession, name, name, monoMass, null, specicityList, unimodReference, null, bioSignificance);
                 ptmMap.put(accession, ptm);
             }
         }

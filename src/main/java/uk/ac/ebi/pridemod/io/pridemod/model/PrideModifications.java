@@ -72,7 +72,7 @@ public class PrideModifications
         return resultModList;
     }
 
-    public PrideModification getModbyId(int id) {
+    public PrideModification getModbyId(String id) {
         for (int i = 0; i < this.getPrideModification().size(); i++) {
             if (this.getPrideModification().get(i).compareId(id)) return this.getPrideModification().get(i);
         }

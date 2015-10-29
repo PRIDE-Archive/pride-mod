@@ -8,6 +8,7 @@ import java.util.List;
 public class PRIDEModPTM extends AbstractPTM{
 
 
+    private Boolean biologicalSignificance;
     private Comparable uniModRef;
 
 
@@ -21,6 +22,7 @@ public class PRIDEModPTM extends AbstractPTM{
      * @param averageDeltaMass Average Delta Mass
      * @param specificityList  List of Specificity
      * @param formula          Chemical Formula
+     * @param bioSignificance  Biological Significance vs artificial modification
      */
     public PRIDEModPTM(String accession,
                        String name,
@@ -29,9 +31,12 @@ public class PRIDEModPTM extends AbstractPTM{
                        Double averageDeltaMass,
                        List<Specificity> specificityList,
                        Comparable unimodReference,
-                       String formula) {
+                       String formula,
+                       Boolean bioSignificance) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
         this.uniModRef = unimodReference;
+        this.biologicalSignificance = bioSignificance;
+
     }
 
     public Comparable getUniModRef() {
@@ -40,5 +45,13 @@ public class PRIDEModPTM extends AbstractPTM{
 
     public void setUniModRef(Comparable uniModRef) {
         this.uniModRef = uniModRef;
+    }
+
+    public Boolean isBiologicalSignificance() {
+        return biologicalSignificance;
+    }
+
+    public void setBiologicalSignificance(Boolean biologicalSignificance) {
+        this.biologicalSignificance = biologicalSignificance;
     }
 }

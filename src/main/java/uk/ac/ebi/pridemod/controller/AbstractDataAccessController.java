@@ -92,7 +92,7 @@ public class AbstractDataAccessController implements DataAccessController {
     public List<PTM> getPTMListByMonoDeltaMass(Double delta) {
         List<PTM> ptms = new ArrayList<PTM>();
         for (PTM ptm : ptmMap.values()) {
-            if (ptm.getMonoDeltaMass() != null && Double.compare(ptm.getMonoDeltaMass(), delta) == 0)
+            if (ptm.getMonoDeltaMass() != null && delta != null && Double.compare(ptm.getMonoDeltaMass(), delta) == 0)
                 ptms.add(ptm);
         }
         return ptms;
@@ -102,7 +102,7 @@ public class AbstractDataAccessController implements DataAccessController {
     public List<PTM> getPTMListByAvgDeltaMass(Double delta) {
         List<PTM> ptms = new ArrayList<PTM>();
         for (PTM ptm : ptmMap.values()) {
-            if (ptm.getAveDeltaMass() != null && Double.compare(ptm.getAveDeltaMass(), delta) == 0)
+            if (ptm.getAveDeltaMass() != null && delta != null && Double.compare(ptm.getAveDeltaMass(), delta) == 0)
                 ptms.add(ptm);
         }
         return ptms;

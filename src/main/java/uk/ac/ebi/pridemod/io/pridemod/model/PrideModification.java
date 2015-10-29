@@ -51,7 +51,7 @@ public class PrideModification
     @XmlAttribute(name = "diff_mono", required = true)
     protected BigDecimal diffMono;
     @XmlAttribute(required = true)
-    protected BigInteger id;
+    protected String id;
     @XmlAttribute(required = true)
     @XmlSchemaType(name = "anyURI")
     protected String title;
@@ -141,19 +141,19 @@ public class PrideModification
      * Gets the value of the id property.
      *
      * @return possible object is
-     *         {@link java.math.BigInteger }
+     *         {@link String }
      */
-    public BigInteger getId() {
+    public String getId() {
         return id;
     }
 
     /**
      * Sets the value of the id property.
      *
-     * @param value allowed object is
-     *              {@link java.math.BigInteger }
+     * @param value allowedobject is
+     *         {@link String }
      */
-    public void setId(BigInteger value) {
+    public void setId(String value) {
         this.id = value;
     }
 
@@ -182,8 +182,8 @@ public class PrideModification
     }
 
 
-    public boolean compareId(int id) {
-        return (this.getId().intValue() == id) ? true : false;
+    public boolean compareId(String id) {
+        return (this.getId().equalsIgnoreCase(id));
     }
 
 
@@ -208,6 +208,7 @@ public class PrideModification
         return specificityList;
     }
 
+    @Deprecated
     public String getPsiName() {
         for (PsiModification psiModification : this.getPsiModifications().getPsiModification()) {
             if (psiModification.generalModification.intValue() == 1) {
@@ -221,6 +222,7 @@ public class PrideModification
      * This function returns the id for a given PRIDE Mod
      * @return
      */
+    @Deprecated
     public String getPsiId() {
         for (PsiModification psiModification : this.getPsiModifications().getPsiModification()) {
             if (psiModification.generalModification.intValue() == 1) {

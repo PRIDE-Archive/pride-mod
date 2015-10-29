@@ -8,16 +8,19 @@ import org.apache.commons.lang3.math.NumberUtils;
 public class PRIDEModUtils {
 
     public enum Database {
-        PSIMOD, UNIMOD, NONE
+        PSIMOD, UNIMOD, PRDMOD, NONE
     }
-    public static Database getAccessionType(String accession){
-        if(accession.contains("UNIMOD")){
+
+    public static Database getAccessionType(String accession) {
+        if (accession.contains("UNIMOD")) {
             return Database.UNIMOD;
-        } else if(!accession.contains("UNIMOD") && accession.contains("MOD")){
+        } else if (accession.contains("PRDMOD")) {
+            return Database.PRDMOD;
+        } else if (!accession.contains("UNIMOD") && !accession.contains("PRDMOD") && accession.contains("MOD")) {
             return Database.PSIMOD;
-        } else if(!accession.contains("MOD") && NumberUtils.isNumber(accession)){
+        } else if (!accession.contains("MOD") && NumberUtils.isNumber(accession)) {
             return Database.UNIMOD;
-        } else{
+        } else {
             return Database.NONE;
         }
     }

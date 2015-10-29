@@ -36,7 +36,7 @@ public class PrideModExtractor {
         return this.modColletion.getModbyMonoMass(mass);
     }
 
-    public PrideModification getModbyId(int id) {
+    public PrideModification getModbyId(String id) {
         return this.modColletion.getModbyId(id);
     }
 

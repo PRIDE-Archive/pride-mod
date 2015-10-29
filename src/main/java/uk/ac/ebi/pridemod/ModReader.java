@@ -24,12 +24,12 @@ public class ModReader {
     /**
      * Local definition of Unimod
      */
-    private static InputStream unimodUrl    = ModReader.class.getClassLoader().getResourceAsStream("unimod.xml");
+    private static InputStream unimodUrl = ModReader.class.getClassLoader().getResourceAsStream("unimod.xml");
 
     /**
      * Local definition of psiMod
      */
-    private static InputStream psiModUrl    = ModReader.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
+    private static InputStream psiModUrl = ModReader.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
 
     /**
      * Local definition of pride mod
@@ -44,7 +44,7 @@ public class ModReader {
 
     private volatile static ModReader instance = new ModReader();
 
-    protected ModReader(){
+    protected ModReader() {
         try {
             unimodController = new UnimodDataAccessController(unimodUrl);
             psiModController = new PSIModDataAccessController(psiModUrl);
@@ -55,14 +55,14 @@ public class ModReader {
             throw new DataAccessException(msg, e);
         } finally {
             try {
-                if(unimodUrl!= null){
+                if (unimodUrl != null) {
                     unimodUrl.close();
                 }
-                if(psiModUrl!= null){
+                if (psiModUrl != null) {
                     psiModUrl.close();
                 }
-                if(psiModUrl!= null){
-                    psiModUrl.close();
+                if (prideModdUrl != null) {
+                    prideModdUrl.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -70,73 +70,85 @@ public class ModReader {
         }
     }
 
-    public static ModReader getInstance(){
+    public static ModReader getInstance() {
         return instance;
     }
 
     /**
      * PTM accession
+     *
      * @param accession
      * @return
      */
-    public PTM getPTMbyAccession(String accession){
+    public PTM getPTMbyAccession(String accession) {
         PTM ptm = null;
-        if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.UNIMOD){
+        if (PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.UNIMOD) {
             ptm = unimodController.getPTMbyAccession(accession);
-        }else if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PSIMOD){
+        } else if (PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PSIMOD) {
             ptm = psiModController.getPTMbyAccession(accession);
+        } else if (PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PRDMOD) {
+            ptm = prideModController.getPTMbyAccession(accession);
         }
         return ptm;
     }
 
     /**
      * String pattern present in the name.
+     *
      * @param namePattern
      * @return
      */
-    public List<PTM> getPTMListByPatternName(String namePattern){
+    public List<PTM> getPTMListByPatternName(String namePattern) {
         List<PTM> ptms = unimodController.getPTMListByPatternName(namePattern);
         ptms.addAll(psiModController.getPTMListByPatternName(namePattern));
+        ptms.addAll(prideModController.getPTMListByPatternName(namePattern));
         return ptms;
     }
 
     /**
      * Specificity to filter all the identifications in the
+     *
      * @param specificity
      * @return
      */
-    public List<PTM> getPTMListBySpecificity(Specificity specificity){
+    public List<PTM> getPTMListBySpecificity(Specificity specificity) {
         List<PTM> ptms = unimodController.getPTMListBySpecificity(specificity);
         ptms.addAll(psiModController.getPTMListBySpecificity(specificity));
+        ptms.addAll(prideModController.getPTMListBySpecificity(specificity));
         return ptms;
     }
 
     /**
      * Description pattern to found PTMs with the pattern
+     *
      * @param descriptionPattern
      * @return
      */
-    public List<PTM> getPTMListByPatternDescription(String descriptionPattern){
+    public List<PTM> getPTMListByPatternDescription(String descriptionPattern) {
         List<PTM> ptms = unimodController.getPTMListByPatternDescription(descriptionPattern);
         ptms.addAll(psiModController.getPTMListByPatternDescription(descriptionPattern));
+        ptms.addAll(prideModController.getPTMListByPatternDescription(descriptionPattern));
         return ptms;
     }
 
     /**
      * Return all PTMs with the same name. In case of PSI-Mod modifications different mofifications
      * can have the same name.
+     *
      * @param name
      * @return
      */
-    public List<PTM> getPTMListByEqualName(String name){
+    public List<PTM> getPTMListByEqualName(String name) {
         List<PTM> ptms = unimodController.getPTMListByEqualName(name);
         ptms.addAll(psiModController.getPTMListByEqualName(name));
+        ptms.addAll(prideModController.getPTMListByEqualName(name));
         return ptms;
     }
 
     public List<PTM> getPTMListByMonoDeltaMass(Double delta) {
         List<PTM> ptms = unimodController.getPTMListByMonoDeltaMass(delta);
         ptms.addAll(psiModController.getPTMListByMonoDeltaMass(delta));
+        ptms.addAll(prideModController.getPTMListByMonoDeltaMass(delta));
         return ptms;
     }
 
@@ -144,6 +156,7 @@ public class ModReader {
     public List<PTM> getPTMListByAvgDeltaMass(Double delta) {
         List<PTM> ptms = unimodController.getPTMListByAvgDeltaMass(delta);
         ptms.addAll(psiModController.getPTMListByAvgDeltaMass(delta));
+        ptms.addAll(prideModController.getPTMListByAvgDeltaMass(delta));
         return ptms;
 
     }

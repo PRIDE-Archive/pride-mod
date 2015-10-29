@@ -22,7 +22,7 @@
             </xs:sequence>
             <xs:attribute name="biological_significance" use="required" type="xs:integer"/>
             <xs:attribute name="diff_mono" use="required" type="xs:decimal"/>
-            <xs:attribute name="id" use="required" type="xs:integer"/>
+            <xs:attribute name="id" use="required" type="xs:string"/>
             <xs:attribute name="title" use="required" type="xs:anyURI"/>
         </xs:complexType>
     </xs:element>
