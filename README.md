@@ -12,7 +12,7 @@ pride-mod is a PRIDE API licensed under [Apache License 2.0](http://www.apache.o
 
 # How to cite it:
 
-Perez-Riverol, Y., Wang, R., Hermjakob, H., Müller, M., Vesada, V., & Vizcaíno, J. A. (2014). Open source libraries and frameworks for mass spectrometry based proteomics: A developer's perspective. Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics, 1844(1), 63-76. [PDF File](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3898926/) [Pubmed Record](http://www.ncbi.nlm.nih.gov/pubmed/23467006)
+Perez-Riverol, Yasset, et al. "ms-data-core-api: an open-source, metadata-oriented library for computational proteomics." Bioinformatics 31.17 (2015): 2903-2905. (https://bioinformatics.oxfordjournals.org/content/31/17/2903.full)[article]
 
 # Main Features
 
