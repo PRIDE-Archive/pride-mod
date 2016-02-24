@@ -197,14 +197,18 @@ public class ModReader {
 
     public List<PTM> getAnchorModification(String accession){
         List<PTM> ptms = new ArrayList<PTM>();
-        ptms.add(getPTMbyAccession(accession));
+        PTM ptm = getPTMbyAccession(accession);
+        if(ptm != null)
+            ptms.add(ptm);
         List<PTM> resultMaps = remapPTMs(ptms);
         return resultMaps;
     }
 
     public List<PTM> getAnchorModification(String accession, String aa) {
         List<PTM> ptms = new ArrayList<PTM>();
-        ptms.add(getPTMbyAccession(accession));
+        PTM ptm = getPTMbyAccession(accession);
+        if(ptm != null)
+            ptms.add(ptm);
         List<PTM> resultMaps = remapPTMs(ptms);
         ptms  = Utilities.filterPTMsByAminoAcidSpecificity(resultMaps, aa);
         return ptms;
@@ -293,5 +297,29 @@ public class ModReader {
             return remapPTM(ptmResult);
         }
         return psiPTM;
+    }
+
+    public List<PTM> getAnchorModificationPosition(String accession, String aa) {
+        List<PTM> ptms = new ArrayList<PTM>();
+        PTM ptm = getPTMbyAccession(accession);
+        if(ptm != null)
+            ptms.add(ptm);
+        List<PTM> resultMaps = remapPTMs(ptms);
+        ptms  = Utilities.filterPTMsByAminoAcidSpecificityPosition(resultMaps, aa);
+        return ptms;
+    }
+
+    public List<PTM> getAnchorMassModification(Double mass, String aa) {
+        List<PTM> ptms = getPTMListByMonoDeltaMass(mass);
+        List<PTM> resultMaps = remapPTMs(ptms);
+        ptms = Utilities.filterPTMsByAminoAcidSpecificity(resultMaps, aa);
+        return ptms;
+    }
+
+    public List<PTM> getAnchorMassModificationPosition(Double mass, String position) {
+        List<PTM> ptms = getPTMListByMonoDeltaMass(mass);
+        List<PTM> resultMaps = remapPTMs(ptms);
+        ptms = Utilities.filterPTMsByAminoAcidSpecificityPosition(resultMaps, position);
+        return ptms;
     }
 }
