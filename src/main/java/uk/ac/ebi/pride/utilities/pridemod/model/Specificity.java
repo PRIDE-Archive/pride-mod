@@ -94,7 +94,7 @@ public class Specificity implements Comparable {
     }
 
     /**
-     * Convert an Amino acids in the one chacter representation to the AminoAcid
+     * Convert an Amino acids in the one character representation to the AminoAcid
      * representation.
      *
      * @param s
