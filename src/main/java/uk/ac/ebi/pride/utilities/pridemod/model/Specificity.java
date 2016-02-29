@@ -82,14 +82,14 @@ public class Specificity implements Comparable {
     }
 
     public enum Position {
-        CTERM, NTERM, PCTERM, PNTERM, NONE
+        CTERM, NTERM, PCTERM, PNTERM, ANYWHERE, NONE
     }
 
     /**
      * To use the same notation of PSI-MOD we decide to include the X as aminoacid. PSI-Mod use X for N-Term position.
      */
     public enum AminoAcid {
-        A, R, N, D, C, E, Q, G, H, K, I, L, M, F, P, S, T, W, Y, V, X, NONE
+        A, R, N, D, C, E, Q, G, H, K, I, L, M, F, P, S, T, W, Y, V, X, NTERM, CTERM, NONE
 
     }
 
@@ -122,6 +122,8 @@ public class Specificity implements Comparable {
         if (s.compareToIgnoreCase("Y") == 0) return AminoAcid.Y;
         if (s.compareToIgnoreCase("V") == 0) return AminoAcid.V;
         if (s.compareToIgnoreCase("X") == 0) return AminoAcid.X;
+        if (s.compareToIgnoreCase("C-term") == 0) return AminoAcid.CTERM;
+        if (s.compareToIgnoreCase("N-term") == 0) return AminoAcid.NTERM;
         return AminoAcid.NONE;
     }
 
@@ -133,10 +135,11 @@ public class Specificity implements Comparable {
      */
     public static Position parsePositon(String s) {
         if (s != null) {
-            if (s.compareToIgnoreCase("N-Term") == 0) return Position.NTERM;
-            if (s.compareToIgnoreCase("C-Term") == 0) return Position.CTERM;
+            if (s.compareToIgnoreCase("Any N-Term") == 0) return Position.NTERM;
+            if (s.compareToIgnoreCase("Any C-Term") == 0) return Position.CTERM;
             if (s.compareToIgnoreCase("Protein N-term") == 0) return Position.PNTERM;
             if (s.compareToIgnoreCase("Protein C-Term") == 0) return Position.PCTERM;
+            if (s.compareToIgnoreCase("Anywhere") == 0) return Position.ANYWHERE;
         }
         return Position.NONE;
     }
