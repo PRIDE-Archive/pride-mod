@@ -39,16 +39,11 @@ If you wish to include pride-mod in your own Java projects, and you use Maven 2,
             <id>nexus-ebi-repo</id>
             <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo</url>
         </repository>
-        <!-- EBI SNAPSHOT repo -->
-        <snapshotRepository>
-            <id>nexus-ebi-repo-snapshots</id>
-            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo-snapshots</url>
-        </snapshotRepository>
 
 - pride-mod dependency snippet:
 
         <dependency>
-            <groupId>uk.ac.ebi.pride.tools</groupId>
+            <groupId>uk.ac.ebi.pride.utilities</groupId>
             <artifactId>pride-mod</artifactId>
              <version>x.y.z</version>
         </dependency>
