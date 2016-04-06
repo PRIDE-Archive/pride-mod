@@ -28,25 +28,25 @@ public class ModReaderTest {
     @Test
     public void TestGetPTms() {
         List<PTM> ptms = modReader.getPTMListByPatternDescription("Phospho");
-        assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 106);
+        assertEquals("Number of PTMs with Term 'Phospho' in name:", ptms.size(), 108);
     }
 
     @Test
     public void TestGetMod(){
         PTM ptm = modReader.getPTMbyAccession("MOD:00036");
-        assertTrue("Difference mass for Average mass is:", ptm.getAveDeltaMass() == 16.0);
+        assertEquals("Difference mass for Average mass is:", ptm.getAveDeltaMass(), (Double) 16.0);
     }
 
     @Test
     public void TestGetMonoDeltaMass(){
         List<PTM> ptms = modReader.getPTMListByMonoDeltaMass(42.010565);
-        assertTrue("The number of Proteins with Mono equal to 42.010565 is:", ptms.size() == 36);
+        assertEquals("The number of Proteins with Mono equal to 42.010565 is:", ptms.size(), 37);
     }
 
     @Test
     public void TestGetAveDeltaMass(){
         List<PTM> ptms = modReader.getPTMListByAvgDeltaMass(42.0367);
-        assertTrue("The number of Proteins with Average equal to 42.010565 is:", ptms.size() == 2);
+        assertEquals("The number of Proteins with Average equal to 42.010565 is:", ptms.size(), 2);
     }
 
     @Test
@@ -55,27 +55,27 @@ public class ModReaderTest {
         //Todo: Solution for MOD:00907 should be provided
 
         List<PTM> ptms = modReader.getAnchorModification("MOD:00696");
-        Assert.assertTrue(ptms.size() == 1);
+        Assert.assertEquals(ptms.size(), 1);
         System.out.println(ptms);
 
         //Modification Oxidation example
         ptms = modReader.getAnchorModification("MOD:00412", "M");
-        Assert.assertTrue(ptms.size() == 1);
+        Assert.assertEquals(ptms.size(), 1);
         System.out.println(ptms);
 
         // Silac
         ptms = modReader.getAnchorModification("MOD:00942");
-        Assert.assertTrue(ptms.size() == 1);
+        Assert.assertEquals(ptms.size(), 1);
         System.out.println(ptms);
 
         // Silac
         ptms = modReader.getAnchorModification("MOD:01812");
-        Assert.assertTrue(ptms.size() == 1);
+        Assert.assertEquals(ptms.size(), 1);
         System.out.println(ptms);
 
         // Silac
         ptms = modReader.getAnchorModification("MOD:00417");
-        Assert.assertTrue(ptms.size() == 1);
+        Assert.assertEquals(ptms.size(), 1);
         System.out.println(ptms);
 
     }
