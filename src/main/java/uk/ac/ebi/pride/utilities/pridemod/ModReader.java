@@ -4,11 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PRIDEModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PSIModDataAccessController;
+import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
+import uk.ac.ebi.pride.utilities.pridemod.model.PSIModPTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
-import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
-import uk.ac.ebi.pride.utilities.pridemod.model.PSIModPTM;
 import uk.ac.ebi.pride.utilities.pridemod.utils.PRIDEModUtils;
 import uk.ac.ebi.pride.utilities.pridemod.utils.Utilities;
 
@@ -26,12 +26,12 @@ public class ModReader {
     /**
      * Local definition of Unimod
      */
-    private static InputStream unimodUrl    = ModReader.class.getClassLoader().getResourceAsStream("unimod.xml");
+    private static InputStream unimodUrl = ModReader.class.getClassLoader().getResourceAsStream("unimod.xml");
 
     /**
      * Local definition of psiMod
      */
-    private static InputStream psiModUrl    = ModReader.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
+    private static InputStream psiModUrl = ModReader.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
 
     /**
      * Local definition of pride mod
@@ -46,7 +46,7 @@ public class ModReader {
 
     private volatile static ModReader instance = new ModReader();
 
-    protected ModReader(){
+    protected ModReader() {
         try {
             unimodController = new UnimodDataAccessController(unimodUrl);
             psiModController = new PSIModDataAccessController(psiModUrl);
@@ -57,14 +57,14 @@ public class ModReader {
             throw new DataAccessException(msg, e);
         } finally {
             try {
-                if(unimodUrl!= null){
+                if (unimodUrl != null) {
                     unimodUrl.close();
                 }
-                if(psiModUrl!= null){
+                if (psiModUrl != null) {
                     psiModUrl.close();
                 }
-                if(psiModUrl!= null){
-                    psiModUrl.close();
+                if (prideModdUrl != null) {
+                    prideModdUrl.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -72,87 +72,103 @@ public class ModReader {
         }
     }
 
-    public static ModReader getInstance(){
+    public static ModReader getInstance() {
         return instance;
     }
 
     /**
      * PTM accession
+     *
      * @param accession
      * @return
      */
-    public PTM getPTMbyAccession(String accession){
+    public PTM getPTMbyAccession(String accession) {
         PTM ptm = null;
-        if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.UNIMOD){
+        if (PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.UNIMOD) {
             ptm = unimodController.getPTMbyAccession(accession);
-        }else if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PSIMOD){
+        } else if (PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PSIMOD) {
             ptm = psiModController.getPTMbyAccession(accession);
+        } else if (PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PRDMOD) {
+            ptm = prideModController.getPTMbyAccession(accession);
         }
         return ptm;
     }
 
     /**
      * String pattern present in the name.
+     *
      * @param namePattern
      * @return
      */
-    public List<PTM> getPTMListByPatternName(String namePattern){
+    public List<PTM> getPTMListByPatternName(String namePattern) {
         List<PTM> ptms = unimodController.getPTMListByPatternName(namePattern);
         ptms.addAll(psiModController.getPTMListByPatternName(namePattern));
+        ptms.addAll(prideModController.getPTMListByPatternName(namePattern));
         return ptms;
     }
 
     /**
      * Specificity to filter all the identifications in the
+     *
      * @param specificity
      * @return
      */
-    public List<PTM> getPTMListBySpecificity(Specificity specificity){
+    public List<PTM> getPTMListBySpecificity(Specificity specificity) {
         List<PTM> ptms = unimodController.getPTMListBySpecificity(specificity);
         ptms.addAll(psiModController.getPTMListBySpecificity(specificity));
+        ptms.addAll(prideModController.getPTMListBySpecificity(specificity));
         return ptms;
     }
 
     /**
      * Description pattern to found PTMs with the pattern
+     *
      * @param descriptionPattern
      * @return
      */
-    public List<PTM> getPTMListByPatternDescription(String descriptionPattern){
+    public List<PTM> getPTMListByPatternDescription(String descriptionPattern) {
         List<PTM> ptms = unimodController.getPTMListByPatternDescription(descriptionPattern);
         ptms.addAll(psiModController.getPTMListByPatternDescription(descriptionPattern));
+        ptms.addAll(prideModController.getPTMListByPatternDescription(descriptionPattern));
         return ptms;
     }
 
     /**
      * Return all PTMs with the same name. In case of PSI-Mod modifications different mofifications
      * can have the same name.
+     *
      * @param name
      * @return
      */
-    public List<PTM> getPTMListByEqualName(String name){
+    public List<PTM> getPTMListByEqualName(String name) {
         List<PTM> ptms = unimodController.getPTMListByEqualName(name);
         ptms.addAll(psiModController.getPTMListByEqualName(name));
+        ptms.addAll(prideModController.getPTMListByEqualName(name));
         return ptms;
     }
 
     /**
      * Get the PTMs using the MonoDelta Mass of the modification
+     *
      * @param delta the delta mass to be search
      * @return
      */
     public List<PTM> getPTMListByMonoDeltaMass(Double delta) {
-        if(delta != null){
+        if (delta != null) {
             List<PTM> ptms = unimodController.getPTMListByMonoDeltaMass(delta);
             ptms.addAll(psiModController.getPTMListByMonoDeltaMass(delta));
+            ptms.addAll(prideModController.getPTMListByMonoDeltaMass(delta));
             return ptms;
         }
         return Collections.emptyList();
+
     }
+
 
     public List<PTM> getPTMListByAvgDeltaMass(Double delta) {
         List<PTM> ptms = unimodController.getPTMListByAvgDeltaMass(delta);
         ptms.addAll(psiModController.getPTMListByAvgDeltaMass(delta));
+        ptms.addAll(prideModController.getPTMListByAvgDeltaMass(delta));
         return ptms;
 
     }
@@ -165,20 +181,21 @@ public class ModReader {
      * 3- Remap all of them to the UniMod modifications if is possible.
      * 4- If the Modification has a parent with the UniMod reference, we will try to use this as the reference.
      * 5- Filter the results by know amino-acid position
+     *
      * @param accession
      * @param aa
      * @return
      */
-    public List<PTM> getAnchorModification(String accession, String aa, boolean delta){
+    public List<PTM> getAnchorModification(String accession, String aa, boolean delta) {
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
-        if(ptms.isEmpty()){
+        if (ptms.isEmpty()) {
             ptms = new ArrayList<PTM>();
             ptms.add(currentPTM);
         }
         ptms = remapPTMs(ptms);
-        ptms  = Utilities.filterPTMsByAminoAcidSpecificity(ptms, aa);
+        ptms = Utilities.filterPTMsByAminoAcidSpecificity(ptms, aa);
         return ptms;
     }
 
@@ -187,7 +204,7 @@ public class ModReader {
         PTM currentPTM = getPTMbyAccession(accession);
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
-        if(ptms.isEmpty()){
+        if (ptms.isEmpty()) {
             ptms = new ArrayList<PTM>();
             ptms.add(currentPTM);
         }
@@ -195,10 +212,10 @@ public class ModReader {
         return ptms;
     }
 
-    public List<PTM> getAnchorModification(String accession){
+    public List<PTM> getAnchorModification(String accession) {
         List<PTM> ptms = new ArrayList<PTM>();
         PTM ptm = getPTMbyAccession(accession);
-        if(ptm != null)
+        if (ptm != null)
             ptms.add(ptm);
         List<PTM> resultMaps = remapPTMs(ptms);
         return resultMaps;
@@ -207,42 +224,41 @@ public class ModReader {
     public List<PTM> getAnchorModification(String accession, String aa) {
         List<PTM> ptms = new ArrayList<PTM>();
         PTM ptm = getPTMbyAccession(accession);
-        if(ptm != null)
+        if (ptm != null)
             ptms.add(ptm);
         List<PTM> resultMaps = remapPTMs(ptms);
-        ptms  = Utilities.filterPTMsByAminoAcidSpecificity(resultMaps, aa);
+        ptms = Utilities.filterPTMsByAminoAcidSpecificity(resultMaps, aa);
         return ptms;
     }
-
-
 
     /**
      * This function allows to remap all possible modifications for a list of modifications, it try to map all modifications from PSI and UniMod into
      * a UniMod list of modifications.
+     *
      * @param ptms the list of the current modifications
      * @return a List of mapped modifications
      */
-    private List<PTM> remapPTMs(List<PTM> ptms){
+    private List<PTM> remapPTMs(List<PTM> ptms) {
         List<PTM> resutList = new ArrayList<PTM>();
-        for(PTM ptm: ptms){
-            if(ptm instanceof PSIModPTM){
+        for (PTM ptm : ptms) {
+            if (ptm instanceof PSIModPTM) {
                 PSIModPTM psiPTM = (PSIModPTM) ptm;
 
-                if(psiPTM.isObsolete() && psiPTM.getRemapID() != null && !psiPTM.getRemapID().isEmpty()){
+                if (psiPTM.isObsolete() && psiPTM.getRemapID() != null && !psiPTM.getRemapID().isEmpty()) {
                     psiPTM = remapPTM((PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID()));
                 }
 
-                if(psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty()){
+                if (psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty()) {
                     resutList.addAll(remapToUniMod(psiPTM));
-                }else if(psiPTM.getParentPTMList() != null && !psiPTM.getParentPTMList().isEmpty()){
+                } else if (psiPTM.getParentPTMList() != null && !psiPTM.getParentPTMList().isEmpty()) {
                     List<PTM> parents = remapParentPtms(psiPTM);
-                    if(!parents.isEmpty())
+                    if (!parents.isEmpty())
                         resutList.addAll(parents);
                     else
                         resutList.add(psiPTM);
-                }else
+                } else
                     resutList.add(psiPTM);
-            }else
+            } else
                 resutList.add(ptm);
         }
         Set<PTM> hashPTMs = new HashSet<>(resutList);
@@ -252,16 +268,17 @@ public class ModReader {
     /**
      * Try to remap the parents PTMs to UniMod, if the parent do not contains the UniMod,
      * we don't do anything with it.
+     *
      * @param currentPTM the PSI Mod to be mapped
      * @return A list of Unimod modifications were the modification map.
      */
     private List<PTM> remapParentPtms(PTM currentPTM) {
         List<PTM> resultPTMs = new ArrayList<PTM>();
-        for(Comparable parent: ((PSIModPTM)currentPTM).getParentPTMList()){
+        for (Comparable parent : ((PSIModPTM) currentPTM).getParentPTMList()) {
             PSIModPTM psiModPTM = (PSIModPTM) psiModController.getPTMbyAccession((String) parent);
-            if(psiModPTM.getUnimodId() != null && !psiModPTM.getUnimodId().isEmpty()){
+            if (psiModPTM.getUnimodId() != null && !psiModPTM.getUnimodId().isEmpty()) {
                 resultPTMs.addAll(remapToUniMod(psiModPTM));
-            }else if(psiModPTM.getParentPTMList() != null && !psiModPTM.getParentPTMList().isEmpty()){
+            } else if (psiModPTM.getParentPTMList() != null && !psiModPTM.getParentPTMList().isEmpty()) {
                 resultPTMs.addAll(remapParentPtms(psiModPTM));
             }
         }
@@ -275,11 +292,11 @@ public class ModReader {
      * @param ptm the PSIMod modification
      * @return the list of Unimod modifications.
      */
-    private List<PTM> remapToUniMod(PSIModPTM ptm){
+    private List<PTM> remapToUniMod(PSIModPTM ptm) {
         List<PTM> resultList = new ArrayList<PTM>();
-        for(String ptmAccesion: ptm.getUnimodId()){
+        for (String ptmAccesion : ptm.getUnimodId()) {
             PTM unimodPTM = unimodController.getPTMbyAccession(Utilities.removePrefixUniMod(ptmAccesion));
-            if( unimodPTM != null)
+            if (unimodPTM != null)
                 resultList.add(unimodPTM);
         }
         return resultList;
@@ -288,11 +305,12 @@ public class ModReader {
     /**
      * This function allow to trace the obsolete modifications until the updated and new version of modification.
      * The recursive method allow to remap obsolete modifications to the new versions.
+     *
      * @param psiPTM an obsolete modification
      * @return the new Term
      */
-    private PSIModPTM remapPTM(PSIModPTM psiPTM){
-        if(psiPTM.isObsolete() && psiPTM.getRemapID() != null){
+    private PSIModPTM remapPTM(PSIModPTM psiPTM) {
+        if (psiPTM.isObsolete() && psiPTM.getRemapID() != null) {
             PSIModPTM ptmResult = (PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID());
             return remapPTM(ptmResult);
         }
@@ -302,10 +320,10 @@ public class ModReader {
     public List<PTM> getAnchorModificationPosition(String accession, String aa) {
         List<PTM> ptms = new ArrayList<PTM>();
         PTM ptm = getPTMbyAccession(accession);
-        if(ptm != null)
+        if (ptm != null)
             ptms.add(ptm);
         List<PTM> resultMaps = remapPTMs(ptms);
-        ptms  = Utilities.filterPTMsByAminoAcidSpecificityPosition(resultMaps, aa);
+        ptms = Utilities.filterPTMsByAminoAcidSpecificityPosition(resultMaps, aa);
         return ptms;
     }
 
