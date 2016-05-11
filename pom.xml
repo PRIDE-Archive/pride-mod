@@ -5,7 +5,7 @@
     <groupId>uk.ac.ebi.pride.utilities</groupId>
     <artifactId>pride-mod</artifactId>
     <packaging>jar</packaging>
-    <version>2.1.1-SNAPSHOT</version>
+    <version>2.1.1</version>
     <name>Modification Java core API</name>
 
     <developers>
@@ -235,7 +235,7 @@
         <connection>scm:git:github.com/PRIDE-Utilities/pride-mod.git</connection>
         <developerConnection>scm:git:git@github.com:PRIDE-Utilities/pride-mod.git</developerConnection>
         <url>https://github.com/PRIDE-Utilities/pride-mod.git</url>
-        <tag>HEAD</tag>
+        <tag>pride-mod-2.1.1</tag>
     </scm>
 
 </project>
