@@ -227,13 +227,13 @@ public class ModReader {
         for(PTM ptm: ptms){
             if(ptm instanceof PSIModPTM){
                 PSIModPTM psiPTM = (PSIModPTM) ptm;
-
-                if(psiPTM.isObsolete() && psiPTM.getRemapID() != null && !psiPTM.getRemapID().isEmpty()){
-                    psiPTM = remapPTM((PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID()));
-                }
-
-                if(psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty()){
+                if(psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty())
                     resutList.addAll(remapToUniMod(psiPTM));
+                else if(psiPTM.isObsolete() && psiPTM.getRemapID() != null && !psiPTM.getRemapID().isEmpty()){
+                    psiPTM = remapPTM((PSIModPTM) psiModController.getPTMbyAccession(psiPTM.getRemapID()));
+                    if(psiPTM.getUnimodId() != null && !psiPTM.getUnimodId().isEmpty()){
+                        resutList.addAll(remapToUniMod(psiPTM));
+                    }
                 }else if(psiPTM.getParentPTMList() != null && !psiPTM.getParentPTMList().isEmpty()){
                     List<PTM> parents = remapParentPtms(psiPTM);
                     if(!parents.isEmpty())
@@ -322,4 +322,15 @@ public class ModReader {
         ptms = Utilities.filterPTMsByAminoAcidSpecificityPosition(resultMaps, position);
         return ptms;
     }
+
+    public boolean isWrongAnnotated(String accession, String aa){
+        List<PTM> ptms  = getAnchorModificationPosition(accession, aa);
+        if(ptms == null || ptms.isEmpty())
+            return
+            true;
+        return  false;
+
+    }
+
+
 }

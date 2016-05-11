@@ -13032,7 +13032,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-xref: Remap: "MOD:01493"
+xref: Remap: "MOD:01505"
 xref: UniMod: "UniMod:214"
 is_obsolete: true
 
@@ -29618,7 +29618,6 @@ xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: UniMod: "UniMod:214"
-xref: UniMod: "UniMod:889"
 is_a: MOD:01506 ! iTRAQ4plex-117, mTRAQ heavy, reporter+balance reagent acylated residue
 is_a: MOD:01709 ! iTRAQ4plex reporter+balance reagent N-acylated residue
 is_a: MOD:01875 ! N6-acylated L-lysine
