@@ -36,6 +36,11 @@
         </developer>
     </developers>
 
+    <properties>
+        <!-- Logging capabilities -->
+        <uk.ac.ebi.pride.architectural-pride-logging.version>1.0.0</uk.ac.ebi.pride.architectural-pride-logging.version>
+    </properties>
+
     <dependencies>
         <!-- logging dependencies -->
         <dependency>
