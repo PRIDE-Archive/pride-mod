@@ -8,6 +8,15 @@
     <version>2.1.3-SNAPSHOT</version>
     <name>Modification Java core API</name>
 
+    <parent>
+        <groupId>uk.ac.ebi.pride.architectural</groupId>
+        <artifactId>pride-core</artifactId>
+        <version>1.0.1</version>
+    </parent>
+
+    <!-- LICENSE - from parent POM -->
+    <!-- ORGANIZATION - from parent POM -->
+
     <developers>
         <developer>
             <name>Yasset Perez-Riverol</name>
