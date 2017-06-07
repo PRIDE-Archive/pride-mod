@@ -35,8 +35,8 @@ If you wish to include pride-mod in your own Java projects, and you use Maven 2,
 - Maven 2 repository definition for pride-mod (and for a host of other EBI libraries):
         
         <repository>
-            <id>nexus-ebi-repo</id>
-            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo</url>
+            <id>nexus-ebi-release-repo</id>
+            <url>http://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo/</url>
         </repository>
 
 - pride-mod dependency snippet:
