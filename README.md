@@ -25,7 +25,7 @@ Bioinformatics 31, no. 17 (2015): 2903-2905. [article](https://bioinformatics.ox
 
 # Availability and Version
 * Current version is 2.0.0-SNAPSHOT
-* The jara library can be download from the [EBI maven repository]( http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo).
+* The jara library can be download from the [EBI maven repository](http://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo/).
 
 # Getting pride-mod
 
