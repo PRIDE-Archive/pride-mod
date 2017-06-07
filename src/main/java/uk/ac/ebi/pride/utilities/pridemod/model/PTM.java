@@ -52,4 +52,7 @@ public interface PTM {
      */
     public String getFormula();
 
+
+    public String getCvLabel();
+
 }

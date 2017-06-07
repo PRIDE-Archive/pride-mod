@@ -106,4 +106,10 @@ public class PSIModPTM extends AbstractPTM{
                 ", unimodId='" + unimodId + '\'' +
                 '}';
     }
+
+
+    @Override
+    public String getCvLabel() {
+        return "PSI-MOD";
+    }
 }

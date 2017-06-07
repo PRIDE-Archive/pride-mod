@@ -27,4 +27,10 @@ public class UniModPTM extends AbstractPTM {
                      String formula) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
     }
+
+
+    @Override
+    public String getCvLabel() {
+        return "UNIMOD";
+    }
 }

@@ -42,6 +42,8 @@ public class AbstractPTM implements PTM {
      */
     String formula;
 
+    String cvLabel;
+
     /**
      * Contructor with all the fields for a general modification
      * @param accession          PTM accession
@@ -95,6 +97,11 @@ public class AbstractPTM implements PTM {
     @Override
     public String getFormula() {
         return formula;
+    }
+
+    @Override
+    public String getCvLabel() {
+        return cvLabel;
     }
 
     @Override

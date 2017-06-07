@@ -8,7 +8,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 public class PRIDEModUtils {
 
     public enum Database {
-        PSIMOD, UNIMOD, NONE
+        PSIMOD, UNIMOD, MS, NONE
     }
     public static Database getAccessionType(String accession){
         if(accession.contains("UNIMOD")){
@@ -17,7 +17,9 @@ public class PRIDEModUtils {
             return Database.PSIMOD;
         } else if(!accession.contains("MOD") && NumberUtils.isNumber(accession)){
             return Database.UNIMOD;
-        } else{
+        } else if(!accession.contains("MS")){
+            return Database.MS;
+        }else{
             return Database.NONE;
         }
     }

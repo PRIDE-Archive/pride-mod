@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PRIDEModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PSIModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
+import uk.ac.ebi.pride.utilities.pridemod.model.MSModification;
 import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
@@ -83,6 +84,9 @@ public class ModReader {
      */
     public PTM getPTMbyAccession(String accession){
         PTM ptm = null;
+        if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.MS){
+            ptm = MSModification.getByAccession(accession);
+        }
         if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.UNIMOD){
             ptm = unimodController.getPTMbyAccession(accession);
         }else if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PSIMOD){
