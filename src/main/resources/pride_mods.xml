@@ -1301,5 +1301,18 @@
 
             </psi_modifications>
         </pride_modification>
+        <pride_modification title="Methylation" id="45" diff_mono="14.015650" biological_significance="1"     shortname="methyl">
+            <unimod_mappings>
+                <unimod_mapping id="34"/>
+            </unimod_mappings>
+            <psi_modifications>
+                <psi_modification id="MOD:00599" title="monomethylated residue" general_modification="1"
+                                  specific_modification="0" origin="X" term_spec="none" obsolete="0"/>
+                <psi_modification id="MOD:00722" title="monomethylated L-glutamine" general_modification="1"
+                                  specific_modification="0" origin="Q" term_spec="none" obsolete="0"/>
+                <psi_modification id="MOD:00724" title="N-methylated L-histidine" general_modification="1"
+                                  specific_modification="0" origin="H" term_spec="none" obsolete="0"/>
+            </psi_modifications>
+        </pride_modification>
     </pride_modifications>
 </pride_mod>
