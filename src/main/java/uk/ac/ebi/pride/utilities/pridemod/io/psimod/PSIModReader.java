@@ -21,12 +21,9 @@ public class PSIModReader {
     public PSIModReader(InputStream inputStream) throws IOException {
         OBOFormatParser oboReader = new OBOFormatParser();
 
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-        try {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
             oboDoc = oboReader.parse(bufferedReader);
             oboDoc.getInstanceFrames();
-        } finally {
-            bufferedReader.close();
         }
     }
 

@@ -59,7 +59,7 @@ public class AminoAcidCollection
      */
     public List<AminoAcid> getAa() {
         if (aa == null) {
-            aa = new ArrayList<AminoAcid>();
+            aa = new ArrayList<>();
         }
         return this.aa;
     }

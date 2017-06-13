@@ -17,11 +17,6 @@ public class UnimodReader {
 
     private static final Logger logger = LoggerFactory.getLogger(UnimodReader.class);
 
-    /**
-     * internal unmashaller
-     */
-    private Unmarshaller unmarshaller = null;
-
     private Unimod unimod_whole = null;
 
     /**
@@ -34,7 +29,10 @@ public class UnimodReader {
             throw new IllegalArgumentException("Xml file to be indexed must not be null");
         }
         // create unmarshaller
-        this.unmarshaller = UnimodUnmarshallerFactory.getInstance().initializeUnmarshaller();
+        /*
+      internal unmashaller
+     */
+        Unmarshaller unmarshaller = UnimodUnmarshallerFactory.getInstance().initializeUnmarshaller();
         unimod_whole = (Unimod) unmarshaller.unmarshal(xml);
     }
 

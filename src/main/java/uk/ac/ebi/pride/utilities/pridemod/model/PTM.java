@@ -14,45 +14,45 @@ public interface PTM {
      * by one unique accession. In case of unimod for example is 31 or 35.
      * @return Accession
      */
-    public String getAccession();
+    String getAccession();
 
     /**
      * Get the Name of the PTMs
      * @return Name
      */
-    public String getName();
+    String getName();
 
     /**
      * Returns the delta MonoIsotopic mass of the modification.
      * @return
      */
-    public Double getMonoDeltaMass();
+    Double getMonoDeltaMass();
 
     /**
      * Returns the delta Average mass of the modification.
      * @return
      */
-    public Double getAveDeltaMass();
+    Double getAveDeltaMass();
 
     /**
      * Returns the description of the Modification.
      * @return Description
      */
-    public String getDescription();
+    String getDescription();
 
     /**
      * Return the List of AminoAcid Specificity.
      * @return
      */
-    public List<Specificity> getSpecificityCollection();
+    List<Specificity> getSpecificityCollection();
 
     /**
      * Return the Chemical Formula of the modification
      * @return
      */
-    public String getFormula();
+    String getFormula();
 
 
-    public String getCvLabel();
+    String getCvLabel();
 
 }

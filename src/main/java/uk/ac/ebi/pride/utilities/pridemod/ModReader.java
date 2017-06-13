@@ -5,11 +5,8 @@ import org.slf4j.LoggerFactory;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PRIDEModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PSIModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
-import uk.ac.ebi.pride.utilities.pridemod.model.MSModification;
-import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
-import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
+import uk.ac.ebi.pride.utilities.pridemod.model.*;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
-import uk.ac.ebi.pride.utilities.pridemod.model.PSIModPTM;
 import uk.ac.ebi.pride.utilities.pridemod.utils.PRIDEModUtils;
 import uk.ac.ebi.pride.utilities.pridemod.utils.Utilities;
 
@@ -178,7 +175,7 @@ public class ModReader {
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
         if(ptms.isEmpty()){
-            ptms = new ArrayList<PTM>();
+            ptms = new ArrayList<>();
             ptms.add(currentPTM);
         }
         ptms = remapPTMs(ptms);
@@ -192,7 +189,7 @@ public class ModReader {
         Double monoDelta = currentPTM.getMonoDeltaMass();
         List<PTM> ptms = getPTMListByMonoDeltaMass(monoDelta);
         if(ptms.isEmpty()){
-            ptms = new ArrayList<PTM>();
+            ptms = new ArrayList<>();
             ptms.add(currentPTM);
         }
         ptms = remapPTMs(ptms);
@@ -200,16 +197,15 @@ public class ModReader {
     }
 
     public List<PTM> getAnchorModification(String accession){
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         PTM ptm = getPTMbyAccession(accession);
         if(ptm != null)
             ptms.add(ptm);
-        List<PTM> resultMaps = remapPTMs(ptms);
-        return resultMaps;
+        return remapPTMs(ptms);
     }
 
     public List<PTM> getAnchorModification(String accession, String aa) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         PTM ptm = getPTMbyAccession(accession);
         if(ptm != null)
             ptms.add(ptm);
@@ -227,7 +223,7 @@ public class ModReader {
      * @return a List of mapped modifications
      */
     private List<PTM> remapPTMs(List<PTM> ptms){
-        List<PTM> resutList = new ArrayList<PTM>();
+        List<PTM> resutList = new ArrayList<>();
         for(PTM ptm: ptms){
             if(ptm instanceof PSIModPTM){
                 PSIModPTM psiPTM = (PSIModPTM) ptm;
@@ -260,7 +256,7 @@ public class ModReader {
      * @return A list of Unimod modifications were the modification map.
      */
     private List<PTM> remapParentPtms(PTM currentPTM) {
-        List<PTM> resultPTMs = new ArrayList<PTM>();
+        List<PTM> resultPTMs = new ArrayList<>();
         for(Comparable parent: ((PSIModPTM)currentPTM).getParentPTMList()){
             PSIModPTM psiModPTM = (PSIModPTM) psiModController.getPTMbyAccession((String) parent);
             if(psiModPTM.getUnimodId() != null && !psiModPTM.getUnimodId().isEmpty()){
@@ -280,7 +276,7 @@ public class ModReader {
      * @return the list of Unimod modifications.
      */
     private List<PTM> remapToUniMod(PSIModPTM ptm){
-        List<PTM> resultList = new ArrayList<PTM>();
+        List<PTM> resultList = new ArrayList<>();
         for(String ptmAccesion: ptm.getUnimodId()){
             PTM unimodPTM = unimodController.getPTMbyAccession(Utilities.removePrefixUniMod(ptmAccesion));
             if( unimodPTM != null)
@@ -304,7 +300,7 @@ public class ModReader {
     }
 
     public List<PTM> getAnchorModificationPosition(String accession, String aa) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         PTM ptm = getPTMbyAccession(accession);
         if(ptm != null)
             ptms.add(ptm);
@@ -329,11 +325,15 @@ public class ModReader {
 
     public boolean isWrongAnnotated(String accession, String aa){
         List<PTM> ptms  = getAnchorModificationPosition(accession, aa);
-        if(ptms == null || ptms.isEmpty())
-            return
-            true;
-        return  false;
+        return ptms == null || ptms.isEmpty();
 
+    }
+
+    public String getShortNamePRIDEModByChildAccession(String accession){
+        PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
+        if(prideMod != null)
+            return prideMod.getShortName();
+        return null;
     }
 
 

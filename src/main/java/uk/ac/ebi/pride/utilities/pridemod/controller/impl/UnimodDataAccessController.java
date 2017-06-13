@@ -48,7 +48,7 @@ public class UnimodDataAccessController extends AbstractDataAccessController{
      */
     private void initPTMMap(Unimod unimodObject) {
 
-        ptmMap = new HashMap<Comparable, PTM>(unimodObject.getModifications().getMod().size());
+        ptmMap = new HashMap<>(unimodObject.getModifications().getMod().size());
 
         for(UnimodModification unimodMod: unimodObject.getModifications().getMod()){
             /**
@@ -64,7 +64,7 @@ public class UnimodDataAccessController extends AbstractDataAccessController{
             List<uk.ac.ebi.pride.utilities.pridemod.model.Specificity> specificityList = null;
 
             if(unimodMod.getSpecificity() != null && unimodMod.getSpecificity().size() > 0){
-                specificityList = new ArrayList<uk.ac.ebi.pride.utilities.pridemod.model.Specificity>(unimodMod.getSpecificity().size());
+                specificityList = new ArrayList<>(unimodMod.getSpecificity().size());
                 for(uk.ac.ebi.pride.utilities.pridemod.io.unimod.model.Specificity oldSpecificty: unimodMod.getSpecificity()){
                     uk.ac.ebi.pride.utilities.pridemod.model.Specificity specificity = new uk.ac.ebi.pride.utilities.pridemod.model.Specificity(oldSpecificty.getSite(), oldSpecificty.getPosition());
                     specificityList.add(specificity);

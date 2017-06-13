@@ -55,6 +55,9 @@ public class PrideModification
     @XmlAttribute(required = true)
     @XmlSchemaType(name = "anyURI")
     protected String title;
+    @XmlAttribute(name = "shortname", required = false)
+    @XmlSchemaType(name = "anyURI")
+    protected String shortname;
 
 
     /**
@@ -177,13 +180,21 @@ public class PrideModification
         this.title = value;
     }
 
+    public String getShortname() {
+        return shortname;
+    }
+
+    public void setShortname(String shortname) {
+        this.shortname = shortname;
+    }
+
     public boolean compareMono(double mass) {
         return (this.diffMono.doubleValue() == mass);
     }
 
 
     public boolean compareId(int id) {
-        return (this.getId().intValue() == id) ? true : false;
+        return this.getId().intValue() == id;
     }
 
 
@@ -196,7 +207,7 @@ public class PrideModification
     }
 
     public List<Specificity> getSpecificityList() {
-        List<Specificity> specificityList = new ArrayList<Specificity>();
+        List<Specificity> specificityList = new ArrayList<>();
 
         for (PsiModification psiModification : this.getPsiModifications().getPsiModification()) {
             if (psiModification.generalModification.intValue() != 1) {

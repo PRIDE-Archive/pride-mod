@@ -128,7 +128,7 @@ public class UnimodModification
      */
     public List<Specificity> getSpecificity() {
         if (specificity == null) {
-            specificity = new ArrayList<Specificity>();
+            specificity = new ArrayList<>();
         }
         return this.specificity;
     }
@@ -176,7 +176,7 @@ public class UnimodModification
      */
     public List<Serializable> getAltNameOrIgnore() {
         if (altNameOrIgnore == null) {
-            altNameOrIgnore = new ArrayList<Serializable>();
+            altNameOrIgnore = new ArrayList<>();
         }
         return this.altNameOrIgnore;
     }
@@ -203,7 +203,7 @@ public class UnimodModification
      */
     public List<Reference> getXref() {
         if (xref == null) {
-            xref = new ArrayList<Reference>();
+            xref = new ArrayList<>();
         }
         return this.xref;
     }

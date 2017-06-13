@@ -21,7 +21,7 @@ public class Utilities {
         if(aa == null || aa.isEmpty()){
             resultPtms = ptms;
         }else{
-            resultPtms = new ArrayList<PTM>();
+            resultPtms = new ArrayList<>();
             Specificity currentSpecificity = new Specificity(Specificity.parseAminoAcid(aa), Specificity.Position.NONE);
             for(PTM ptm: ptms){
                 for(Specificity specificity:ptm.getSpecificityCollection()){
@@ -67,9 +67,25 @@ public class Utilities {
                         resultPTMs.add(ptm);
         }
         List<PTM> ptms = new ArrayList<>();
-        for(PTM ptm: resultPTMs)
-            ptms.add(ptm);
+        ptms.addAll(resultPTMs);
 
         return ptms;
+    }
+
+    public static boolean isUniModAccession(String accession){
+        return accession.contains("Unimod:") && (accession.replace("Unimod:", "").matches("^-?\\d+$"));
+    }
+
+    public static Integer getIntegerForUnimodAccession(String accession){
+        if(isUniModAccession(accession)){
+            return Integer.parseInt(accession.replace("Unimod:", ""));
+        }else if(accession.matches("^-?\\d+$"))
+            return Integer.parseInt(accession);
+        return null;
+
+    }
+
+    public static boolean isPSIModAccession(String accession){
+        return accession.contains(("MOD:")) && (accession.replace("MOD:", "").length() == 5);
     }
 }

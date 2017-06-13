@@ -57,7 +57,7 @@ public class PsiModifications
      */
     public List<PsiModification> getPsiModification() {
         if (psiModification == null) {
-            psiModification = new ArrayList<PsiModification>();
+            psiModification = new ArrayList<>();
         }
         return this.psiModification;
     }

@@ -22,7 +22,7 @@ public class AbstractDataAccessController implements DataAccessController {
      * Default constructor for Controllers
      */
     public AbstractDataAccessController(InputStream inputStream) {
-        ptmMap = new HashMap<Comparable, PTM>();
+        ptmMap = new HashMap<>();
         source = inputStream;
     }
 
@@ -50,7 +50,7 @@ public class AbstractDataAccessController implements DataAccessController {
      */
     @Override
     public List<PTM> getPTMListByPatternName(String namePattern) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         for (PTM ptm : ptmMap.values()) {
             if (ptm.getName().contains(namePattern))
                 ptms.add(ptm);
@@ -60,7 +60,7 @@ public class AbstractDataAccessController implements DataAccessController {
 
     @Override
     public List<PTM> getPTMListBySpecificity(Specificity specificity) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         for (PTM ptm : ptmMap.values()) {
             if (ptm.getSpecificityCollection().contains(specificity))
                 ptms.add(ptm);
@@ -70,7 +70,7 @@ public class AbstractDataAccessController implements DataAccessController {
 
     @Override
     public List<PTM> getPTMListByPatternDescription(String descriptionPattern) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         for (PTM ptm : ptmMap.values()) {
             if (ptm.getDescription().toUpperCase().contains(descriptionPattern.toUpperCase()))
                 ptms.add(ptm);
@@ -80,7 +80,7 @@ public class AbstractDataAccessController implements DataAccessController {
 
     @Override
     public List<PTM> getPTMListByEqualName(String name) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         for (PTM ptm : ptmMap.values()) {
             if (ptm.getName().equalsIgnoreCase(name))
                 ptms.add(ptm);
@@ -90,7 +90,7 @@ public class AbstractDataAccessController implements DataAccessController {
 
     @Override
     public List<PTM> getPTMListByMonoDeltaMass(Double delta) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         for (PTM ptm : ptmMap.values()) {
             if (ptm.getMonoDeltaMass() != null && Math.abs(ptm.getMonoDeltaMass() - delta) < 0.00001)
                 ptms.add(ptm);
@@ -100,7 +100,7 @@ public class AbstractDataAccessController implements DataAccessController {
 
     @Override
     public List<PTM> getPTMListByAvgDeltaMass(Double delta) {
-        List<PTM> ptms = new ArrayList<PTM>();
+        List<PTM> ptms = new ArrayList<>();
         for (PTM ptm : ptmMap.values()) {
             if (ptm.getAveDeltaMass() != null && Math.abs(ptm.getAveDeltaMass()-delta) < 0.00001)
                 ptms.add(ptm);

@@ -79,4 +79,17 @@ public class ModReaderTest {
         System.out.println(ptms);
 
     }
+
+    @Test
+    public void TestGetShortNamePRIDEMod(){
+        Assert.assertTrue(modReader.getShortNamePRIDEModByChildAccession("MOD:00394").equalsIgnoreCase("acetyl"));
+
+        // Unimod works with Unimod Prefix and Without it, this run is with Prefix
+        Assert.assertTrue(modReader.getShortNamePRIDEModByChildAccession("Unimod:1").equalsIgnoreCase("acetyl"));
+
+        // Unimod works with Unimod Prefix and Without it, this run is without the Prefix
+        Assert.assertTrue(modReader.getShortNamePRIDEModByChildAccession("1").equalsIgnoreCase("acetyl"));
+
+
+    }
 }

@@ -27,6 +27,7 @@
             <xs:attribute name="diff_mono" use="required" type="xs:decimal"/>
             <xs:attribute name="id" use="required" type="xs:integer"/>
             <xs:attribute name="title" use="required" type="xs:anyURI"/>
+            <xs:attribute name="shortname" use="optional" type="xs:anyURI"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="unimod_mappings">

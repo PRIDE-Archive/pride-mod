@@ -59,13 +59,13 @@ public class ModificationCollection
      */
     public List<UnimodModification> getMod() {
         if (mod == null) {
-            mod = new ArrayList<UnimodModification>();
+            mod = new ArrayList<>();
         }
         return this.mod;
     }
 
     public List<UnimodModification> getModbyAvgMass(double mass) {
-        List<UnimodModification> resultModList = new ArrayList<UnimodModification>();
+        List<UnimodModification> resultModList = new ArrayList<>();
         for (UnimodModification aMod : this.mod) {
             if (aMod.compareAvg(mass)) {
                 resultModList.add(aMod);
@@ -83,7 +83,7 @@ public class ModificationCollection
 
 
     public List<UnimodModification> getModListbySpecificity(String specificity) {
-        List<UnimodModification> resultModList = new ArrayList<UnimodModification>();
+        List<UnimodModification> resultModList = new ArrayList<>();
         for (UnimodModification aMod : this.mod) {
             if (aMod.isSpecificity(specificity)) {
                 resultModList.add(aMod);
@@ -93,7 +93,7 @@ public class ModificationCollection
     }
 
     public List<UnimodModification> getListbyMassSpecificity(String specificity, double mass) {
-        List<UnimodModification> resultModList = new ArrayList<UnimodModification>();
+        List<UnimodModification> resultModList = new ArrayList<>();
         for (UnimodModification aMod : this.mod) {
             if (aMod.compareAvg(mass) && aMod.isSpecificity(specificity)) {
                 resultModList.add(aMod);

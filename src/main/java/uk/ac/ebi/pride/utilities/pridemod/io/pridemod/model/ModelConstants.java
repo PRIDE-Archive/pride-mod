@@ -14,7 +14,7 @@ public class ModelConstants {
     public static final String MODEL_PKG = "uk.ac.ebi.pride.utilities.pridemod.io.pridemod.model";
     public static final String PRIDEMOD = "";
 
-    private static Map<Class, QName> modelQNames = new HashMap<Class, QName>();
+    private static Map<Class, QName> modelQNames = new HashMap<>();
 
     static {
 

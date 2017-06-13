@@ -59,7 +59,7 @@ public class ElementCollection
      */
     public List<AtomElement> getElem() {
         if (elem == null) {
-            elem = new ArrayList<AtomElement>();
+            elem = new ArrayList<>();
         }
         return this.elem;
     }

@@ -1,14 +1,22 @@
 package uk.ac.ebi.pride.utilities.pridemod.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * yperez
  */
 public class PRIDEModPTM extends AbstractPTM{
 
-
+    // Unimod Reference
     private Comparable uniModRef;
+
+    // ShortName for the biological significance of the modification
+    private String shortName;
+
+    // List of PSIModPTM
+    private Map<Comparable, PSIModPTM> psiChildren = new HashMap<>();
 
 
     /**
@@ -29,9 +37,11 @@ public class PRIDEModPTM extends AbstractPTM{
                        Double averageDeltaMass,
                        List<Specificity> specificityList,
                        Comparable unimodReference,
-                       String formula) {
+                       String formula, String shortName, Map<Comparable, PSIModPTM> children) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
         this.uniModRef = unimodReference;
+        this.shortName = shortName;
+        this.psiChildren = children;
     }
 
     public Comparable getUniModRef() {
@@ -40,6 +50,22 @@ public class PRIDEModPTM extends AbstractPTM{
 
     public void setUniModRef(Comparable uniModRef) {
         this.uniModRef = uniModRef;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public Map<Comparable, PSIModPTM> getPsiChildren() {
+        return psiChildren;
+    }
+
+    public void setPsiChildren(Map<Comparable, PSIModPTM> psiChildren) {
+        this.psiChildren = psiChildren;
     }
 
     @Override

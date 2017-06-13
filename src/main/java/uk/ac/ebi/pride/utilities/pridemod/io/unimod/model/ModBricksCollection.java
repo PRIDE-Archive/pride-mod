@@ -59,7 +59,7 @@ public class ModBricksCollection
      */
     public List<ModBrick> getBrick() {
         if (brick == null) {
-            brick = new ArrayList<ModBrick>();
+            brick = new ArrayList<>();
         }
         return this.brick;
     }

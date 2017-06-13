@@ -76,7 +76,7 @@ public class ModBrick
      */
     public List<AtomComposition> getElement() {
         if (element == null) {
-            element = new ArrayList<AtomComposition>();
+            element = new ArrayList<>();
         }
         return this.element;
     }

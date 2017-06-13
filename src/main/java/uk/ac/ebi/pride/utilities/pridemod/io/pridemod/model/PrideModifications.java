@@ -57,13 +57,13 @@ public class PrideModifications
      */
     public List<PrideModification> getPrideModification() {
         if (prideModification == null) {
-            prideModification = new ArrayList<PrideModification>();
+            prideModification = new ArrayList<>();
         }
         return this.prideModification;
     }
 
     public List<PrideModification> getModbyMonoMass(double mass) {
-        List<PrideModification> resultModList = new ArrayList<PrideModification>();
+        List<PrideModification> resultModList = new ArrayList<>();
         for (int i = 0; i < this.getPrideModification().size(); i++) {
             if (this.getPrideModification().get(i).compareMono(mass)) {
                 resultModList.add(this.getPrideModification().get(i));
@@ -80,7 +80,7 @@ public class PrideModifications
     }
 
     public List<PrideModification> getModListbySpecificity(String specificity) {
-        List<PrideModification> resultModList = new ArrayList<PrideModification>();
+        List<PrideModification> resultModList = new ArrayList<>();
         for (int i = 0; i < this.getPrideModification().size(); i++) {
             if (this.prideModification.get(i).isSpecificity(specificity)) {
                 resultModList.add(this.prideModification.get(i));
@@ -90,7 +90,7 @@ public class PrideModifications
     }
 
     public List<PrideModification> getListbyMassSpecificity(String specificity, double mass) {
-        List<PrideModification> resultModList = new ArrayList<PrideModification>();
+        List<PrideModification> resultModList = new ArrayList<>();
         for (int i = 0; i < this.getPrideModification().size(); i++) {
             if (this.getPrideModification().get(i).compareMono(mass) && this.getPrideModification().get(i).isSpecificity(specificity)) {
                 resultModList.add(this.getPrideModification().get(i));

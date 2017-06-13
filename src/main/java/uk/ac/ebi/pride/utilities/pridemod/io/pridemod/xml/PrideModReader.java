@@ -25,10 +25,6 @@ public class PrideModReader {
     private static final Logger logger = LoggerFactory.getLogger(PrideModReader.class);
 
     /**
-     * internal unmashaller
-     */
-    private Unmarshaller unmarshaller = null;
-    /**
      * internal xml extractor
      */
     private PrideModExtractor extractor = null;
@@ -48,7 +44,10 @@ public class PrideModReader {
 
         try {
             // create unmarshaller
-            this.unmarshaller = PrideModUnmarshallerFactory.getInstance().initializeUnmarshaller();
+            /*
+      internal unmashaller
+     */
+            Unmarshaller unmarshaller = PrideModUnmarshallerFactory.getInstance().initializeUnmarshaller();
             prideMod_whole = (PrideMod) unmarshaller.unmarshal(inputStream);
         } catch (JAXBException e) {
             throw new IllegalArgumentException("Error unmarshalling XML file: " + e.getMessage(), e);

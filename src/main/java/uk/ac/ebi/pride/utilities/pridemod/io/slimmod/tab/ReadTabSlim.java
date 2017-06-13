@@ -83,7 +83,7 @@ public final class ReadTabSlim {
 
     private static List<Specificity> parseSpecificityCollection(String s) {
         String specificity[] = s.split(delimiterSpecificity);
-        List<Specificity> returnSpecificityList = new ArrayList<Specificity>();
+        List<Specificity> returnSpecificityList = new ArrayList<>();
         for (String aSpecificity : specificity) {
             returnSpecificityList.add(parseSpecificity(aSpecificity));
         }

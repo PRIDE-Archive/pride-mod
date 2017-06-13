@@ -22,7 +22,7 @@ public class SlimModCollection implements List<SlimModification> {
      * Constructor that create a new List of Slim modifications
      */
     public SlimModCollection() {
-        this.modCollection = new ArrayList<SlimModification>();
+        this.modCollection = new ArrayList<>();
     }
 
     /**

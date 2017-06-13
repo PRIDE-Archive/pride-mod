@@ -151,7 +151,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.unimod.org/xmlns/schema/unimod_2", name = "url")
     public JAXBElement<String> createUrl(String value) {
-        return new JAXBElement<String>(_Url_QNAME, String.class, null, value);
+        return new JAXBElement<>(_Url_QNAME, String.class, null, value);
     }
 
     /**
@@ -159,7 +159,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.unimod.org/xmlns/schema/unimod_2", name = "text")
     public JAXBElement<String> createText(String value) {
-        return new JAXBElement<String>(_Text_QNAME, String.class, null, value);
+        return new JAXBElement<>(_Text_QNAME, String.class, null, value);
     }
 
     /**
@@ -167,7 +167,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.unimod.org/xmlns/schema/unimod_2", name = "misc_notes")
     public JAXBElement<String> createMiscNotes(String value) {
-        return new JAXBElement<String>(_MiscNotes_QNAME, String.class, null, value);
+        return new JAXBElement<>(_MiscNotes_QNAME, String.class, null, value);
     }
 
     /**
@@ -175,7 +175,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.unimod.org/xmlns/schema/unimod_2", name = "alt_name")
     public JAXBElement<String> createAltName(String value) {
-        return new JAXBElement<String>(_AltName_QNAME, String.class, null, value);
+        return new JAXBElement<>(_AltName_QNAME, String.class, null, value);
     }
 
     /**
@@ -183,7 +183,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.unimod.org/xmlns/schema/unimod_2", name = "source")
     public JAXBElement<String> createSource(String value) {
-        return new JAXBElement<String>(_Source_QNAME, String.class, null, value);
+        return new JAXBElement<>(_Source_QNAME, String.class, null, value);
     }
 
 }
