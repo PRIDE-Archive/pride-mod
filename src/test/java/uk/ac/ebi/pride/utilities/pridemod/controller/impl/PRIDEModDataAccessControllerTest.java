@@ -17,9 +17,9 @@ public class PRIDEModDataAccessControllerTest {
 
     @Before
     public void setUp() throws Exception {
-        InputStream inputStream = PRIDEModDataAccessControllerTest.class.getClassLoader().getResourceAsStream("pride_mods.xml");
-        InputStream psiStream = PSIModDataAccessControllerTest.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
-        InputStream uniModStream = PSIModDataAccessControllerTest.class.getClassLoader().getResourceAsStream("unimod.xml");
+        InputStream inputStream = PRIDEModDataAccessController.class.getClassLoader().getResourceAsStream("pride_mods.xml");
+        InputStream psiStream = PSIModDataAccessController.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
+        InputStream uniModStream = PSIModDataAccessController.class.getClassLoader().getResourceAsStream("unimod.xml");
 
         if (psiStream == null || inputStream == null || uniModStream == null) {
             throw new IllegalStateException("Modification file not found!");
