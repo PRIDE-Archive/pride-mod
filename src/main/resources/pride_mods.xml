@@ -2,7 +2,7 @@
 <pride_mod>
 
     <pride_modifications>
-        <pride_modification title="Acetylation"   id="1" biological_significance="1" shortname="acetyl">
+        <pride_modification id="1" biological_significance="1" shortname="acetyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:1" general_modification="1"/>
           </unimod_mappings>
@@ -42,7 +42,7 @@
                 <psi_modification accession="MOD:00644" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Amidation"     id="2" biological_significance="1"    shortname="amidated">
+        <pride_modification    id="2" biological_significance="1"    shortname="amidated">
           <unimod_mappings>
               <unimod_mapping accession="UNIMOD:2" general_modification="1"/>
               <unimod_mapping accession="UNIMOD:555" general_modification="0" />
@@ -74,7 +74,7 @@
                 <psi_modification accession="MOD:00883" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Biotinylation" id="3" biological_significance="1"  shortname="biotinylation">
+        <pride_modification  id="3" biological_significance="1"  shortname="biotinylation">
            <unimod_mappings>
             <unimod_mapping accession="UNIMOD:3" general_modification="1"/>
            </unimod_mappings>
@@ -83,7 +83,7 @@
                 <psi_modification accession="MOD:00126" general_modification="0"/>
           </psi_modifications>
         </pride_modification>
-        <pride_modification title="Phosphorylation" id="4" biological_significance="1" shortname="phospho">
+        <pride_modification  id="4" biological_significance="1" shortname="phospho">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:21" general_modification="1"/>
           </unimod_mappings>
@@ -107,7 +107,7 @@
                 <psi_modification accession="MOD:00259" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Carbamidomethyl" id="5" biological_significance="0"    shortname="carbamidomethyl">
+        <pride_modification  id="5" biological_significance="0"    shortname="carbamidomethyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:4" general_modification="1"/>
           </unimod_mappings>
@@ -123,7 +123,7 @@
                 <psi_modification accession="MOD:00206" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Carbamylation"   id="6" biological_significance="0"    shortname="carbamylation">
+        <pride_modification   id="6" biological_significance="0"    shortname="carbamylation">
          <unimod_mappings>
             <unimod_mapping accession="UNIMOD:5" general_modification="1"/>
          </unimod_mappings>
@@ -135,7 +135,7 @@
                 <psi_modification accession="MOD:00348" general_modification="0"/>
             </psi_modifications>
         </pride_modification  >
-        <pride_modification title="Carboxymethyl"   id="7" diff_mono="58.005479" biological_significance="0"    shortname="carboxymethyl">
+        <pride_modification    id="7" diff_mono="58.005479" biological_significance="0"    shortname="carboxymethyl">
             <unimod_mappings>
               <unimod_mapping accession="UNIMOD:6" general_modification="1"/>
             </unimod_mappings>
@@ -151,7 +151,7 @@
                 <psi_modification accession="MOD:00619" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Deamidation"     id="8"  biological_significance="1"     shortname="deamidated">
+        <pride_modification     id="8"  biological_significance="1"     shortname="deamidated">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:7" general_modification="1"/>
             <unimod_mapping accession="UNIMOD:621" general_modification="0"/>
@@ -166,7 +166,7 @@
                 <psi_modification accession="MOD:00565" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Homoserine"      id="9" biological_significance="0"   shortname="homoserine">
+        <pride_modification       id="9" biological_significance="0"   shortname="homoserine">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:10" general_modification="1"/>
           </unimod_mappings>
@@ -174,7 +174,7 @@
                 <psi_modification accession="MOD:00403" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Homoserine lactone"  id="10" biological_significance="0"  shortname="homoserine-lactone">
+        <pride_modification  id="10" biological_significance="0"  shortname="homoserine-lactone">
            <unimod_mappings>
             <unimod_mapping accession="UNIMOD:11" general_modification="1"/>
           </unimod_mappings>
@@ -184,7 +184,7 @@
                 <psi_modification accession="MOD:01704" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="NIPCAM(C)"       id="11" biological_significance="0"   shortname="nipcam-c">
+        <pride_modification      id="11" biological_significance="0"   shortname="nipcam-c">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:17" name="NIPCAM" general_modification="1"/>
           </unimod_mappings>
@@ -192,7 +192,7 @@
                 <psi_modification accession="MOD:00410" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Dehydratation"   id="12" biological_significance="1"  shortname="dehydratation">
+        <pride_modification   id="12" biological_significance="1"  shortname="dehydratation">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:23" general_modification="1"/>
           </unimod_mappings>
@@ -244,7 +244,7 @@
                 <psi_modification accession="MOD:00416" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Propionamide(C)" id="13" biological_significance="0"   shortname="propionamide">
+        <pride_modification  id="13" biological_significance="0"   shortname="propionamide">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:24" general_modification="1"/>
           </unimod_mappings>
@@ -253,7 +253,7 @@
                 <psi_modification accession="MOD:01079" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Pyro-carbamidomethyl" id="14" biological_significance="0"  shortname="pyro-carbamidomethyl">
+        <pride_modification  id="14" biological_significance="0"  shortname="pyro-carbamidomethyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:26" general_modification="1"/>
         </unimod_mappings>
@@ -261,7 +261,7 @@
                 <psi_modification accession="MOD:00419" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Oxidation"            id="15" biological_significance="1"   shortname="oxidation">
+        <pride_modification         id="15" biological_significance="1"   shortname="oxidation">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:35" general_modification="1"/>
           </unimod_mappings>
@@ -303,7 +303,7 @@
                 <psi_modification accession="MOD:00412" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Pyro-glu from Q"      id="16" biological_significance="1" shortname="deamidated">
+        <pride_modification      id="16" biological_significance="1" shortname="deamidated">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:28" general_modification="1"/>
           </unimod_mappings>
@@ -312,7 +312,7 @@
                 <psi_modification accession="MOD:00040" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Loss of ammonia" id="17" biological_significance="0"  shortname="loss-ammonia">
+        <pride_modification  id="17" biological_significance="0"  shortname="loss-ammonia">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:385" general_modification="1"/>
           </unimod_mappings>
@@ -322,7 +322,7 @@
                 <psi_modification accession="MOD:01160" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="SMA"             id="18"  biological_significance="0"  shortname="sma">
+        <pride_modification            id="18"  biological_significance="0"  shortname="sma">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:29" general_modification="1"/>
           </unimod_mappings>
@@ -336,7 +336,7 @@
                 <psi_modification accession="MOD:01607" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Cation:Na"       id="19" biological_significance="0"   shortname="cation-na">
+        <pride_modification       id="19" biological_significance="0"   shortname="cation-na">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:30" general_modification="1"/>
           </unimod_mappings>
@@ -346,7 +346,7 @@
                 <psi_modification accession="MOD:01296" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Pyridylethyl"    id="20" biological_significance="0"  shortname="pyridylethyl">
+        <pride_modification  id="20" biological_significance="0"  shortname="pyridylethyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:31" general_modification="1"/>
           </unimod_mappings>
@@ -355,7 +355,7 @@
                 <psi_modification accession="MOD:01438" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Monomethylation" id="21" biological_significance="1"    shortname="monomethylation">
+        <pride_modification  id="21" biological_significance="1"    shortname="monomethylation">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:34" general_modification="1"/>
           </unimod_mappings>
@@ -400,7 +400,7 @@
                 <psi_modification accession="MOD:00304" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Methylthio"      id="22" biological_significance="1"   shortname="methylthio">
+        <pride_modification      id="22" biological_significance="1"   shortname="methylthio">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:39" general_modification="1"/>
           </unimod_mappings>
@@ -412,7 +412,7 @@
                 <psi_modification accession="MOD:00597" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Sulfo"           id="23" biological_significance="1"   shortname="sulfo">
+        <pride_modification          id="23" biological_significance="1"   shortname="sulfo">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:40" general_modification="1"/>
           </unimod_mappings>
@@ -424,7 +424,7 @@
                 <psi_modification accession="MOD:00181" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Lipoyl"          id="24" biological_significance="1"  shortname="lipoyl">
+        <pride_modification        id="24" biological_significance="1"  shortname="lipoyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:42" general_modification="1"/>
           </unimod_mappings>
@@ -432,7 +432,7 @@
                 <psi_modification accession="MOD:00127" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Farnesylation"   id="25" biological_significance="1"  shortname="farnesylation">
+        <pride_modification   id="25" biological_significance="1"  shortname="farnesylation">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:44" general_modification="1"/>
           </unimod_mappings>
@@ -442,7 +442,7 @@
                 <psi_modification accession="MOD:01590" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Myristoylation"  id="26" biological_significance="1"        shortname="myristoylation">
+        <pride_modification   id="26" biological_significance="1"        shortname="myristoylation">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:45" general_modification="1"/>
           </unimod_mappings>
@@ -455,7 +455,7 @@
                 <psi_modification accession="MOD:00650" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Pyridoxal phosphate"  id="27" biological_significance="1"        shortname="pyridoxal phosphate">
+        <pride_modification   id="27" biological_significance="1"        shortname="pyridoxal phosphate">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:46" general_modification="1"/>
           </unimod_mappings>
@@ -463,7 +463,7 @@
                 <psi_modification accession="MOD:00128" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Palmitoylation"       id="28" biological_significance="1"        shortname="palmitoyl">
+        <pride_modification       id="28" biological_significance="1"        shortname="palmitoyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:47" general_modification="1"/>
           </unimod_mappings>
@@ -482,7 +482,7 @@
                 <psi_modification accession="MOD:00652" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Geranyl-geranyl"      id="29" biological_significance="1"        shortname="geranyl-geranyl">
+        <pride_modification  id="29" biological_significance="1"        shortname="geranyl-geranyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:48" general_modification="1"/>
           </unimod_mappings>
@@ -491,7 +491,7 @@
                 <psi_modification accession="MOD:00113" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Phosphopantetheine"   id="30" biological_significance="1"        shortname="phosphopantetheine">
+        <pride_modification   id="30" biological_significance="1"        shortname="phosphopantetheine">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:49" general_modification="1"/>
           </unimod_mappings>
@@ -499,7 +499,7 @@
                 <psi_modification accession="MOD:00159" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Flavin adenine dinucleotide" id="31" biological_significance="1" shortname="adenine-dinucleotide">
+        <pride_modification  id="31" biological_significance="1" shortname="adenine-dinucleotide">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:50" general_modification="1"/>
           </unimod_mappings>
@@ -513,7 +513,7 @@
                 <psi_modification accession="MOD:00153" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Guanidination"               id="32"  biological_significance="0"                shortname="guanidination">
+        <pride_modification          id="32"  biological_significance="0"                shortname="guanidination">
             <!--
                Check what happens with accessione id=31 (← These terms have been questioned in PSI-MOD Bug-Tracker (3449657) )
                -->
@@ -525,7 +525,7 @@
                 <psi_modification id='MOD:00445' general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Formylation"                 id="33" biological_significance="1"                  shortname="formyl">
+        <pride_modification            id="33" biological_significance="1"                  shortname="formyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:122" general_modification="1"/>
           </unimod_mappings>
@@ -543,7 +543,7 @@
                 <psi_modification accession="MOD:01483" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-D:2H(8)"                id="34"  biological_significance="0"                shortname="icat-d:2h8">
+        <pride_modification             id="34"  biological_significance="0"                shortname="icat-d:2h8">
            <unimod_mappings>
              <unimod_mapping accession="UNIMOD:12" general_modification="1"/>
            </unimod_mappings>
@@ -551,7 +551,7 @@
                 <psi_modification accession="MOD:00405" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-D"                      id="35" biological_significance="0"                      shortname="icat-d">
+        <pride_modification               id="35" biological_significance="0"                      shortname="icat-d">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:13" general_modification="1"/>
           </unimod_mappings>
@@ -559,7 +559,7 @@
                 <psi_modification accession="MOD:00406" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-C"                      id="36" biological_significance="0"                      shortname="icat-c">
+        <pride_modification              id="36" biological_significance="0"                      shortname="icat-c">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:105" general_modification="1"/>
           </unimod_mappings>
@@ -567,7 +567,7 @@
                 <psi_modification accession="MOD:00480" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="ICAT-C:13C(9)"               id="37" biological_significance="0"               shortname="icat-c:13C9">
+        <pride_modification             id="37" biological_significance="0"               shortname="icat-c:13C9">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:106" general_modification="1"/>
           </unimod_mappings>
@@ -575,7 +575,7 @@
                 <psi_modification accession="MOD:00481" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="13C(6) Silac label"          id="38" biological_significance="0"            shortname="silac-16C6">
+        <pride_modification         id="38" biological_significance="0"            shortname="silac-16C6">
             <unimod_mappings>
               <unimod_mapping accession="UNIMOD:188"  general_modification="1"/>
             </unimod_mappings>
@@ -587,7 +587,7 @@
                 <psi_modification accession="MOD:01331" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Label:18O(2)"                id="39" biological_significance="0"                  shortname="label-18O2">
+        <pride_modification             id="39" biological_significance="0"                  shortname="label-18O2">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:193" general_modification="1"/>
           </unimod_mappings>
@@ -595,7 +595,7 @@
                 <psi_modification accession="MOD:00546" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Carboxylation"               id="40" biological_significance="1"                shortname="carboxylation">
+        <pride_modification             id="40" biological_significance="1"                shortname="carboxylation">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:299" general_modification="1"/>
           </unimod_mappings>
@@ -610,7 +610,7 @@
                 <psi_modification accession="MOD:00618" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Dioxidation"                 id="41" biological_significance="1"                  shortname="dioxidation">
+        <pride_modification           id="41" biological_significance="1"                  shortname="dioxidation">
             <unimod_mappings>
             <unimod_mapping accession="UNIMOD:425" general_modification="1"/>
           </unimod_mappings>
@@ -636,7 +636,7 @@
                 <psi_modification accession="MOD:01291" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="iTRAQ4plex"                  id="42" biological_significance="0"                  shortname="iTRAQ4plex">
+        <pride_modification          id="42" biological_significance="0"                  shortname="iTRAQ4plex">
             <unimod_mappings>
               <unimod_mapping accession="UNIMOD:214" general_modification="1"/>
             </unimod_mappings>
@@ -658,7 +658,7 @@
                 <psi_modification accession="MOD:01509" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="iTRAQ8plex"     id="43" biological_significance="0"                  shortname="iTRAQ4plex">
+        <pride_modification     id="43" biological_significance="0"                  shortname="iTRAQ4plex">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:730" general_modification="1"/>
           </unimod_mappings>
@@ -693,7 +693,7 @@
                 <psi_modification accession="MOD:01559" general_modification="0"/>
             </psi_modifications>
         </pride_modification >
-        <pride_modification title="TMT6plex"       id="44" biological_significance="0" shortname="TMT6plex">
+        <pride_modification   id="44" biological_significance="0" shortname="TMT6plex">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:737" general_modification="1"/>
           </unimod_mappings>
@@ -743,7 +743,7 @@
                 <psi_modification accession="MOD:01763" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Ubiquitinylation"        id="45" biological_significance="1" shortname="glygly; gg">
+        <pride_modification     id="45" biological_significance="1" shortname="glygly; gg">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:121" general_modification="1"/>
           </unimod_mappings>
@@ -751,7 +751,7 @@
                 <psi_modification accession="MOD:00492" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Methylation"    id="46" biological_significance="1" shortname="methyl">
+        <pride_modification   id="46" biological_significance="1" shortname="methyl">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:34" general_modification="1"/>
           </unimod_mappings>
@@ -761,7 +761,7 @@
                 <psi_modification accession="MOD:00724" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Single Amino Acid Polymorphisms" id="47" biological_significance="1"  shortname="SAP">
+        <pride_modification  id="47" biological_significance="1"  shortname="AA Substitution">
             <psi_modifications>
                 <psi_modification accession="MOD:00009" general_modification="1"/>
                 <psi_modification accession="MOD:00868" general_modification="0"/>
@@ -770,18 +770,18 @@
                 <psi_modification accession="MOD:01651" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="L-cysteine residue"       id="48" biological_significance="1" shortname="L-cysteine residue" >
+        <pride_modification      id="48" biological_significance="1" shortname="L-cysteine residue" >
             <psi_modifications>
                 <psi_modification accession="MOD:00014" general_modification="1"/>
                 <psi_modification accession="MOD:01457" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="L-cystine (cross-link)"   id="49" biological_significance="1" shortname="L-cystine-cross-link" >
+        <pride_modification   id="49" biological_significance="1" shortname="L-cystine-cross-link" >
             <psi_modifications>
                 <psi_modification accession="MOD:00034" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Label:15N(2)"             id="50" biological_significance="0" shortname="label:15N2">
+        <pride_modification            id="50" biological_significance="0" shortname="label:15N2">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:995" general_modification="1"/>
           </unimod_mappings>
@@ -789,12 +789,12 @@
                 <psi_modification accession="MOD:01603" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Label:15N(1)"             id="51" biological_significance="0" shortname="label:15N1">
+        <pride_modification           id="51" biological_significance="0" shortname="label:15N1">
           <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:994" general_modification="1"/>
           </unimod_mappings>
         </pride_modification>
-        <pride_modification title="CysTMT6plex-126"          id="52" biological_significance="0" shortname="cysTMT6plex-126">
+        <pride_modification      id="52" biological_significance="0" shortname="cysTMT6plex-126">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:985" general_modification="1"/>
           </unimod_mappings>
@@ -803,37 +803,37 @@
                 <psi_modification accession="MOD:01821" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification title="Ethyl amino"              id="53" biological_significance="0" shortname="ethyl-amino">
+        <pride_modification              id="53" biological_significance="0" shortname="ethyl-amino">
           <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:926" general_modification="1"/>
             </unimod_mappings>
         </pride_modification>
-        <pride_modification title="Ala-&gt;Lys substitution" id="54" biological_significance="1" shortname="ala-lys-substitution">
+        <pride_modification  id="54" biological_significance="1" shortname="ala-lys-substitution">
             <unimod_mappings>
               <unimod_mapping accession="UNIMOD:1048" general_modification="1"/>
             </unimod_mappings>
         </pride_modification>
-        <pride_modification title="Ala-&gt;Gln substitution" id="55" biological_significance="1" shortname="ala-gln-substitution">
+        <pride_modification  id="55" biological_significance="1" shortname="ala-gln-substitution">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:1051" general_modification="1"/>
           </unimod_mappings>
         </pride_modification>
-        <pride_modification title="Asp-&gt;Phe substitution" id="56" biological_significance="1" shortname="asp->phe-substitution">
+        <pride_modification  id="56" biological_significance="1" shortname="asp->phe-substitution">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:1068" general_modification="1"/>
           </unimod_mappings>
         </pride_modification>
-        <pride_modification title="Asp->Lys substitution"    id="57" biological_significance="1" shortname="asp->lys-substitution">
+        <pride_modification   id="57" biological_significance="1" shortname="asp->lys-substitution">
               <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:1070" general_modification="1"/>
               </unimod_mappings>
         </pride_modification>
-        <pride_modification title="Asp-&gt;Met substitution" id="58" biological_significance="1" shortname="asp-met-substitution">
+        <pride_modification  id="58" biological_significance="1" shortname="asp-met-substitution">
               <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:1071" general_modification="1"/>
               </unimod_mappings>
         </pride_modification>
-        <pride_modification title="Hydroxytrimethyl"         id="59" biological_significance="1" shortname="hydroxytrimethyl">
+        <pride_modification        id="59" biological_significance="1" shortname="hydroxytrimethyl">
               <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:445" general_modification="1"/>
               </unimod_mappings>
@@ -841,6 +841,341 @@
                 <psi_modification accession="MOD:00364" general_modification="1" />
             </psi_modifications>
         </pride_modification>
+        <pride_modification  id="60" biological_significance="1" shortname="sulfide">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:421" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+                <psi_modification accession="MOD:00274" general_modification="1" />
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="61" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="669" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="62" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="1044" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="63" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="108" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+                <psi_modification accession="MOD:00483" general_modification="1"/>
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="64" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="1082" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+                <psi_modification accession="MOD:00483" general_modification="1"/>
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="37" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+                <psi_modification accession="MOD:00430" general_modification="1"/>
+                <psi_modification accession="MOD:00855" general_modification="0"/>
+                <psi_modification accession="MOD:00857" general_modification="0"/>
+                <psi_modification accession="MOD:00898" general_modification="0"/>
+                <psi_modification accession="MOD:01669" general_modification="0"/>
+                <psi_modification accession="MOD:01687" general_modification="0"/>
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="66" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="1130" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="67" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="1146" general_modification="1" />
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="68" shortname="oxidation-oxolactone" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="288" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="69" shortname="amidine" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="141" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+              <psi_modification accession="MOD:00509" general_modification="1" />
+              <psi_modification accession="MOD:01353" general_modification="0" />
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="70" shortname="dimethyl-CHD2" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="199" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+              <psi_modification accession="MOD:00552" general_modification="1" />
+              <psi_modification accession="MOD:01254" general_modification="0" />
+              <psi_modification accession="MOD:01459" general_modification="0" />
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="71" shortname="label-13C6-15N2" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="259" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+              <psi_modification accession="MOD:00582" general_modification="1"/>
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="72" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1088" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="73" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1108" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="74" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1128" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="75" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1154" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="76" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1182" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="77" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1194" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="78" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1199" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="79" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1211" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="80" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1219" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="81" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:1223" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="82" shortname="O18_STY" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:258" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="83" shortname="13C6-15N4" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:267" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="84" shortname="13C6-15N1" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:268" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="85" shortname="Pyro_glu" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:27" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="86" shortname="Cysteinyl" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:312" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="87" shortname="dimethyl-heavy" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:330" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="88" shortname="pyroglutamic" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:359" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="89" shortname="ICPL_heavy" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:36" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="90" shortname="icpl_heavy" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:364" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="91" shortname="lys4" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:481" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="92" shortname="hydroxymethyl" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:414" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+              <psi_modification accession="MOD:00241" general_modification="1"/>
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="93" shortname="glycerylPE" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:396" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="94" shortname="hypusine" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:379" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+
+        <pride_modification  id="95" shortname="icpl_light" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:365" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="96" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:589" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="97" shortname="propionyl_light" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:58" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="98" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:571" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="99" shortname="acetyl_heavy" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:56" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+              <psi_modification accession="MOD:00449" general_modification="1"/>
+              <psi_modification accession="MOD:01233" general_modification="0"/>
+            </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="100" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:545" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="101" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:540" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="102" shortname="iTRAQ114" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:532" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="103" shortname="diethylation" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:518" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+
+        <pride_modification  id="104" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:590" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="105" shortname="propionyl_heavy" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:59" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="106" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:59" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="107" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:599" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="108" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:629" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="109" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:664" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="110" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:671" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="111" shortname="AA substitution" biological_significance="1">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:596" general_modification="1"/>
+            </unimod_mappings>
+        </pride_modification>
+        <pride_modification  id="112" shortname="cysteic_acid" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:345" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+            <psi_modification accession="MOD:00460" general_modification="1"/>
+          </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="113" shortname="13C9" biological_significance="0">
+            <unimod_mappings>
+                <unimod_mapping accession="UNIMOD:148" general_modification="1"/>
+            </unimod_mappings>
+            <psi_modifications>
+            <psi_modification accession="MOD:00540" general_modification="1"/>
+            <psi_modification accession="MOD:01326" general_modification="0"/>
+            <psi_modification accession="MOD:01327" general_modification="0"/>
+          </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="114" shortname="butanoylated" biological_significance="1">
+            <psi_modifications>
+              <psi_modification accession="MOD:01996" general_modification="1"/>
+              <psi_modification accession="MOD:01997" general_modification="0"/>
+          </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="115" shortname="bacillithiol-disulfide" biological_significance="1">
+            <psi_modifications>
+              <psi_modification accession="MOD:01860" general_modification="1"/>
+          </psi_modifications>
+        </pride_modification>
+        <pride_modification  id="116" shortname="Lys_CamCys" biological_significance="0">
+            <unimod_mappings>
+              <unimo_mappings accession="UNIMOD:903" general_modification="1"/>
+          </unimod_mappings>
+        </pride_modification>
     </pride_modifications>
+
+
+Accession-> UNIMOD:671 not found shortname
 
 </pride_mod>

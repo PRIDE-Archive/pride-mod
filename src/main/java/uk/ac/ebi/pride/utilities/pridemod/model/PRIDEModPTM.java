@@ -18,19 +18,16 @@ public class PRIDEModPTM extends AbstractPTM{
     private Map<Comparable, Map.Entry<PSIModPTM, Boolean>> psiChildren = new HashMap<>();
     private boolean biologicalRelevant;
 
-    private String title;
-
     /**
      * Contructor with all the fields for a general modification.
      * @param accession
-     * @param title
+
      * @param unimodReference
      * @param shortName
      * @param biologicalRelevant
      * @param children
      */
     public PRIDEModPTM(String accession,
-                       String title,
                        Map<Comparable, Map.Entry<UniModPTM,Boolean>> unimodReference,
                        String shortName, boolean biologicalRelevant, Map<Comparable, Map.Entry<PSIModPTM, Boolean>> children) {
         super(accession);
@@ -38,16 +35,12 @@ public class PRIDEModPTM extends AbstractPTM{
         this.shortName = shortName;
         this.psiChildren = children;
         this.biologicalRelevant = biologicalRelevant;
-        this.title = title;
     }
 
     public String getShortName() {
         return shortName;
     }
 
-    public String getTitle(){
-        return this.title;
-    }
 
     public boolean isBiologicalRelevant() {
         return biologicalRelevant;

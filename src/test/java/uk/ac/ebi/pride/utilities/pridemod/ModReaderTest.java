@@ -93,11 +93,11 @@ public class ModReaderTest {
         // Unimod works with Unimod Prefix and Without it, this run is with Prefix
         Assert.assertTrue(modReader.getPRIDEModByAccession("UNIMOD:1").getShortName().equalsIgnoreCase("acetyl"));
 
-        Assert.assertTrue(modReader.getPRIDEModByAccession("CHEMOD:59.049690") != null );
+        Assert.assertTrue(modReader.getPRIDEModByAccession("CHEMMOD:59.049690") != null );
 
-        Assert.assertTrue(modReader.getPRIDEModByAccession("CHEMOD:0.984016") != null);
+        Assert.assertTrue(modReader.getPRIDEModByAccession("CHEMMOD:0.984016") != null);
 
-        Assert.assertTrue(modReader.getPRIDEModByCHEMODAccessionAndPosition("CHEMOD:0.984016", "R") != null );
+        Assert.assertTrue(modReader.getPRIDEModByAccessionAndAmminoAcid("CHEMMOD:0.984016", "R") != null );
 
     }
 

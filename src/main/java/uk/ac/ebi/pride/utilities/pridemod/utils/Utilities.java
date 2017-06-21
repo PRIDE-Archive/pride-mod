@@ -90,12 +90,12 @@ public class Utilities {
     }
 
     public static boolean isChemodAccession(String accession) {
-        return accession.toUpperCase().contains("CHEMOD:");
+        return accession.toUpperCase().contains("CHEMMOD:");
     }
 
     public static Double getChemodMass(String accession) {
         if(isChemodAccession(accession)){
-            return Double.parseDouble(accession.toUpperCase().replace("CHEMOD:", ""));
+            return Double.parseDouble(accession.toUpperCase().replace("CHEMMOD:", ""));
         }
         return null;
     }

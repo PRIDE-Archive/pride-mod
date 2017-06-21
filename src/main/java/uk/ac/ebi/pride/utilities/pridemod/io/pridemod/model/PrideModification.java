@@ -51,9 +51,6 @@ public class PrideModification
     protected BigInteger biologicalSignificance;
     @XmlAttribute(required = true)
     protected BigInteger id;
-    @XmlAttribute(required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected String title;
     @XmlAttribute(name = "shortname", required = false)
     @XmlSchemaType(name = "anyURI")
     protected String shortname;
@@ -139,26 +136,6 @@ public class PrideModification
         this.id = value;
     }
 
-    /**
-     * Gets the value of the title property.
-     *
-     * @return possible object is
-     *         {@link String }
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * Sets the value of the title property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
-
     public String getShortname() {
         return shortname;
     }
@@ -178,4 +155,6 @@ public class PrideModification
                     return psiModification.getAccession();
         throw new DataAccessException("Now Accession has been found for the Modification.");
     }
+
+
 }

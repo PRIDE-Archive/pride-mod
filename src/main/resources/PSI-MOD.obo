@@ -11078,6 +11078,7 @@ xref: MassMono: "150.993929"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:345"
 is_a: MOD:00708 ! sulfur oxygenated L-cysteine
 
 [Term]

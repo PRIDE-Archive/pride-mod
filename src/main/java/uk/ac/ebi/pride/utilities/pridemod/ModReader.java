@@ -172,7 +172,7 @@ public class ModReader {
      * @return
      */
     public PRIDEModPTM getPRIDEModByAccession(String accession){
-        String newAccession = getUniqueUniModAccessionFromCheMod(accession);
+        String newAccession = getUniquePRIDEModAccessionFromCheMod(accession);
         if(newAccession != null)
             accession = newAccession;
         PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
@@ -183,7 +183,7 @@ public class ModReader {
 
     /**
      * Retrieve PRIDE Annotation PTM using the Accession of the corresponding
-     * PTM in the group. The PRIDE Annotation PTM aggregate a set of PTMs in a
+     * AminoAcid where the modification occur. The PRIDE Annotation PTM aggregate a set of PTMs in a
      * generic PTM with some important annotations on top such as:
      *   - Biologically relevant
      *   - ShortName
@@ -191,25 +191,13 @@ public class ModReader {
      * @param accession
      * @return
      */
-    public PRIDEModPTM getPRIDEModByCHEMODAccessionAndPosition(String accession, String AA){
-        String newAccession = getUniqueUniModAccessionFromCheMod(accession, AA);
+    public PRIDEModPTM getPRIDEModByAccessionAndAmminoAcid(String accession, String aminoAcid){
+        String newAccession = getUniquePRIDEModAccessionFromCheMod(accession, aminoAcid);
         if(newAccession != null)
             accession = newAccession;
         PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
         if(prideMod != null)
             return prideMod;
-        return null;
-    }
-
-    private String getUniqueUniModAccessionFromCheMod(String accession, String aa) {
-        if(Utilities.isChemodAccession(accession)){
-            Double mass = Utilities.getChemodMass(accession);
-            if(mass != null){
-                List<PTM> unimodList = unimodController.getPTMListByMonoDeltaMassSpecificity(mass,aa);
-                if(unimodList != null && unimodList.size() == 1)
-                    return unimodList.get(0).getAccession();
-            }
-        }
         return null;
     }
 
@@ -224,7 +212,7 @@ public class ModReader {
      * @param accession CHEMOD Accession.
      * @return A {@link UniModPTM} accession
      */
-    public String getUniqueUniModAccessionFromCheMod(String accession){
+    private String getUniquePRIDEModAccessionFromCheMod(String accession){
         if(Utilities.isChemodAccession(accession)){
             Double mass = Utilities.getChemodMass(accession);
             if(mass != null){
@@ -232,6 +220,41 @@ public class ModReader {
                 UniModPTM generalModification = prideModController.getGeneralModificationUNIMOD(unimodList);
                 if(generalModification != null)
                     return generalModification.getAccession();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * This function retrieve a UniMod accession if the accession is Unique, if the
+     * PTM is not unique to one accession, it can't be assigned to a PTM without
+     * manual curation. The accession should have the following format:
+     *  - CHEMOD:34.560056
+     *  - CHEMOD:-345.8999
+     *
+     * @param accession CHEMOD Accession.
+     * @return A {@link UniModPTM} accession
+     */
+    private String getUniquePRIDEModAccessionFromCheMod(String accession, String aminoAcid){
+        if(Utilities.isChemodAccession(accession)){
+            Double mass = Utilities.getChemodMass(accession);
+            if(mass != null){
+                List<PTM> unimodList = unimodController.getPTMListByMonoDeltaMassSpecificity(mass, aminoAcid);
+                UniModPTM generalModification = prideModController.getGeneralModificationUNIMOD(unimodList);
+                if(generalModification != null)
+                    return generalModification.getAccession();
+            }
+        }
+        return null;
+    }
+
+    private String getUniqueUnimodAccessionFromCheMod(String accession, String aa) {
+        if(Utilities.isChemodAccession(accession)){
+            Double mass = Utilities.getChemodMass(accession);
+            if(mass != null){
+                List<PTM> unimodList = unimodController.getPTMListByMonoDeltaMassSpecificity(mass,aa);
+                if(unimodList != null && unimodList.size() == 1)
+                    return unimodList.get(0).getAccession();
             }
         }
         return null;
@@ -412,6 +435,4 @@ public class ModReader {
         List<PTM> ptms  = getAnchorModificationPosition(accession, aa);
         return ptms == null || ptms.isEmpty();
     }
-
-
 }
