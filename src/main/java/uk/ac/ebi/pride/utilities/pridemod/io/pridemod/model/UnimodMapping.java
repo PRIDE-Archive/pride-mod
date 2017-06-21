@@ -23,12 +23,13 @@ import java.math.BigInteger;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "unimod_mapping")
-public class UnimodMapping
-        implements Serializable, PrideModObject {
+public class UnimodMapping implements Serializable, PrideModObject {
 
     private final static long serialVersionUID = 100L;
     @XmlAttribute(required = true)
     protected String accession;
+    @XmlAttribute(name = "general_modification", required = true)
+    protected BigInteger generalModification;
 
 
     /**
@@ -49,6 +50,26 @@ public class UnimodMapping
      */
     public void setAccession(String value) {
         this.accession = value;
+    }
+
+    /**
+     * Gets the value of the generalModification property.
+     *
+     * @return possible object is
+     *         {@link java.math.BigInteger }
+     */
+    public BigInteger getGeneralModification() {
+        return generalModification;
+    }
+
+    /**
+     * Sets the value of the generalModification property.
+     *
+     * @param value allowed object is
+     *              {@link java.math.BigInteger }
+     */
+    public void setGeneralModification(BigInteger value) {
+        this.generalModification = value;
     }
 
 }

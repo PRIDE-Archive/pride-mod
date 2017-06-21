@@ -60,8 +60,12 @@ public class PRIDEModDataAccessController extends AbstractDataAccessController {
                 String shortName = oldMod.getShortname();
                 String title     = oldMod.getTitle();
                 UniModPTM uniModPTM = null;
-                if(oldMod.getUnimodMapping() != null){
-                    uniModPTM = (UniModPTM) unimodController.getPTMbyAccession(oldMod.getUnimodMapping().getAccession());
+                Map<Comparable, Map.Entry<UniModPTM, Boolean>> unimodChildren = new HashMap<>();
+                if(oldMod.getUnimodMappings() != null && oldMod.getUnimodMappings().getUnimodMapping() != null){
+                    for(UnimodMapping unimodMapping: oldMod.getUnimodMappings().getUnimodMapping()){
+                        uniModPTM = (UniModPTM) unimodController.getPTMbyAccession(unimodMapping.getAccession());
+                        unimodChildren.put(uniModPTM.getAccession(), new AbstractMap.SimpleEntry<UniModPTM, Boolean>(uniModPTM, unimodMapping.getGeneralModification().intValue() == 1));
+                    }
                 }
                 Map<Comparable, Map.Entry<PSIModPTM, Boolean>> children = new HashMap<>();
                 if(oldMod.getPsiModifications() != null && !oldMod.getPsiModifications().getPsiModification().isEmpty()){
@@ -70,7 +74,7 @@ public class PRIDEModDataAccessController extends AbstractDataAccessController {
                         children.put(psiModification.getAccession(), new AbstractMap.SimpleEntry<>(psiModPTM, psiModification.getGeneralModification().intValue() ==1));
                     }
                 }
-                PRIDEModPTM ptm = new PRIDEModPTM(accession, title,uniModPTM,shortName,(oldMod.getBiologicalSignificance().intValue() == 1),children);
+                PRIDEModPTM ptm = new PRIDEModPTM(accession, title,unimodChildren,shortName,(oldMod.getBiologicalSignificance().intValue() == 1),children);
                 ptmMap.put(accession, ptm);
             }
         }

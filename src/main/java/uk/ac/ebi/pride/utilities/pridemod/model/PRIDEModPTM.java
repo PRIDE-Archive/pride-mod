@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class PRIDEModPTM extends AbstractPTM{
 
-    UniModPTM uniModRef;
+    private Map<Comparable, Map.Entry<UniModPTM,Boolean>> uniModRef = new HashMap<>();
     private String shortName;
 
     private Map<Comparable, Map.Entry<PSIModPTM, Boolean>> psiChildren = new HashMap<>();
@@ -34,7 +34,7 @@ public class PRIDEModPTM extends AbstractPTM{
      */
     public PRIDEModPTM(String accession,
                        String title,
-                       UniModPTM unimodReference,
+                       Map<Comparable, Map.Entry<UniModPTM,Boolean>> unimodReference,
                        String shortName, boolean biologicalRelevant, Map<Comparable, Map.Entry<PSIModPTM, Boolean>> children) {
         super(accession);
         this.uniModRef = unimodReference;
@@ -42,10 +42,6 @@ public class PRIDEModPTM extends AbstractPTM{
         this.psiChildren = children;
         this.biologicalRelevant = biologicalRelevant;
         this.title = title;
-    }
-
-    public UniModPTM getUniModRef() {
-        return uniModRef;
     }
 
     public String getShortName() {
@@ -67,8 +63,7 @@ public class PRIDEModPTM extends AbstractPTM{
      * @return true if the UNIMOD modification reference is the same that the accession
      */
     public boolean isUniModRef(String accession) {
-        return (uniModRef != null &&
-                uniModRef.accession.toUpperCase().equalsIgnoreCase(accession.toUpperCase()));
+        return (uniModRef != null && !uniModRef.isEmpty() && uniModRef.containsKey(accession.toUpperCase()));
     }
 
     /**
@@ -82,9 +77,10 @@ public class PRIDEModPTM extends AbstractPTM{
 
     @Override
     public String getAccession() {
-        if(uniModRef != null)
-            return uniModRef.getAccession();
-        PSIModPTM psiModPTM = getGeneralModification();
+        UniModPTM uniModPTM = getUnimodGeneralModification();
+        if(uniModPTM != null)
+            return uniModPTM.getAccession();
+        PSIModPTM psiModPTM = getPSIGeneralModification();
         if(psiModPTM != null)
             return psiModPTM.getAccession();
         throw new DataAccessException("The PRIDE Modifications is wrongly defined");
@@ -92,9 +88,10 @@ public class PRIDEModPTM extends AbstractPTM{
 
     @Override
     public String getName() {
-        if(uniModRef != null)
-            return uniModRef.getName();
-        PSIModPTM psiModPTM = getGeneralModification();
+        UniModPTM uniModPTM = getUnimodGeneralModification();
+        if(uniModPTM != null)
+            return uniModPTM.getName();
+        PSIModPTM psiModPTM = getPSIGeneralModification();
         if(psiModPTM != null)
             return psiModPTM.getName();
         throw new DataAccessException("The PRIDE Modifications is wrongly defined");
@@ -102,9 +99,10 @@ public class PRIDEModPTM extends AbstractPTM{
 
     @Override
     public Double getMonoDeltaMass() {
-        if(uniModRef != null)
-            return uniModRef.getMonoDeltaMass();
-        PSIModPTM psiModPTM = getGeneralModification();
+        UniModPTM uniModPTM = getUnimodGeneralModification();
+        if(uniModPTM != null)
+            return uniModPTM.getMonoDeltaMass();
+        PSIModPTM psiModPTM = getPSIGeneralModification();
         if(psiModPTM != null)
             return psiModPTM.getMonoDeltaMass();
         throw new DataAccessException("The PRIDE Modifications is wrongly defined");
@@ -112,9 +110,10 @@ public class PRIDEModPTM extends AbstractPTM{
 
     @Override
     public Double getAveDeltaMass() {
-        if(uniModRef != null)
-            return uniModRef.getAveDeltaMass();
-        PSIModPTM psiModPTM = getGeneralModification();
+        UniModPTM uniModPTM = getUnimodGeneralModification();
+        if(uniModPTM != null)
+            return uniModPTM.getAveDeltaMass();
+        PSIModPTM psiModPTM = getPSIGeneralModification();
         if(psiModPTM != null)
             return psiModPTM.getAveDeltaMass();
         throw new DataAccessException("The PRIDE Modifications is wrongly defined");
@@ -122,9 +121,10 @@ public class PRIDEModPTM extends AbstractPTM{
 
     @Override
     public String getDescription() {
-        if(uniModRef != null)
-            return uniModRef.getDescription();
-        PSIModPTM psiModPTM = getGeneralModification();
+        UniModPTM uniModPTM = getUnimodGeneralModification();
+        if(uniModPTM != null)
+            return uniModPTM.getDescription();
+        PSIModPTM psiModPTM = getPSIGeneralModification();
         if(psiModPTM != null)
             return psiModPTM.getDescription();
         throw new DataAccessException("The PRIDE Modifications is wrongly defined");
@@ -134,7 +134,8 @@ public class PRIDEModPTM extends AbstractPTM{
     public List<Specificity> getSpecificityCollection() {
         List<Specificity> specificities = new ArrayList<>();
         if(uniModRef != null)
-            specificities.addAll(uniModRef.getSpecificityCollection());
+            for(Map.Entry uniModValue: uniModRef.values())
+                specificities.addAll(((UniModPTM)uniModValue).getSpecificityCollection());
         if(psiChildren != null){
             for(Map.Entry psiModValue: psiChildren.values()){
                 specificities.addAll(((PSIModPTM)psiModValue.getKey()).getSpecificityCollection());
@@ -150,10 +151,19 @@ public class PRIDEModPTM extends AbstractPTM{
                 '}';
     }
 
-    private PSIModPTM getGeneralModification(){
+    private PSIModPTM getPSIGeneralModification(){
         for(Map.Entry psiModPTM: psiChildren.values()){
             if((Boolean) psiModPTM.getValue())
                 return (PSIModPTM) psiModPTM.getKey();
+        }
+        return null;
+
+    }
+
+    private UniModPTM getUnimodGeneralModification(){
+        for(Map.Entry unimodPTM: uniModRef.values()){
+            if((Boolean) unimodPTM.getValue())
+                return (UniModPTM) unimodPTM.getKey();
         }
         return null;
 

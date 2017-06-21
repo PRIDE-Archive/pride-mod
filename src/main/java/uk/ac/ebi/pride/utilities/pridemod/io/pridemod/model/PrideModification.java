@@ -35,7 +35,7 @@ import java.util.List;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "unimodMapping",
+        "unimodMappings",
         "psiModifications"
 })
 @XmlRootElement(name = "pride_modification")
@@ -43,8 +43,8 @@ public class PrideModification
         implements Serializable, PrideModObject {
 
     private final static long serialVersionUID = 100L;
-    @XmlElement(name = "unimod_mapping", required = true)
-    protected UnimodMapping unimodMapping;
+    @XmlElement(name = "unimod_mappings", required = true)
+    protected UnimodMappings unimodMappings;
     @XmlElement(name = "psi_modifications", required = true)
     protected PsiModifications psiModifications;
     @XmlAttribute(name = "biological_significance", required = true)
@@ -65,8 +65,8 @@ public class PrideModification
      * @return possible object is
      *         {@link UnimodMapping }
      */
-    public UnimodMapping getUnimodMapping() {
-        return unimodMapping;
+    public UnimodMappings getUnimodMappings() {
+        return unimodMappings;
     }
 
     /**
@@ -75,8 +75,8 @@ public class PrideModification
      * @param value allowed object is
      *              {@link UnimodMapping }
      */
-    public void setUnimodMapping(UnimodMapping value) {
-        this.unimodMapping = value;
+    public void setUnimodMappings(UnimodMappings value) {
+        this.unimodMappings = value;
     }
 
     /**
@@ -168,9 +168,11 @@ public class PrideModification
     }
 
     public String getAccession() {
-        if(this.getUnimodMapping() != null)
-            return unimodMapping.getAccession();
-        else if(this.getPsiModifications() != null && !this.getPsiModifications().getPsiModification().isEmpty())
+        if(this.getUnimodMappings() != null && this.getUnimodMappings().getUnimodMapping() != null && !this.getUnimodMappings().getUnimodMapping().isEmpty())
+            for (UnimodMapping unimodMapping : this.getUnimodMappings().getUnimodMapping())
+                if (unimodMapping.generalModification.intValue() == 1)
+                    return unimodMapping.getAccession();
+        if(this.getPsiModifications() != null && !this.getPsiModifications().getPsiModification().isEmpty())
             for (PsiModification psiModification : this.getPsiModifications().getPsiModification())
                 if (psiModification.generalModification.intValue() == 1)
                     return psiModification.getAccession();

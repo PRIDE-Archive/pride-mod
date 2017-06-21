@@ -76,7 +76,7 @@ public class AbstractDataAccessController implements DataAccessController {
     public List<PTM> getPTMListByPatternDescription(String descriptionPattern) {
         List<PTM> ptms = new ArrayList<>();
         for (PTM ptm : ptmMap.values()) {
-            if (ptm.getDescription().toUpperCase().contains(descriptionPattern.toUpperCase()))
+            if (ptm.getDescription() !=null && ptm.getDescription().toUpperCase().contains(descriptionPattern.toUpperCase()))
                 ptms.add(ptm);
         }
         return ptms;
