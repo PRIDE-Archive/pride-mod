@@ -229,8 +229,9 @@ public class ModReader {
             Double mass = Utilities.getChemodMass(accession);
             if(mass != null){
                 List<PTM> unimodList = unimodController.getPTMListByMonoDeltaMass(mass);
-                if(unimodList != null && unimodList.size() == 1)
-                    return unimodList.get(0).getAccession();
+                UniModPTM generalModification = prideModController.getGeneralModificationUNIMOD(unimodList);
+                if(generalModification != null)
+                    return generalModification.getAccession();
             }
         }
         return null;

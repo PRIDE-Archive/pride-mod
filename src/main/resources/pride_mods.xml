@@ -44,7 +44,9 @@
         </pride_modification>
         <pride_modification title="Amidation"     id="2" biological_significance="1"    shortname="amidated">
           <unimod_mappings>
-            <unimod_mapping accession="UNIMOD:2" general_modification="1"/>
+              <unimod_mapping accession="UNIMOD:2" general_modification="1"/>
+              <unimod_mapping accession="UNIMOD:555" general_modification="0" />
+              <unimod_mapping accession="UNIMOD:561" general_modification="0" />
           </unimod_mappings>
           <psi_modifications>
                 <psi_modification accession="MOD:00674" general_modification="1"/>
@@ -152,6 +154,8 @@
         <pride_modification title="Deamidation"     id="8"  biological_significance="1"     shortname="deamidated">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:7" general_modification="1"/>
+            <unimod_mapping accession="UNIMOD:621" general_modification="0"/>
+            <unimod_mapping accession="UNIMOD:632" general_modification="0"/>
           </unimod_mappings>
             <psi_modifications>
                 <psi_modification accession="MOD:00400" general_modification="1"/>

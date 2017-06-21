@@ -94,4 +94,20 @@ public class PRIDEModDataAccessController extends AbstractDataAccessController {
         }
         return null;
     }
+
+    public UniModPTM getGeneralModificationUNIMOD(List<PTM> unimodList) {
+        for(PTM ptmOldValue: ptmMap.values()){
+            if(!((PRIDEModPTM) ptmOldValue).getChieldUnimodPTMSs().isEmpty()){
+                boolean found = true;
+                Collection<UniModPTM> listMods = ((PRIDEModPTM) ptmOldValue).getChieldUnimodPTMSs();
+                for(PTM unimodQuery: unimodList){
+                   if(!listMods.contains(unimodQuery))
+                      found = false;
+                }
+                if(found)
+                    return ((PRIDEModPTM) ptmOldValue).getUnimodGeneralModification();
+            }
+        }
+        return null;
+    }
 }

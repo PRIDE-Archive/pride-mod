@@ -2,10 +2,7 @@ package uk.ac.ebi.pride.utilities.pridemod.model;
 
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * The PRIDEModPTM contains the information for specific modifications in PRIDE annotation system.
@@ -160,13 +157,21 @@ public class PRIDEModPTM extends AbstractPTM{
 
     }
 
-    private UniModPTM getUnimodGeneralModification(){
+    public UniModPTM getUnimodGeneralModification(){
         for(Map.Entry unimodPTM: uniModRef.values()){
             if((Boolean) unimodPTM.getValue())
                 return (UniModPTM) unimodPTM.getKey();
         }
         return null;
 
+    }
+
+    public Collection<UniModPTM> getChieldUnimodPTMSs(){
+        List<UniModPTM> uniModPTMS = new ArrayList<>();
+        if(uniModRef != null && !uniModRef.values().isEmpty())
+            for(Map.Entry unimodEntry: uniModRef.values())
+                uniModPTMS.add((UniModPTM) unimodEntry.getKey());
+        return uniModPTMS;
     }
 
 }
