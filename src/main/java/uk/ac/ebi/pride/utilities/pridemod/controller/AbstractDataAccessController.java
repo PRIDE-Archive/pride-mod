@@ -10,12 +10,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * yperez
+ * The abstract data access controller contains the ptmMap a key->value pair object that store all the information
+ * for the PTMs in the ontology. It also contains the reference to the original source file that
+ * has been used to load the ontology. The abstract controller contains default methods to
+ * retrieve, and populate the ontology.
+ *
+ * @author ypriverol
  */
 public class AbstractDataAccessController implements DataAccessController {
 
     public Map<Comparable, PTM> ptmMap;
-
     private InputStream source;
 
     /**
@@ -107,4 +111,5 @@ public class AbstractDataAccessController implements DataAccessController {
         }
         return ptms;
     }
+
 }

@@ -4,17 +4,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * This code is licensed under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * ==Overview==
- * <p>
- * This class contains the modification for Neutral loss
- * <p>
- * Created by ypriverol (ypriverol@gmail.com) on 31/05/2017.
+ * The MS modifications contains a set of modifications that are encoded in MS like the fragment neutral losses
+ *
+ * @author ypriverol
  */
 public enum MSModification implements PTM{
 

@@ -3,9 +3,11 @@ package uk.ac.ebi.pride.utilities.pridemod.utils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 /**
- * yperez
+ * This class contains important constants that are need on all classes and packages.
  */
-public class PRIDEModUtils {
+public class Constants {
+
+    public static final String UNIMOD_TAG = "UniMod:";
 
     public enum Database {
         PSIMOD, UNIMOD, MS, NONE

@@ -64,6 +64,14 @@ public class AbstractPTM implements PTM {
         this.formula = formula;
     }
 
+    /**
+     * Constructor when only an accession and name is known
+     * @param accession
+     */
+    public AbstractPTM(String accession){
+        this.accession = accession;
+    }
+
     @Override
     public String getAccession() {
         return accession;

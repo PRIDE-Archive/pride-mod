@@ -11,6 +11,7 @@ import uk.ac.ebi.pride.utilities.pridemod.io.psimod.PSIModReader;
 import uk.ac.ebi.pride.utilities.pridemod.model.PSIModPTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
+import uk.ac.ebi.pride.utilities.pridemod.utils.Constants;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,11 +21,14 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * yperez
+ * The {@link PSIModDataAccessController} contains all the methods to read, and query the PSI Obo Ontology.
+ * The Current obo file has been edited to improve the retrieval options and cross-references between
+ * databases.
+ *
+ * @author ypriverol
  */
-public class PSIModDataAccessController extends AbstractDataAccessController{
 
-    private static final String UNIMOD_TAG = "UniMod:";
+public class PSIModDataAccessController extends AbstractDataAccessController{
 
     private static final Logger logger = LoggerFactory.getLogger(UnimodDataAccessController.class);
 
@@ -110,7 +114,7 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
                     if(((Xref)xref).getIdref().equalsIgnoreCase(REMAP_TAG)){
                         remapID = ((Xref)xref).getAnnotation();
                     }
-                    if(((Xref)xref).getIdref().equalsIgnoreCase(UNIMOD_TAG)){
+                    if(((Xref)xref).getIdref().equalsIgnoreCase(Constants.UNIMOD_TAG)){
                         unimodID.add(((Xref)xref).getAnnotation());
                     }
                 }

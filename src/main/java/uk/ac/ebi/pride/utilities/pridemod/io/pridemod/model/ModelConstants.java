@@ -6,8 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * User: yperez
- * Date: 18-Julio-2011
+ * ModelsConstants represent the namespaces of each object in the PRIDE Mod XML
+ *
+ * @author ypriverol
+ *
  */
 public class ModelConstants {
 
@@ -18,7 +20,6 @@ public class ModelConstants {
 
     static {
 
-        modelQNames.put(UnimodMappings.class, new QName(PRIDEMOD, "unimod_mappings"));
         modelQNames.put(UnimodMapping.class, new QName(PRIDEMOD, "unimod_mapping"));
         modelQNames.put(PsiModifications.class, new QName(PRIDEMOD, "psi_modifications"));
         modelQNames.put(PsiModification.class, new QName(PRIDEMOD, "psi_modification"));
@@ -30,7 +31,6 @@ public class ModelConstants {
         modelQNames = Collections.unmodifiableMap(modelQNames);
 
     }
-
 
     public static boolean isRegisteredClass(Class cls) {
         return modelQNames.containsKey(cls);

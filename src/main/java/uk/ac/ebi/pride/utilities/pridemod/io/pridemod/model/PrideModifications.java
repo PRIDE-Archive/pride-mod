@@ -62,40 +62,4 @@ public class PrideModifications
         return this.prideModification;
     }
 
-    public List<PrideModification> getModbyMonoMass(double mass) {
-        List<PrideModification> resultModList = new ArrayList<>();
-        for (int i = 0; i < this.getPrideModification().size(); i++) {
-            if (this.getPrideModification().get(i).compareMono(mass)) {
-                resultModList.add(this.getPrideModification().get(i));
-            }
-        }
-        return resultModList;
-    }
-
-    public PrideModification getModbyId(int id) {
-        for (int i = 0; i < this.getPrideModification().size(); i++) {
-            if (this.getPrideModification().get(i).compareId(id)) return this.getPrideModification().get(i);
-        }
-        return null;
-    }
-
-    public List<PrideModification> getModListbySpecificity(String specificity) {
-        List<PrideModification> resultModList = new ArrayList<>();
-        for (int i = 0; i < this.getPrideModification().size(); i++) {
-            if (this.prideModification.get(i).isSpecificity(specificity)) {
-                resultModList.add(this.prideModification.get(i));
-            }
-        }
-        return resultModList;
-    }
-
-    public List<PrideModification> getListbyMassSpecificity(String specificity, double mass) {
-        List<PrideModification> resultModList = new ArrayList<>();
-        for (int i = 0; i < this.getPrideModification().size(); i++) {
-            if (this.getPrideModification().get(i).compareMono(mass) && this.getPrideModification().get(i).isSpecificity(specificity)) {
-                resultModList.add(this.getPrideModification().get(i));
-            }
-        }
-        return resultModList;
-    }
 }

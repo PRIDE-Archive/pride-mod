@@ -3,7 +3,10 @@ package uk.ac.ebi.pride.utilities.pridemod.model;
 import java.util.List;
 
 /**
- * yperez
+ * The UniModPTM contains the information for each modification in Unimod. The current version represent the information
+ * and fields on UniMod June 2017.
+ *
+ * @author ypriverol
  */
 public class UniModPTM extends AbstractPTM {
 
@@ -27,7 +30,6 @@ public class UniModPTM extends AbstractPTM {
                      String formula) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
     }
-
 
     @Override
     public String getCvLabel() {

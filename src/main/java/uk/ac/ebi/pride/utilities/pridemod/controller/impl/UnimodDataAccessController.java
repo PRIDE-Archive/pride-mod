@@ -22,8 +22,9 @@ import java.util.List;
 
 /**
  * Class to retrieve all Modifications from Unimod database. All modifications are store in
- * memory using the
- * yperez.
+ * memory using the ptmMap. The current version of UniMod is June 2017.
+ *
+ * @author ypriverol
  */
 public class UnimodDataAccessController extends AbstractDataAccessController{
 
@@ -52,7 +53,7 @@ public class UnimodDataAccessController extends AbstractDataAccessController{
 
         for(UnimodModification unimodMod: unimodObject.getModifications().getMod()){
             /**
-             * We will add the UNIMOD to the id in order to have the same style than PSI-MOD and
+             * We will add the UNIMOD to the accession in order to have the same style than PSI-MOD and
              * the mzIdentML files
              */
             String accession   = "UNIMOD:" + (unimodMod.getRecordId()).intValue();

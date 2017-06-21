@@ -1,5 +1,6 @@
 package uk.ac.ebi.pride.utilities.pridemod.io.pridemod.model;
 
+import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
 import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
 
 import javax.xml.bind.annotation.*;
@@ -25,7 +26,7 @@ import java.util.List;
  *       &lt;/sequence>
  *       &lt;attribute name="biological_significance" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="diff_mono" use="required" type="{http://www.w3.org/2001/XMLSchema}decimal" />
- *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="accession" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="title" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,7 +35,7 @@ import java.util.List;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "unimodMappings",
+        "unimodMapping",
         "psiModifications"
 })
 @XmlRootElement(name = "pride_modification")
@@ -42,14 +43,12 @@ public class PrideModification
         implements Serializable, PrideModObject {
 
     private final static long serialVersionUID = 100L;
-    @XmlElement(name = "unimod_mappings", required = true)
-    protected UnimodMappings unimodMappings;
+    @XmlElement(name = "unimod_mapping", required = true)
+    protected UnimodMapping unimodMapping;
     @XmlElement(name = "psi_modifications", required = true)
     protected PsiModifications psiModifications;
     @XmlAttribute(name = "biological_significance", required = true)
     protected BigInteger biologicalSignificance;
-    @XmlAttribute(name = "diff_mono", required = true)
-    protected BigDecimal diffMono;
     @XmlAttribute(required = true)
     protected BigInteger id;
     @XmlAttribute(required = true)
@@ -61,23 +60,23 @@ public class PrideModification
 
 
     /**
-     * Gets the value of the unimodMappings property.
+     * Gets the value of the unimodMapping property.
      *
      * @return possible object is
-     *         {@link UnimodMappings }
+     *         {@link UnimodMapping }
      */
-    public UnimodMappings getUnimodMappings() {
-        return unimodMappings;
+    public UnimodMapping getUnimodMapping() {
+        return unimodMapping;
     }
 
     /**
-     * Sets the value of the unimodMappings property.
+     * Sets the value of the unimodMapping property.
      *
      * @param value allowed object is
-     *              {@link UnimodMappings }
+     *              {@link UnimodMapping }
      */
-    public void setUnimodMappings(UnimodMappings value) {
-        this.unimodMappings = value;
+    public void setUnimodMapping(UnimodMapping value) {
+        this.unimodMapping = value;
     }
 
     /**
@@ -121,27 +120,7 @@ public class PrideModification
     }
 
     /**
-     * Gets the value of the diffMono property.
-     *
-     * @return possible object is
-     *         {@link java.math.BigDecimal }
-     */
-    public BigDecimal getDiffMono() {
-        return diffMono;
-    }
-
-    /**
-     * Sets the value of the diffMono property.
-     *
-     * @param value allowed object is
-     *              {@link java.math.BigDecimal }
-     */
-    public void setDiffMono(BigDecimal value) {
-        this.diffMono = value;
-    }
-
-    /**
-     * Gets the value of the id property.
+     * Gets the value of the accession property.
      *
      * @return possible object is
      *         {@link java.math.BigInteger }
@@ -151,7 +130,7 @@ public class PrideModification
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the accession property.
      *
      * @param value allowed object is
      *              {@link java.math.BigInteger }
@@ -184,60 +163,17 @@ public class PrideModification
         return shortname;
     }
 
-    public void setShortname(String shortname) {
-        this.shortname = shortname;
-    }
-
-    public boolean compareMono(double mass) {
-        return (this.diffMono.doubleValue() == mass);
-    }
-
-
     public boolean compareId(int id) {
         return this.getId().intValue() == id;
     }
 
-
-    public boolean isSpecificity(String specificity) {
-        for (int i = 0; i < this.getPsiModifications().getPsiModification().size(); i++) {
-            if (this.getPsiModifications().getPsiModification().get(i).getOrigin().compareToIgnoreCase(specificity) == 0)
-                return true;
-        }
-        return false;
-    }
-
-    public List<Specificity> getSpecificityList() {
-        List<Specificity> specificityList = new ArrayList<>();
-
-        for (PsiModification psiModification : this.getPsiModifications().getPsiModification()) {
-            if (psiModification.generalModification.intValue() != 1) {
-                Specificity specificity = new Specificity(psiModification.getOrigin(), psiModification.getTermSpec());
-                specificityList.add(specificity);
-            }
-
-        }
-        return specificityList;
-    }
-
-    public String getPsiName() {
-        for (PsiModification psiModification : this.getPsiModifications().getPsiModification()) {
-            if (psiModification.generalModification.intValue() == 1) {
-                return psiModification.getTitle();
-            }
-        }
-        return null;
-    }
-
-    /**
-     * This function returns the id for a given PRIDE Mod
-     * @return
-     */
-    public String getPsiId() {
-        for (PsiModification psiModification : this.getPsiModifications().getPsiModification()) {
-            if (psiModification.generalModification.intValue() == 1) {
-                return psiModification.getId();
-            }
-        }
-        return null;
+    public String getAccession() {
+        if(this.getUnimodMapping() != null)
+            return unimodMapping.getAccession();
+        else if(this.getPsiModifications() != null && !this.getPsiModifications().getPsiModification().isEmpty())
+            for (PsiModification psiModification : this.getPsiModifications().getPsiModification())
+                if (psiModification.generalModification.intValue() == 1)
+                    return psiModification.getAccession();
+        throw new DataAccessException("Now Accession has been found for the Modification.");
     }
 }

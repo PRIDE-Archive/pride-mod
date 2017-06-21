@@ -7,95 +7,83 @@ import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PSIModDataAccessContro
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
 import uk.ac.ebi.pride.utilities.pridemod.model.*;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
-import uk.ac.ebi.pride.utilities.pridemod.utils.PRIDEModUtils;
+import uk.ac.ebi.pride.utilities.pridemod.utils.Constants;
 import uk.ac.ebi.pride.utilities.pridemod.utils.Utilities;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
 /**
- * yperez
+ * ModReader is a Helper Class that contains all the methods to interact with all the controllers. Because most of the
+ * PTM database contains the same modifications we use this class to expose all the common methods amount all the controllers
+ *
+ * @author ypriverol
  */
 public class ModReader {
 
     private static final Logger logger = LoggerFactory.getLogger(ModReader.class);
 
-    /**
-     * Local definition of Unimod
-     */
     private static InputStream unimodUrl    = ModReader.class.getClassLoader().getResourceAsStream("unimod.xml");
-
-    /**
-     * Local definition of psiMod
-     */
     private static InputStream psiModUrl    = ModReader.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
-
-    /**
-     * Local definition of pride mod
-     */
     private static InputStream prideModdUrl = ModReader.class.getClassLoader().getResourceAsStream("pride_mods.xml");
 
-    private static UnimodDataAccessController unimodController;
-
-    private static PSIModDataAccessController psiModController;
-
-    private static PRIDEModDataAccessController prideModController;
+    private static UnimodDataAccessController   unimodController = null;
+    private static PSIModDataAccessController   psiModController = null;
+    private static PRIDEModDataAccessController prideModController = null;
 
     private volatile static ModReader instance = new ModReader();
 
     protected ModReader(){
+
         try {
             unimodController = new UnimodDataAccessController(unimodUrl);
             psiModController = new PSIModDataAccessController(psiModUrl);
-            prideModController = new PRIDEModDataAccessController(prideModdUrl);
+            prideModController = new PRIDEModDataAccessController(prideModdUrl, unimodController, psiModController);
         } catch (Exception e) {
-            String msg = "Exception while trying to read Database files..";
+            String msg = "Exception while trying to read Ontology Files";
             logger.error(msg, e);
             throw new DataAccessException(msg, e);
-        } finally {
-            try {
-                if(unimodUrl!= null){
-                    unimodUrl.close();
-                }
-                if(psiModUrl!= null){
-                    psiModUrl.close();
-                }
-                if(psiModUrl!= null){
-                    psiModUrl.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
+    /**
+     * The method to retrieve the ModReader Instance that can be use to retrieve all
+     * PTMs in the major providers, PRIDE, PSIMod or UniMod.
+     * @return
+     */
     public static ModReader getInstance(){
         return instance;
     }
 
     /**
-     * PTM accession
+     * This function retrieve by Accession the PTM from UNIMOD, or PSIMod Ontologies. The
+     * function also support search for Accessions in PSI-MS, such as
+     * fragment losses.
      * @param accession
-     * @return
+     * @return PTM
      */
     public PTM getPTMbyAccession(String accession){
+
         PTM ptm = null;
-        if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.MS){
+        if(Constants.getAccessionType(accession) == Constants.Database.MS){
             ptm = MSModification.getByAccession(accession);
         }
-        if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.UNIMOD){
+        if(Constants.getAccessionType(accession) == Constants.Database.UNIMOD){
             ptm = unimodController.getPTMbyAccession(accession);
-        }else if(PRIDEModUtils.getAccessionType(accession) == PRIDEModUtils.Database.PSIMOD){
+
+        }else if(Constants.getAccessionType(accession) == Constants.Database.PSIMOD){
             ptm = psiModController.getPTMbyAccession(accession);
         }
         return ptm;
     }
 
     /**
-     * String pattern present in the name.
-     * @param namePattern
-     * @return
+     * This function retrieve by String pattern from Name in the the
+     * PTM from UNIMOD, or PSIMod Ontologies. The function also support search
+     * for Accessions in PSI-MS, such as fragment losses. The resulted List contains
+     * the PTMs on all Ontologies including PSI and UniMod.
+     * @param namePattern String Pattern.
+     * @return List of PTMs
      */
     public List<PTM> getPTMListByPatternName(String namePattern){
         List<PTM> ptms = unimodController.getPTMListByPatternName(namePattern);
@@ -104,9 +92,12 @@ public class ModReader {
     }
 
     /**
-     * Specificity to filter all the identifications in the
+     * This function retrieve by Specificity the PTM from UNIMOD, or PSIMod Ontologies. The
+     * function also support search for Accessions in PSI-MS, such as
+     * fragment losses. The resulted List contains the PTMs on all Ontologies including PSI and UniMod.
+     * @param specificity . A site specific for the modification.
+     * @return List of PTMs
      * @param specificity
-     * @return
      */
     public List<PTM> getPTMListBySpecificity(Specificity specificity){
         List<PTM> ptms = unimodController.getPTMListBySpecificity(specificity);
@@ -115,21 +106,26 @@ public class ModReader {
     }
 
     /**
-     * Description pattern to found PTMs with the pattern
-     * @param descriptionPattern
-     * @return
-     */
-    public List<PTM> getPTMListByPatternDescription(String descriptionPattern){
+     * This function retrieve by String pattern from Description in the the
+     * PTM from UNIMOD, or PSIMod Ontologies. The function also support search
+     * for Accessions in PSI-MS, such as fragment losses. The resulted List contains
+     * the PTMs on all Ontologies including PSI and UniMod.
+     *
+     * @author descriptionPattern pattern on description
+     * @return List of PTMs
+     **/
+     public List<PTM> getPTMListByPatternDescription(String descriptionPattern){
         List<PTM> ptms = unimodController.getPTMListByPatternDescription(descriptionPattern);
         ptms.addAll(psiModController.getPTMListByPatternDescription(descriptionPattern));
         return ptms;
     }
 
     /**
-     * Return all PTMs with the same name. In case of PSI-Mod modifications different mofifications
+     * Return all PTMs with the exact name. In case of PSI-Mod modifications different
+     * mofifications will be returns.
      * can have the same name.
-     * @param name
-     * @return
+     * @param name Name of the modification
+     * @return List of PTMs
      */
     public List<PTM> getPTMListByEqualName(String name){
         List<PTM> ptms = unimodController.getPTMListByEqualName(name);
@@ -138,9 +134,10 @@ public class ModReader {
     }
 
     /**
-     * Get the PTMs using the MonoDelta Mass of the modification
+     * Get the PTMs using the MonoDelta Mass of the modification. This will
+     * use the mono isotopic mass for the comparison of each modification.
      * @param delta the delta mass to be search
-     * @return
+     * @return List of modifications.
      */
     public List<PTM> getPTMListByMonoDeltaMass(Double delta) {
         if(delta != null){
@@ -151,11 +148,59 @@ public class ModReader {
         return Collections.emptyList();
     }
 
+    /**
+     * Get the PTMs using the AvgDelta Mass of the modification. This will
+     * use the average isotopic mass for the comparison of each modification.
+     * @param delta the delta mass to be search
+     * @return List of modifications.
+     */
     public List<PTM> getPTMListByAvgDeltaMass(Double delta) {
         List<PTM> ptms = unimodController.getPTMListByAvgDeltaMass(delta);
         ptms.addAll(psiModController.getPTMListByAvgDeltaMass(delta));
         return ptms;
 
+    }
+
+    /**
+     * Retrieve PRIDE Annotation PTM using the Accession of the corresponding
+     * PTM in the group. The PRIDE Annotation PTM aggregate a set of PTMs in a
+     * generic PTM with some important annotations on top such as:
+     *   - Biologically relevant
+     *   - ShortName
+     *
+     * @param accession
+     * @return
+     */
+    public PRIDEModPTM getPRIDEModByAccession(String accession){
+        String newAccession = getUniqueUniModAccessionFromCheMod(accession);
+        if(newAccession != null)
+            accession = newAccession;
+        PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
+        if(prideMod != null)
+            return prideMod;
+        return null;
+    }
+
+    /**
+     * This function retrieve a UniMod accession if the accession is Unique, if the
+     * PTM is not unique to one accession, it can't be assigned to a PTM without
+     * manual curation. The accession should have the following format:
+     *  - CHEMOD:34.560056
+     *  - CHEMOD:-345.8999
+     *
+     * @param accession CHEMOD Accession.
+     * @return A {@link UniModPTM} accession
+     */
+    public String getUniqueUniModAccessionFromCheMod(String accession){
+        if(Utilities.isChemodAccession(accession)){
+            Double mass = Utilities.getChemodMass(accession);
+            if(mass != null){
+                List<PTM> unimodList = unimodController.getPTMListByMonoDeltaMass(mass);
+                if(unimodList != null && unimodList.size() == 1)
+                    return unimodList.get(0).getAccession();
+            }
+        }
+        return null;
     }
 
     /**
@@ -270,7 +315,7 @@ public class ModReader {
 
     /**
      * This function map a PSIMod modification to UniMod by looking inside the
-     * UniMod and map the mapUniMod id to it.
+     * UniMod and map the mapUniMod accession to it.
      *
      * @param ptm the PSIMod modification
      * @return the list of Unimod modifications.
@@ -323,17 +368,15 @@ public class ModReader {
         return ptms;
     }
 
+    /**
+     * This modifica
+     * @param accession
+     * @param aa
+     * @return
+     */
     public boolean isWrongAnnotated(String accession, String aa){
         List<PTM> ptms  = getAnchorModificationPosition(accession, aa);
         return ptms == null || ptms.isEmpty();
-
-    }
-
-    public String getShortNamePRIDEModByChildAccession(String accession){
-        PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
-        if(prideMod != null)
-            return prideMod.getShortName();
-        return null;
     }
 
 

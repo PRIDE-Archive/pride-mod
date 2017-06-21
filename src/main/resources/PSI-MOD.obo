@@ -31494,6 +31494,7 @@ xref: MassMono: "130.089033"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:995"
 is_a: MOD:00843 ! (15)N labeled residue
 is_a: MOD:00912 ! modified L-lysine residue
 
@@ -35896,6 +35897,7 @@ xref: MassMono: "425.196952"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:985"
 is_a: MOD:01821 ! cysTMT6plex reporter+balance reagent cysteine disulfide
 
 [Term]

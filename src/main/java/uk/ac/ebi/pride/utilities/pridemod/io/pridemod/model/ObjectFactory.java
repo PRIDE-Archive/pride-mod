@@ -41,13 +41,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UnimodMappings }
-     */
-    public UnimodMappings createUnimodMappings() {
-        return new UnimodMappings();
-    }
-
-    /**
      * Create an instance of {@link PrideModifications }
      */
     public PrideModifications createPrideModifications() {

@@ -4,8 +4,14 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import uk.ac.ebi.pride.utilities.pridemod.model.PRIDEModPTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -82,14 +88,29 @@ public class ModReaderTest {
 
     @Test
     public void TestGetShortNamePRIDEMod(){
-        Assert.assertTrue(modReader.getShortNamePRIDEModByChildAccession("MOD:00394").equalsIgnoreCase("acetyl"));
+        Assert.assertTrue(modReader.getPRIDEModByAccession("MOD:00394").getShortName().equalsIgnoreCase("acetyl"));
 
         // Unimod works with Unimod Prefix and Without it, this run is with Prefix
-        Assert.assertTrue(modReader.getShortNamePRIDEModByChildAccession("Unimod:1").equalsIgnoreCase("acetyl"));
+        Assert.assertTrue(modReader.getPRIDEModByAccession("UNIMOD:1").getShortName().equalsIgnoreCase("acetyl"));
 
-        // Unimod works with Unimod Prefix and Without it, this run is without the Prefix
-        Assert.assertTrue(modReader.getShortNamePRIDEModByChildAccession("1").equalsIgnoreCase("acetyl"));
+        Assert.assertTrue(modReader.getPRIDEModByAccession("CHEMOD:59.049690") != null );
+
+    }
 
 
+    @Test
+    public void TestGetShortNamePRIDEModFromFile(){
+        try {
+            File file = new File(ModReaderTest.class.getClassLoader().getResource("mods_not_found.txt").toURI());
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String sCurrentLine;
+            while ((sCurrentLine = br.readLine()) != null) {
+                PRIDEModPTM prideModPTM = modReader.getPRIDEModByAccession(sCurrentLine);
+                if(prideModPTM == null)
+                    System.out.println("Accession-> " + sCurrentLine + " not found shortname");
+            }
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
     }
 }

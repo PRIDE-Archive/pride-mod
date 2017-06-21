@@ -9,7 +9,10 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 /**
- * yperez
+ * Unmarshaller a specific PRIDE Modification File. It take an PRIDE XML file definition and
+ * return the complete information of the file.
+ *
+ * @author ypriverol
  */
 public class PrideModUnmarshallerFactory {
 

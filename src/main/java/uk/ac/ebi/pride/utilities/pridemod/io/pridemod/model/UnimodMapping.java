@@ -14,7 +14,7 @@ import java.math.BigInteger;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="accession" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -28,26 +28,27 @@ public class UnimodMapping
 
     private final static long serialVersionUID = 100L;
     @XmlAttribute(required = true)
-    protected BigInteger id;
+    protected String accession;
+
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the accession property.
      *
      * @return possible object is
-     *         {@link java.math.BigInteger }
+     *         {@link String }
      */
-    public BigInteger getId() {
-        return id;
+    public String getAccession() {
+        return accession;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the accession property.
      *
      * @param value allowed object is
-     *              {@link java.math.BigInteger }
+     *              {@link String }
      */
-    public void setId(BigInteger value) {
-        this.id = value;
+    public void setAccession(String value) {
+        this.accession = value;
     }
 
 }

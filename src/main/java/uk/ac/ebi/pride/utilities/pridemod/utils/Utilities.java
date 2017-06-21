@@ -73,12 +73,12 @@ public class Utilities {
     }
 
     public static boolean isUniModAccession(String accession){
-        return accession.contains("Unimod:") && (accession.replace("Unimod:", "").matches("^-?\\d+$"));
+        return accession.toUpperCase().contains("Unimod:".toUpperCase()) && (accession.toUpperCase().replace("Unimod:".toUpperCase(), "").matches("^-?\\d+$"));
     }
 
     public static Integer getIntegerForUnimodAccession(String accession){
         if(isUniModAccession(accession)){
-            return Integer.parseInt(accession.replace("Unimod:", ""));
+            return Integer.parseInt(accession.toUpperCase().replace("Unimod:".toUpperCase(), ""));
         }else if(accession.matches("^-?\\d+$"))
             return Integer.parseInt(accession);
         return null;
@@ -86,6 +86,17 @@ public class Utilities {
     }
 
     public static boolean isPSIModAccession(String accession){
-        return accession.contains(("MOD:")) && (accession.replace("MOD:", "").length() == 5);
+        return accession.toUpperCase().contains(("MOD:".toUpperCase())) && (accession.toUpperCase().replace("MOD:".toUpperCase(), "").length() == 5);
+    }
+
+    public static boolean isChemodAccession(String accession) {
+        return accession.toUpperCase().contains("CHEMOD:");
+    }
+
+    public static Double getChemodMass(String accession) {
+        if(isChemodAccession(accession)){
+            return Double.parseDouble(accession.toUpperCase().replace("CHEMOD:", ""));
+        }
+        return null;
     }
 }

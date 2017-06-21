@@ -13032,7 +13032,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-xref: Remap: "MOD:01493"
+xref: Remap: "MOD:01505"
 xref: UniMod: "UniMod:214"
 is_obsolete: true
 
@@ -29120,7 +29120,7 @@ xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: UniMod: "UniMod:532"
-is_a: MOD:01485 ! iTRAQ4plex-114 reporter+balance reagent acylated residue
+is_a: MOD:01485 ! iTRAQ4plex-114 reporter+balance reagent ac ylated residue
 is_a: MOD:01709 ! iTRAQ4plex reporter+balance reagent N-acylated residue
 is_a: MOD:01875 ! N6-acylated L-lysine
 
@@ -29618,7 +29618,6 @@ xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 xref: UniMod: "UniMod:214"
-xref: UniMod: "UniMod:889"
 is_a: MOD:01506 ! iTRAQ4plex-117, mTRAQ heavy, reporter+balance reagent acylated residue
 is_a: MOD:01709 ! iTRAQ4plex reporter+balance reagent N-acylated residue
 is_a: MOD:01875 ! N6-acylated L-lysine
@@ -31495,6 +31494,7 @@ xref: MassMono: "130.089033"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:995"
 is_a: MOD:00843 ! (15)N labeled residue
 is_a: MOD:00912 ! modified L-lysine residue
 
@@ -35897,6 +35897,7 @@ xref: MassMono: "425.196952"
 xref: Origin: "C"
 xref: Source: "artifact"
 xref: TermSpec: "none"
+xref: UniMod: "UniMod:985"
 is_a: MOD:01821 ! cysTMT6plex reporter+balance reagent cysteine disulfide
 
 [Term]

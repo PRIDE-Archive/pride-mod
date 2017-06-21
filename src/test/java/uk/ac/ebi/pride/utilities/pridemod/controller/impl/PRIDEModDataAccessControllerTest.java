@@ -3,6 +3,7 @@ package uk.ac.ebi.pride.utilities.pridemod.controller.impl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import uk.ac.ebi.pride.utilities.pridemod.controller.DataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
 
 import java.io.InputStream;
@@ -17,10 +18,15 @@ public class PRIDEModDataAccessControllerTest {
     @Before
     public void setUp() throws Exception {
         InputStream inputStream = PRIDEModDataAccessControllerTest.class.getClassLoader().getResourceAsStream("pride_mods.xml");
-        if (inputStream == null) {
-            throw new IllegalStateException("no file for input found!");
+        InputStream psiStream = PSIModDataAccessControllerTest.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
+        InputStream uniModStream = PSIModDataAccessControllerTest.class.getClassLoader().getResourceAsStream("unimod.xml");
+
+        if (psiStream == null || inputStream == null || uniModStream == null) {
+            throw new IllegalStateException("Modification file not found!");
         }
-        prideModDataAccessController = new PRIDEModDataAccessController(inputStream);
+        DataAccessController psiModDataAccessController = new PSIModDataAccessController(psiStream);
+        DataAccessController unimodDataAccessController = new UnimodDataAccessController(uniModStream);
+        prideModDataAccessController = new PRIDEModDataAccessController(inputStream,unimodDataAccessController,psiModDataAccessController);
     }
 
     @After
@@ -36,7 +42,7 @@ public class PRIDEModDataAccessControllerTest {
 
     @Test
     public void TestGetMod(){
-        PTM ptm = prideModDataAccessController.getPTMbyAccession("MOD:00394");
+        PTM ptm = prideModDataAccessController.getPTMbyAccession("UNIMOD:1");
         assertTrue("Difference mass for Average mass is:", ptm.getMonoDeltaMass() == 42.010565);
     }
 
