@@ -9,7 +9,6 @@ import uk.ac.ebi.pride.utilities.pridemod.controller.AbstractDataAccessControlle
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
 import uk.ac.ebi.pride.utilities.pridemod.io.psimod.PSIModReader;
 import uk.ac.ebi.pride.utilities.pridemod.model.PSIModPTM;
-import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
 import uk.ac.ebi.pride.utilities.pridemod.utils.Constants;
 

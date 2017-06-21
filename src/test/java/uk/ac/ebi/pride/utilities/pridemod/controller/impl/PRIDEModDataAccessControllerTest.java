@@ -37,7 +37,7 @@ public class PRIDEModDataAccessControllerTest {
     @Test
     public void TestGetPTms() {
         List<PTM> ptms = prideModDataAccessController.getPTMListByPatternDescription("Phospho");
-        assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 2);
+        assertTrue("Number of PTMs with Term 'Phospho' in name:", ptms.size() == 3);
     }
 
     @Test

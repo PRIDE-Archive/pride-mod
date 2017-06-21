@@ -1,14 +1,10 @@
 package uk.ac.ebi.pride.utilities.pridemod.io.pridemod.model;
 
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
-import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
 
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -153,6 +149,7 @@ public class PrideModification
             for (PsiModification psiModification : this.getPsiModifications().getPsiModification())
                 if (psiModification.generalModification.intValue() == 1)
                     return psiModification.getAccession();
+
         throw new DataAccessException("Now Accession has been found for the Modification.");
     }
 
