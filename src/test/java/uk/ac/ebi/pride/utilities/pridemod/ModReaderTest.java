@@ -95,6 +95,9 @@ public class ModReaderTest {
 
         Assert.assertTrue(modReader.getPRIDEModByAccession("CHEMOD:59.049690") != null );
 
+        Assert.assertTrue(modReader.getPRIDEModByCHEMODAccessionAndPosition("CHEMOD:0.984016", "R") != null );
+
+
     }
 
 

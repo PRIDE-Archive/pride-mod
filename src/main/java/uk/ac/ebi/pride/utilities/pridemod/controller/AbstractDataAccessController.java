@@ -112,4 +112,16 @@ public class AbstractDataAccessController implements DataAccessController {
         return ptms;
     }
 
+    public List<PTM> getPTMListByMonoDeltaMassSpecificity(Double mass, String aa) {
+        List<PTM> ptms = getPTMListByMonoDeltaMass(mass);
+        List<PTM> ptmsResults = new ArrayList<>();
+        if(!ptms.isEmpty()){
+            for(PTM ptm: ptms){
+                for(Specificity specificity: ptm.getSpecificityCollection())
+                    if(specificity.getName().compareTo(Specificity.AminoAcid.valueOf(aa)) == 0)
+                        ptmsResults.add(ptm);
+            }
+        }
+        return ptmsResults;
+    }
 }

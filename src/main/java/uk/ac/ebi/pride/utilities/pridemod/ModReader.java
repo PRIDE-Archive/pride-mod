@@ -182,6 +182,39 @@ public class ModReader {
     }
 
     /**
+     * Retrieve PRIDE Annotation PTM using the Accession of the corresponding
+     * PTM in the group. The PRIDE Annotation PTM aggregate a set of PTMs in a
+     * generic PTM with some important annotations on top such as:
+     *   - Biologically relevant
+     *   - ShortName
+     *
+     * @param accession
+     * @return
+     */
+    public PRIDEModPTM getPRIDEModByCHEMODAccessionAndPosition(String accession, String AA){
+        String newAccession = getUniqueUniModAccessionFromCheMod(accession, AA);
+        if(newAccession != null)
+            accession = newAccession;
+        PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
+        if(prideMod != null)
+            return prideMod;
+        return null;
+    }
+
+    private String getUniqueUniModAccessionFromCheMod(String accession, String aa) {
+        if(Utilities.isChemodAccession(accession)){
+            Double mass = Utilities.getChemodMass(accession);
+            if(mass != null){
+                List<PTM> unimodList = unimodController.getPTMListByMonoDeltaMassSpecificity(mass,aa);
+                if(unimodList != null && unimodList.size() == 1)
+                    return unimodList.get(0).getAccession();
+            }
+        }
+        return null;
+    }
+
+
+    /**
      * This function retrieve a UniMod accession if the accession is Unique, if the
      * PTM is not unique to one accession, it can't be assigned to a PTM without
      * manual curation. The accession should have the following format:
