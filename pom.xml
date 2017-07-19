@@ -41,6 +41,8 @@
         <uk.ac.ebi.pride.architectural-pride-logging.version>1.0.0</uk.ac.ebi.pride.architectural-pride-logging.version>
         <!-- TDD -->
         <uk.ac.ebi.pride.architectural-pride-tdd.version>1.0.3</uk.ac.ebi.pride.architectural-pride-tdd.version>
+        <uk.ac.ebi.pride.architectural-pride-xml-handling.version>1.0.1</uk.ac.ebi.pride.architectural-pride-xml-handling.version>
+
     </properties>
 
     <dependencies>
@@ -58,15 +60,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>2.2.7</version>
+            <groupId>uk.ac.ebi.pride.architectural</groupId>
+            <artifactId>pride-xml-handling</artifactId>
+            <type>pom</type>
+            <version>${uk.ac.ebi.pride.architectural-pride-xml-handling.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-xjc</artifactId>
-            <version>2.2.7</version>
-        </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
