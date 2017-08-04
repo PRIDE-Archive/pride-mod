@@ -37,6 +37,7 @@ public class PRIDEModPTM extends AbstractPTM{
         this.biologicalRelevant = biologicalRelevant;
     }
 
+    @Override
     public String getShortName() {
         return shortName;
     }

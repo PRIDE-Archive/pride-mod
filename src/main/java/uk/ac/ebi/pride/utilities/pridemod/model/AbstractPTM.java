@@ -113,6 +113,11 @@ public class AbstractPTM implements PTM {
     }
 
     @Override
+    public String getShortName() {
+        return getName();
+    }
+
+    @Override
     public String toString() {
         return "AbstractPTM{" +
                 "accession='" + accession + '\'' +

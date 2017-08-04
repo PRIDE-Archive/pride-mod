@@ -52,7 +52,17 @@ public interface PTM {
      */
     String getFormula();
 
-
+    /**
+     * Get the CVLabel of a modification
+     * @return
+     */
     String getCvLabel();
+
+    /**
+     * The shortname is used for some tools to classify an acronism of a modification
+     *
+     * @return
+     */
+    String getShortName();
 
 }

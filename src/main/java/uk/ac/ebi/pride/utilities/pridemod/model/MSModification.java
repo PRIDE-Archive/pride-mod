@@ -69,6 +69,12 @@ public enum MSModification implements PTM{
         return cvLabel;
     }
 
+    @Override
+    public String getShortName() {
+        return getName();
+    }
+
+
     public static PTM getByAccession(String accession) {
         for(MSModification mod: values())
             if(mod.getAccession().equalsIgnoreCase(accession))

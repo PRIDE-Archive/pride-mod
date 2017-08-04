@@ -110,8 +110,15 @@ public class ModReaderTest {
             String sCurrentLine;
             while ((sCurrentLine = br.readLine()) != null) {
                 PRIDEModPTM prideModPTM = modReader.getPRIDEModByAccession(sCurrentLine);
-                if(prideModPTM == null)
+                if(prideModPTM == null){
                     System.out.println("Accession-> " + sCurrentLine + " not found shortname");
+                    List<PTM> ptm = modReader.getAnchorModification(sCurrentLine);
+                    if(ptm.size() == 1)
+                        System.out.println("Accession-> " + sCurrentLine + " Short name -> " + ptm.get(0).getShortName());
+
+                } else{
+                    System.out.println("Accession-> " + sCurrentLine + " Short name -> " + prideModPTM.getShortName());
+                }
             }
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
