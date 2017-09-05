@@ -4,14 +4,14 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.model.PRIDEModPTM;
 import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -122,6 +122,17 @@ public class ModReaderTest {
             }
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void TestShortNameUNIMOD() throws IOException {
+        InputStream file = ModReaderTest.class.getClassLoader().getResourceAsStream("unimod.xml");
+        UnimodDataAccessController unimodDataAccessController = new UnimodDataAccessController(file);
+        if(unimodDataAccessController != null && unimodDataAccessController.ptmMap.size() > 0){
+            for(PTM ptm: unimodDataAccessController.ptmMap.values()){
+                System.out.println("Accession-> " + ptm.getAccession() + " Short name -> " + ptm.getShortName());
+            }
         }
     }
 }

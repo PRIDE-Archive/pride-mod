@@ -46,8 +46,4 @@ public class UniModPTM extends AbstractPTM {
         return this.accession.equalsIgnoreCase(((UniModPTM)obj).getAccession());
     }
 
-    @Override
-    public String getShortName(){
-        return getName();
-    }
 }

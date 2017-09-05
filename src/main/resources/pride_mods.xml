@@ -575,7 +575,7 @@
                 <psi_modification accession="MOD:00481" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification  id="38" biological_significance="0"            shortname="SILAC-16C6">
+        <pride_modification  id="38" biological_significance="0"            shortname="SILAC:16C6">
             <unimod_mappings>
               <unimod_mapping accession="UNIMOD:188"  general_modification="1"/>
             </unimod_mappings>
@@ -587,7 +587,7 @@
                 <psi_modification accession="MOD:01331" general_modification="0"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification  id="39" biological_significance="0"                  shortname="LABEL-18O2">
+        <pride_modification  id="39" biological_significance="0"                  shortname="Label:18O2">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:193" general_modification="1"/>
           </unimod_mappings>
@@ -781,7 +781,7 @@
                 <psi_modification accession="MOD:00034" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification            id="50" biological_significance="0" shortname="LABEL:15N2">
+        <pride_modification            id="50" biological_significance="0" shortname="Label:15N2">
           <unimod_mappings>
             <unimod_mapping accession="UNIMOD:995" general_modification="1"/>
           </unimod_mappings>
@@ -789,7 +789,7 @@
                 <psi_modification accession="MOD:01603" general_modification="1"/>
             </psi_modifications>
         </pride_modification>
-        <pride_modification           id="51" biological_significance="0" shortname="LABEL:15N1">
+        <pride_modification           id="51" biological_significance="0" shortname="Label:15N1">
           <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:994" general_modification="1"/>
           </unimod_mappings>
@@ -922,7 +922,7 @@
               <psi_modification accession="MOD:01459" general_modification="0" />
             </psi_modifications>
         </pride_modification>
-        <pride_modification  id="71" shortname="LABEL-13C6-15N2" biological_significance="0">
+        <pride_modification  id="71" shortname="Label:13C6-15N2" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:259" general_modification="1"/>
             </unimod_mappings>
@@ -1020,7 +1020,7 @@
                 <unimod_mapping accession="UNIMOD:364" general_modification="1"/>
             </unimod_mappings>
         </pride_modification>
-        <pride_modification  id="90" shortname="LABEL:2H4" biological_significance="0">
+        <pride_modification  id="90" shortname="Label:2H4" biological_significance="0">
             <unimod_mappings>
                 <unimod_mapping accession="UNIMOD:481" general_modification="1"/>
             </unimod_mappings>
