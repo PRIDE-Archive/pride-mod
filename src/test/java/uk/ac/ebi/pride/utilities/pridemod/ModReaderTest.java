@@ -132,7 +132,10 @@ public class ModReaderTest {
         if(unimodDataAccessController != null && unimodDataAccessController.ptmMap.size() > 0){
             for(PTM ptm: unimodDataAccessController.ptmMap.values()){
                 System.out.println("Accession-> " + ptm.getAccession() + " Short name -> " + ptm.getShortName());
+                if(ptm.getShortName().contains("\t") || ptm.getShortName().contains(" "))
+                    System.out.println("ERROR");
             }
         }
+
     }
 }

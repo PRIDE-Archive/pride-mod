@@ -114,8 +114,8 @@ public class AbstractPTM implements PTM {
 
     @Override
     public String getShortName() {
-        String name = getName();
-        name = (name != null)?name.replaceAll("\\(", "").replaceAll("\\)" , "-"):name;
+        String name = getName().trim();
+        name = (name != null)? name.replaceAll("\\s+", "-").replaceAll("\\(", "").replaceAll("\\)" , "-"):name;
         if(name.endsWith("-"))
             name = name.substring(0, name.length() - 1);
         return name;
