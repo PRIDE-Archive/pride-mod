@@ -41,6 +41,9 @@ public class ModReaderTest {
     public void TestGetMod(){
         PTM ptm = modReader.getPTMbyAccession("MOD:00036");
         assertTrue("Difference mass for Average mass is:", ptm.getAveDeltaMass() == 16.0);
+
+        PTM ptm2 = modReader.getPTMbyAccession("MS:1001524");
+        assertEquals("Name of the MS:1001524 should be fragment neutral loss", ptm2.getShortName().toLowerCase(), "fragment neutral loss");
     }
 
     @Test
