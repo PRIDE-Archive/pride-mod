@@ -19,7 +19,7 @@ public class Constants {
             return Database.PSIMOD;
         } else if(!accession.contains("MOD") && NumberUtils.isNumber(accession)){
             return Database.UNIMOD;
-        } else if(!accession.contains("MS")){
+        } else if(accession.contains("MS")){
             return Database.MS;
         }else{
             return Database.NONE;

@@ -63,16 +63,17 @@ public class ModReader {
      * @return PTM
      */
     public PTM getPTMbyAccession(String accession){
-
         PTM ptm = null;
-        if(Constants.getAccessionType(accession) == Constants.Database.MS){
-            ptm = MSModification.getByAccession(accession);
-        }
-        if(Constants.getAccessionType(accession) == Constants.Database.UNIMOD){
-            ptm = unimodController.getPTMbyAccession(accession);
-
-        }else if(Constants.getAccessionType(accession) == Constants.Database.PSIMOD){
-            ptm = psiModController.getPTMbyAccession(accession);
+        switch (Constants.getAccessionType(accession)) {
+            case MS:
+                ptm = MSModification.getByAccession(accession);
+                break;
+            case UNIMOD:
+                ptm = unimodController.getPTMbyAccession(accession);
+                break;
+            case PSIMOD:
+                ptm = psiModController.getPTMbyAccession(accession);
+                break;
         }
         return ptm;
     }
