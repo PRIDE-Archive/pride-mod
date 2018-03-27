@@ -63,7 +63,7 @@ public class ModReader {
      * @return PTM
      */
     public PTM getPTMbyAccession(String accession){
-        PTM ptm = null;
+        PTM ptm;
         switch (Constants.getAccessionType(accession)) {
             case MS:
                 ptm = MSModification.getByAccession(accession);
@@ -74,6 +74,8 @@ public class ModReader {
             case PSIMOD:
                 ptm = psiModController.getPTMbyAccession(accession);
                 break;
+            default:
+                ptm = null;
         }
         return ptm;
     }
