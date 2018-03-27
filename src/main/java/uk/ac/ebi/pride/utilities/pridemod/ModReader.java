@@ -64,8 +64,7 @@ public class ModReader {
      */
     public PTM getPTMbyAccession(String accession){
         PTM ptm = null;
-        Constants.Database database = Constants.getAccessionType(accession);
-        switch (database) {
+        switch (Constants.getAccessionType(accession)) {
             case MS:
                 ptm = MSModification.getByAccession(accession);
                 break;
