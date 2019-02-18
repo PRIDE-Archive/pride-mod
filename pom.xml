@@ -5,7 +5,7 @@
     <groupId>uk.ac.ebi.pride.utilities</groupId>
     <artifactId>pride-mod</artifactId>
     <packaging>jar</packaging>
-    <version>2.1.8-SNAPSHOT</version>
+    <version>2.1.11-SNAPSHOT</version>
     <name>Modification Java core API</name>
 
     <parent>

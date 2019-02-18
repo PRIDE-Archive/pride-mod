@@ -1,22 +1,34 @@
 package uk.ac.ebi.pride.utilities.pridemod;
 
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PRIDEModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PSIModDataAccessController;
-import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
-import uk.ac.ebi.pride.utilities.pridemod.model.*;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
+import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
+import uk.ac.ebi.pride.utilities.pridemod.model.MSModification;
+import uk.ac.ebi.pride.utilities.pridemod.model.PRIDEModPTM;
+import uk.ac.ebi.pride.utilities.pridemod.model.PSIModPTM;
+import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
+import uk.ac.ebi.pride.utilities.pridemod.model.Specificity;
+import uk.ac.ebi.pride.utilities.pridemod.model.UniModPTM;
 import uk.ac.ebi.pride.utilities.pridemod.utils.Constants;
 import uk.ac.ebi.pride.utilities.pridemod.utils.Utilities;
-
-import java.io.InputStream;
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * ModReader is a Helper Class that contains all the methods to interact with all the controllers. Because most of the
- * PTM database contains the same modifications we use this class to expose all the common methods amount all the controllers
+ * ModReader is a Helper Class that contains all the methods to interact with
+ * all the controllers. Because most of the PTM database contains the same
+ * modifications we use this class to expose all the common methods amount all
+ * the controllers
  *
  * @author ypriverol
  */
