@@ -21,6 +21,9 @@ public class UniModPTM extends AbstractPTM {
      * @param specificityList  List of Specificity
      * @param formula          Chemical Formula
      */
+
+    List<String> classifications;
+
     public UniModPTM(String accession,
                      String name,
                      String description,
@@ -29,6 +32,11 @@ public class UniModPTM extends AbstractPTM {
                      List<Specificity> specificityList,
                      String formula) {
         super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
+    }
+
+    public UniModPTM(String accession, String name, String description, Double monoDeltaMass, Double averageDeltaMass, List<Specificity> specificityList, String formula, List<String> classifications) {
+        super(accession, name, description, monoDeltaMass, averageDeltaMass, specificityList, formula);
+        this.classifications = classifications;
     }
 
     @Override
@@ -46,4 +54,7 @@ public class UniModPTM extends AbstractPTM {
         return this.accession.equalsIgnoreCase(((UniModPTM)obj).getAccession());
     }
 
+    public List<String> getClassifications() {
+        return classifications;
+    }
 }

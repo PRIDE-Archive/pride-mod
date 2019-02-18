@@ -91,7 +91,7 @@ public class Specificity
      */
     public List<NeutralLoss> getNeutralLoss() {
         if (neutralLoss == null) {
-            neutralLoss = new ArrayList<NeutralLoss>();
+            neutralLoss = new ArrayList<>();
         }
         return this.neutralLoss;
     }
@@ -119,7 +119,7 @@ public class Specificity
      */
     public List<Serializable> getMiscNotesOrPepNeutralLoss() {
         if (miscNotesOrPepNeutralLoss == null) {
-            miscNotesOrPepNeutralLoss = new ArrayList<Serializable>();
+            miscNotesOrPepNeutralLoss = new ArrayList<>();
         }
         return this.miscNotesOrPepNeutralLoss;
     }

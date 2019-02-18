@@ -1,11 +1,6 @@
 package uk.ac.ebi.pride.utilities.pridemod.model;
 
 /**
- * User: yperez
- * Date: 19/07/11
- */
-
-/**
  * Specificity is a class that contains the information of the aminoacid specificity for
  * modifications and also specified the position of this amino acids (N-term, C-Term) or
  * Anywhere. The class contains inside a two classes to define the position and the amino

@@ -66,8 +66,7 @@ public class Utilities {
                     if(specificity.getPosition().equals(currentSpecificity.getPosition()))
                         resultPTMs.add(ptm);
         }
-        List<PTM> ptms = new ArrayList<>();
-        ptms.addAll(resultPTMs);
+        List<PTM> ptms = new ArrayList<>(resultPTMs);
 
         return ptms;
     }

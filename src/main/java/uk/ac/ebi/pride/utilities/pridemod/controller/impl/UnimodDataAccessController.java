@@ -15,9 +15,8 @@ import org.slf4j.LoggerFactory;
 import javax.xml.bind.JAXBException;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -52,10 +51,8 @@ public class UnimodDataAccessController extends AbstractDataAccessController{
         ptmMap = new HashMap<>(unimodObject.getModifications().getMod().size());
 
         for(UnimodModification unimodMod: unimodObject.getModifications().getMod()){
-            /**
-             * We will add the UNIMOD to the accession in order to have the same style than PSI-MOD and
-             * the mzIdentML files
-             */
+
+             // We will add the UNIMOD to the accession in order to have the same style than PSI-MOD the mzIdentML files
             String accession   = "UNIMOD:" + (unimodMod.getRecordId()).intValue();
             String name        = unimodMod.getTitle();
             String description = unimodMod.getFullName();
@@ -64,15 +61,18 @@ public class UnimodDataAccessController extends AbstractDataAccessController{
             Double monoMass    = (unimodMod.getDelta()!=null)? (unimodMod.getDelta().getMonoMass()).doubleValue():null;
             List<uk.ac.ebi.pride.utilities.pridemod.model.Specificity> specificityList = null;
 
+            Set<String> classifications = new HashSet<>();
+
             if(unimodMod.getSpecificity() != null && unimodMod.getSpecificity().size() > 0){
                 specificityList = new ArrayList<>(unimodMod.getSpecificity().size());
                 for(uk.ac.ebi.pride.utilities.pridemod.io.unimod.model.Specificity oldSpecificty: unimodMod.getSpecificity()){
                     uk.ac.ebi.pride.utilities.pridemod.model.Specificity specificity = new uk.ac.ebi.pride.utilities.pridemod.model.Specificity(oldSpecificty.getSite(), oldSpecificty.getPosition());
+                    classifications.add(oldSpecificty.getClassification().toLowerCase());
                     specificityList.add(specificity);
                 }
 
             }
-            PTM uniModPTM = new UniModPTM(accession, name,description,monoMass,avgMass,specificityList,formula);
+            PTM uniModPTM = new UniModPTM(accession, name,description,monoMass,avgMass,specificityList,formula, new ArrayList<>(classifications));
             ptmMap.put(accession,uniModPTM);
         }
     }

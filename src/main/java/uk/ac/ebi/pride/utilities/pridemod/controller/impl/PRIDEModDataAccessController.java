@@ -63,7 +63,7 @@ public class PRIDEModDataAccessController extends AbstractDataAccessController {
                 if(oldMod.getUnimodMappings() != null && oldMod.getUnimodMappings().getUnimodMapping() != null){
                     for(UnimodMapping unimodMapping: oldMod.getUnimodMappings().getUnimodMapping()){
                         UniModPTM uniModPTM = (UniModPTM) unimodController.getPTMbyAccession(unimodMapping.getAccession());
-                        unimodChildren.put(uniModPTM.getAccession(), new AbstractMap.SimpleEntry<UniModPTM, Boolean>(uniModPTM, unimodMapping.getGeneralModification().intValue() == 1));
+                        unimodChildren.put(uniModPTM.getAccession(), new AbstractMap.SimpleEntry<>(uniModPTM, unimodMapping.getGeneralModification().intValue() == 1));
                     }
                 }
                 Map<Comparable, Map.Entry<PSIModPTM, Boolean>> children = new HashMap<>();

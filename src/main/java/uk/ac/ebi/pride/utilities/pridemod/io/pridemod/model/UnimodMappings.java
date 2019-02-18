@@ -57,7 +57,7 @@ public class UnimodMappings
      */
     public List<UnimodMapping> getUnimodMapping() {
         if (unimodMapping == null) {
-            unimodMapping = new ArrayList<UnimodMapping>();
+            unimodMapping = new ArrayList<>();
         }
         return this.unimodMapping;
     }

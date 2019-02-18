@@ -44,7 +44,7 @@ public class PSIModDataAccessController extends AbstractDataAccessController{
     }
 
     /**
-     * InitPTMMap is a parser of all the ptms included in the PSIMod database. We decide to keep all in memory for the
+     * InitPTMMap is a parser of all the ptm included in the PSIMod database. We decide to keep all in memory for the
      * very beginning to improve the performance of the application. The present function convert all terms from PSI-MOD to
      * PTM structure and added them to a HashMap. In the future we can think to
      * @param termCollection

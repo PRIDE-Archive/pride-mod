@@ -12,6 +12,7 @@ import uk.ac.ebi.pride.utilities.pridemod.utils.Utilities;
 
 import java.io.InputStream;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * ModReader is a Helper Class that contains all the methods to interact with all the controllers. Because most of the
@@ -423,6 +424,14 @@ public class ModReader {
         List<PTM> resultMaps = remapPTMs(ptms);
         ptms = Utilities.filterPTMsByAminoAcidSpecificityPosition(resultMaps, position);
         return ptms;
+    }
+
+    /**
+     * Return all the UNIMOD PTms.
+     * @return List of {@link UniModPTM}
+     */
+    public List<PTM> getUnimodPTMs(){
+        return unimodController.ptmMap.values().stream().collect(Collectors.toList());
     }
 
     /**
