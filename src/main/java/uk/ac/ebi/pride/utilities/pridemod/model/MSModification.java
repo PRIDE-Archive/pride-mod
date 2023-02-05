@@ -12,7 +12,6 @@ public enum MSModification implements PTM{
 
     FRAGMENT_NEUTRAL_LOSS("MS", "MS:1001524", "fragment neutral loss", 63.998283, 63.998283, "fragment neutral loss");
 
-
     private String cvLabel;
     private String accession;
     private String name;

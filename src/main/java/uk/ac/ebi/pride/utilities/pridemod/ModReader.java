@@ -1,15 +1,9 @@
 package uk.ac.ebi.pride.utilities.pridemod;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import lombok.extern.slf4j.Slf4j;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PRIDEModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.PSIModDataAccessController;
 import uk.ac.ebi.pride.utilities.pridemod.controller.impl.UnimodDataAccessController;
@@ -32,9 +26,8 @@ import java.util.stream.Collectors;
  *
  * @author ypriverol
  */
+@Slf4j
 public class ModReader {
-
-    private static final Logger logger = LoggerFactory.getLogger(ModReader.class);
 
     private static InputStream unimodUrl    = ModReader.class.getClassLoader().getResourceAsStream("unimod.xml");
     private static InputStream psiModUrl    = ModReader.class.getClassLoader().getResourceAsStream("PSI-MOD.obo");
@@ -54,7 +47,7 @@ public class ModReader {
             prideModController = new PRIDEModDataAccessController(prideModdUrl, unimodController, psiModController);
         } catch (Exception e) {
             String msg = "Exception while trying to read Ontology Files";
-            logger.error(msg, e);
+            log.error(msg, e);
             throw new DataAccessException(msg, e);
         }
     }
@@ -228,9 +221,7 @@ public class ModReader {
 		if (newAccession != null)
 			accession = newAccession;
 		final PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
-		if (prideMod != null)
-			return prideMod;
-		return null;
+		return prideMod;
 	}
 
 	/**
@@ -247,9 +238,7 @@ public class ModReader {
 		if (newAccession != null)
 			accession = newAccession;
 		final PRIDEModPTM prideMod = prideModController.getPRIDEModByChildrenID(accession);
-		if (prideMod != null)
-			return prideMod;
-		return null;
+		return prideMod;
 	}
 
 	/**

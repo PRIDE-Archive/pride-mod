@@ -1,5 +1,6 @@
 package uk.ac.ebi.pride.utilities.pridemod.controller.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import uk.ac.ebi.pride.utilities.pridemod.exception.DataAccessException;
 import uk.ac.ebi.pride.utilities.pridemod.io.unimod.model.UnimodModification;
 import uk.ac.ebi.pride.utilities.pridemod.model.PTM;
@@ -9,14 +10,10 @@ import uk.ac.ebi.pride.utilities.pridemod.io.unimod.model.Unimod;
 import uk.ac.ebi.pride.utilities.pridemod.io.unimod.xml.UnimodReader;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.xml.bind.JAXBException;
 
 import java.io.InputStream;
 import java.util.*;
-import java.util.stream.Collectors;
 
 
 /**
@@ -25,9 +22,8 @@ import java.util.stream.Collectors;
  *
  * @author ypriverol
  */
+@Slf4j
 public class UnimodDataAccessController extends AbstractDataAccessController{
-
-    private static final Logger logger = LoggerFactory.getLogger(UnimodDataAccessController.class);
 
     public UnimodDataAccessController(InputStream xml) {
         super(xml);
@@ -37,7 +33,7 @@ public class UnimodDataAccessController extends AbstractDataAccessController{
 
         } catch (JAXBException e) {
             String msg = "Exception while trying to read the Unimod file";
-            logger.error(msg, e);
+            log.error(msg, e);
             throw new DataAccessException(msg, e);
         }
     }

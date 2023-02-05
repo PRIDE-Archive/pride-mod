@@ -100,8 +100,10 @@ public class PRIDEModDataAccessController extends AbstractDataAccessController {
                 boolean found = true;
                 Collection<UniModPTM> listMods = ((PRIDEModPTM) ptmOldValue).getChieldUnimodPTMSs();
                 for(PTM unimodQuery: unimodList){
-                   if(!listMods.contains(unimodQuery))
-                      found = false;
+                    if (!listMods.contains(unimodQuery)) {
+                        found = false;
+                        break;
+                    }
                 }
                 if(found)
                     return ((PRIDEModPTM) ptmOldValue).getUnimodGeneralModification();
